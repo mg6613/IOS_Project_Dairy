@@ -1,2 +1,2 @@
-# ST
+# Team ST
 Side Team
