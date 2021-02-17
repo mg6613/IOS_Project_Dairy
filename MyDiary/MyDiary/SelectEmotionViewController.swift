@@ -7,12 +7,24 @@
 
 import UIKit
 
+// Variable for get selected date from previous view
+var selectDate_EmotionView = ""
+
 class SelectEmotionViewController: UIViewController {
 
+    @IBOutlet weak var image1: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        image1.addGestureRecognizer(tapGR)
+        image1.isUserInteractionEnabled = true
+    }
+    
+    @objc func imageTapped(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            print("첫번째 이미지")
+        }
     }
     
 

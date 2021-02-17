@@ -18,7 +18,9 @@
 		2882C62325DC164100DEB105 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62225DC164100DEB105 /* ListViewController.swift */; };
 		2882C62625DC1CB600DEB105 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62525DC1CB500DEB105 /* DetailViewController.swift */; };
 		2882C62925DC1E8D00DEB105 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */; };
-		496B62729940D02BAE3AA1E1 /* Pods_autoLayout_Test02.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A87F3B43F4B163E9140C0F /* Pods_autoLayout_Test02.framework */; };
+		28EB791B25DCB4A20065EEEF /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB791A25DCB4A20065EEEF /* Contents.swift */; };
+		28EB791F25DCD0DE0065EEEF /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB791E25DCD0DE0065EEEF /* heart.png */; };
+		496B62729940D02BAE3AA1E1 /* Pods_MyDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A87F3B43F4B163E9140C0F /* Pods_MyDiary.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,9 +37,11 @@
 		2882C62225DC164100DEB105 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2882C62525DC1CB500DEB105 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		28EB791A25DCB4A20065EEEF /* Contents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		28EB791E25DCD0DE0065EEEF /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		726582DEFCFF58A3FBBF434D /* Pods-autoLayout_Test02.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autoLayout_Test02.debug.xcconfig"; path = "Target Support Files/Pods-autoLayout_Test02/Pods-autoLayout_Test02.debug.xcconfig"; sourceTree = "<group>"; };
 		D59C600E81B8C5F5DA3C9D8A /* Pods-autoLayout_Test02.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-autoLayout_Test02.release.xcconfig"; path = "Target Support Files/Pods-autoLayout_Test02/Pods-autoLayout_Test02.release.xcconfig"; sourceTree = "<group>"; };
-		F5A87F3B43F4B163E9140C0F /* Pods_autoLayout_Test02.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_autoLayout_Test02.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5A87F3B43F4B163E9140C0F /* Pods_MyDiary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MyDiary.framework; path = "../Debug-iphonesimulator/Pods_MyDiary.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496B62729940D02BAE3AA1E1 /* Pods_autoLayout_Test02.framework in Frameworks */,
+				496B62729940D02BAE3AA1E1 /* Pods_MyDiary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +77,8 @@
 		28454B5125DC077F0016119D /* MyDiary */ = {
 			isa = PBXGroup;
 			children = (
+				28EB791D25DCD0C90065EEEF /* Images */,
+				28EB791A25DCB4A20065EEEF /* Contents.swift */,
 				28454B5225DC077F0016119D /* AppDelegate.swift */,
 				28454B5425DC077F0016119D /* SceneDelegate.swift */,
 				28454B5625DC077F0016119D /* ViewController.swift */,
@@ -89,6 +95,14 @@
 			path = MyDiary;
 			sourceTree = "<group>";
 		};
+		28EB791D25DCD0C90065EEEF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				28EB791E25DCD0DE0065EEEF /* heart.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		8D51A030A7C28BA27EC69618 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +115,7 @@
 		BC4164B8781BFBDF9FB83C84 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F5A87F3B43F4B163E9140C0F /* Pods_autoLayout_Test02.framework */,
+				F5A87F3B43F4B163E9140C0F /* Pods_MyDiary.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EB791F25DCD0DE0065EEEF /* heart.png in Resources */,
 				28454B5F25DC07830016119D /* LaunchScreen.storyboard in Resources */,
 				28454B5C25DC07830016119D /* Assets.xcassets in Resources */,
 				28454B5A25DC077F0016119D /* Main.storyboard in Resources */,
@@ -221,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2882C62925DC1E8D00DEB105 /* SettingTableViewController.swift in Sources */,
+				28EB791B25DCB4A20065EEEF /* Contents.swift in Sources */,
 				28454B5725DC077F0016119D /* ViewController.swift in Sources */,
 				28454B5325DC077F0016119D /* AppDelegate.swift in Sources */,
 				2882C62325DC164100DEB105 /* ListViewController.swift in Sources */,

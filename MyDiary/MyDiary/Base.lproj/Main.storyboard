@@ -11,7 +11,7 @@
         <!--시작-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="&lt;"/>
                                         <connections>
-                                            <action selector="btnPreview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SjN-xD-af7"/>
+                                            <action selector="btnLastMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljU-gb-SdW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-o3-DJ3">
@@ -33,7 +33,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="&gt;"/>
                                         <connections>
-                                            <action selector="btnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LOq-NM-t5B"/>
+                                            <action selector="btnNextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rd7-mi-9zP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -61,6 +61,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnNextOutlet" destination="MeV-o3-DJ3" id="gMi-NS-icd"/>
+                        <outlet property="btnPreviewOutlet" destination="TkV-a4-qim" id="hxO-hn-hya"/>
                         <outlet property="myCalendar" destination="7RI-W1-Pny" id="c9I-gT-M7Z"/>
                         <segue destination="cpQ-DR-Ool" kind="show" identifier="moveSelectEmo" id="6dR-V9-d0V"/>
                         <segue destination="gRU-q4-Pbg" kind="show" identifier="moveList" id="IHq-1b-ean"/>
@@ -73,7 +75,7 @@
         <!--설정-->
         <scene sceneID="cVa-IL-yiE">
             <objects>
-                <tableViewController id="Boa-mg-iQq" customClass="SettingTableViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Boa-mg-iQq" customClass="SettingTableViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="TZg-gm-Xbq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +104,7 @@
         <!--리스트-->
         <scene sceneID="BWl-nV-SRO">
             <objects>
-                <viewController id="gRU-q4-Pbg" customClass="ListViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gRU-q4-Pbg" customClass="ListViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="boA-va-kSS">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +152,7 @@
                                 </prototypes>
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="SiN-lz-0s2">
-                                <rect key="frame" x="140" y="91" width="107" height="84"/>
+                                <rect key="frame" x="140" y="91" width="108" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="Jv6-rJ-d9G"/>
                                 </constraints>
@@ -178,7 +180,7 @@
         <!--상세보기-->
         <scene sceneID="QvB-HC-MoM">
             <objects>
-                <viewController id="M89-VD-D6P" customClass="DetailViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M89-VD-D6P" customClass="DetailViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="160-yz-bRR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -256,7 +258,7 @@
         <!--감정 선택-->
         <scene sceneID="XPH-JU-AK3">
             <objects>
-                <viewController id="cpQ-DR-Ool" customClass="SelectEmotionViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cpQ-DR-Ool" customClass="SelectEmotionViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9C-Hs-B56">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -348,6 +350,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="감정 선택" id="1jN-ga-3y2"/>
+                    <connections>
+                        <outlet property="image1" destination="bG5-jr-sYT" id="zfa-ep-GaH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwe-9L-V85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -356,7 +361,7 @@
         <!--글쓰기-->
         <scene sceneID="QXj-0b-5An">
             <objects>
-                <viewController id="rX2-DE-ssK" customClass="AddContentViewController" customModule="autoLayout_Test02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rX2-DE-ssK" customClass="AddContentViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YDY-tv-WiG">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
