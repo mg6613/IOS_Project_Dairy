@@ -157,6 +157,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
+                                    <outlet property="dataSource" destination="gRU-q4-Pbg" id="ufL-ZU-Zwm"/>
                                     <outlet property="delegate" destination="gRU-q4-Pbg" id="bkn-04-dxp"/>
                                 </connections>
                             </tableView>
@@ -181,6 +182,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="리스트" id="eBa-Mi-FjK"/>
+                    <connections>
+                        <outlet property="listTableView" destination="ft5-EW-llI" id="HFN-h6-50n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgj-7a-IgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
