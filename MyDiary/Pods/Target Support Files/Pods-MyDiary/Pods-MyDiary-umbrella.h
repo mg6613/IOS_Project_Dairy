@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_autoLayout_Test02VersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_autoLayout_Test02VersionString[];
+FOUNDATION_EXPORT double Pods_MyDiaryVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MyDiaryVersionString[];
 
