@@ -77,20 +77,8 @@
 		28454B5125DC077F0016119D /* MyDiary */ = {
 			isa = PBXGroup;
 			children = (
-				28EB791D25DCD0C90065EEEF /* Images */,
-				28EB791A25DCB4A20065EEEF /* Contents.swift */,
-				28454B5225DC077F0016119D /* AppDelegate.swift */,
-				28454B5425DC077F0016119D /* SceneDelegate.swift */,
-				28454B5625DC077F0016119D /* ViewController.swift */,
-				28454B5825DC077F0016119D /* Main.storyboard */,
-				28454B5B25DC07830016119D /* Assets.xcassets */,
-				28454B5D25DC07830016119D /* LaunchScreen.storyboard */,
-				28454B6025DC07830016119D /* Info.plist */,
-				2882C61B25DC0F7000DEB105 /* SelectEmotionViewController.swift */,
-				2882C61E25DC0FCD00DEB105 /* AddContentViewController.swift */,
-				2882C62225DC164100DEB105 /* ListViewController.swift */,
-				2882C62525DC1CB500DEB105 /* DetailViewController.swift */,
-				2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */,
+				3CC08AB825DCEFBA00AB456A /* Supporting Files */,
+				3CC08AB725DCEFA500AB456A /* Source */,
 			);
 			path = MyDiary;
 			sourceTree = "<group>";
@@ -98,9 +86,85 @@
 		28EB791D25DCD0C90065EEEF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				28EB791E25DCD0DE0065EEEF /* heart.png */,
+				3CC08ABF25DCF29700AB456A /* JPG */,
+				3CC08ABE25DCF28F00AB456A /* PNG */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		3CC08AB725DCEFA500AB456A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3CC08ABB25DCF1B800AB456A /* VCs */,
+				3CC08ABA25DCF19900AB456A /* Models */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		3CC08AB825DCEFBA00AB456A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28454B5225DC077F0016119D /* AppDelegate.swift */,
+				28454B5425DC077F0016119D /* SceneDelegate.swift */,
+				28454B5D25DC07830016119D /* LaunchScreen.storyboard */,
+				28454B6025DC07830016119D /* Info.plist */,
+				28EB791D25DCD0C90065EEEF /* Images */,
+				3CC08ABC25DCF20700AB456A /* StoryBoard */,
+				3CC08AB925DCEFCD00AB456A /* Assets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CC08AB925DCEFCD00AB456A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				28454B5B25DC07830016119D /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		3CC08ABA25DCF19900AB456A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28EB791A25DCB4A20065EEEF /* Contents.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3CC08ABB25DCF1B800AB456A /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				28454B5625DC077F0016119D /* ViewController.swift */,
+				2882C61B25DC0F7000DEB105 /* SelectEmotionViewController.swift */,
+				2882C61E25DC0FCD00DEB105 /* AddContentViewController.swift */,
+				2882C62225DC164100DEB105 /* ListViewController.swift */,
+				2882C62525DC1CB500DEB105 /* DetailViewController.swift */,
+				2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */,
+			);
+			name = VCs;
+			sourceTree = "<group>";
+		};
+		3CC08ABC25DCF20700AB456A /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				28454B5825DC077F0016119D /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		3CC08ABE25DCF28F00AB456A /* PNG */ = {
+			isa = PBXGroup;
+			children = (
+				28EB791E25DCD0DE0065EEEF /* heart.png */,
+			);
+			name = PNG;
+			sourceTree = "<group>";
+		};
+		3CC08ABF25DCF29700AB456A /* JPG */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JPG;
 			sourceTree = "<group>";
 		};
 		8D51A030A7C28BA27EC69618 /* Pods */ = {
