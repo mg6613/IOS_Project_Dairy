@@ -74,6 +74,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(self.getDocumentDirectory())
     }
     
+    // Reload data when back from other view
+    override func viewWillAppear(_ animated: Bool) {
+        // DB select action
+        print("viewWillAppear")
+        myCalendar.reloadData()
+
+        // Connect FSCalendar
+        myCalendar.delegate = self
+        myCalendar.dataSource = self
+ 
+        // DB select action
+        readValues()
+    }
+    
     
     @IBAction func openChart(_ sender: UIBarButtonItem) {
         let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
@@ -202,7 +216,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             print("데이트 타입 확인 : \(type(of: date))")
             print("날짜 : \(date)")
 
-            return UIImage(named: "heart.png")
+            return UIImage(named: "48.png")
         }
         return nil
     }

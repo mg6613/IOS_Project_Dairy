@@ -18,6 +18,7 @@
 		2882C62325DC164100DEB105 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62225DC164100DEB105 /* ListViewController.swift */; };
 		2882C62625DC1CB600DEB105 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62525DC1CB500DEB105 /* DetailViewController.swift */; };
 		2882C62925DC1E8D00DEB105 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */; };
+		28B8BCB225DD4EBC00573D21 /* 48.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B8BCB125DD4EBC00573D21 /* 48.png */; };
 		28EB791B25DCB4A20065EEEF /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB791A25DCB4A20065EEEF /* Contents.swift */; };
 		28EB791F25DCD0DE0065EEEF /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EB791E25DCD0DE0065EEEF /* heart.png */; };
 		3CC08B0825DD309000AB456A /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC08B0725DD309000AB456A /* ChartViewController.swift */; };
@@ -41,6 +42,7 @@
 		2882C62225DC164100DEB105 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2882C62525DC1CB500DEB105 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		28B8BCB125DD4EBC00573D21 /* 48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 48.png; sourceTree = "<group>"; };
 		28EB791A25DCB4A20065EEEF /* Contents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		28EB791E25DCD0DE0065EEEF /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		3CC08B0725DD309000AB456A /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				28EB791E25DCD0DE0065EEEF /* heart.png */,
+				28B8BCB125DD4EBC00573D21 /* 48.png */,
 			);
 			name = PNG;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28B8BCB225DD4EBC00573D21 /* 48.png in Resources */,
 				3CC08B0F25DD30F900AB456A /* ChartViewController.xib in Resources */,
 				28EB791F25DCD0DE0065EEEF /* heart.png in Resources */,
 				28454B5F25DC07830016119D /* LaunchScreen.storyboard in Resources */,
