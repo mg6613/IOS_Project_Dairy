@@ -86,7 +86,6 @@
 		28EB791D25DCD0C90065EEEF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				3CC08ABF25DCF29700AB456A /* JPG */,
 				3CC08ABE25DCF28F00AB456A /* PNG */,
 			);
 			path = Images;
@@ -106,7 +105,6 @@
 			children = (
 				28454B5225DC077F0016119D /* AppDelegate.swift */,
 				28454B5425DC077F0016119D /* SceneDelegate.swift */,
-				28454B5D25DC07830016119D /* LaunchScreen.storyboard */,
 				28454B6025DC07830016119D /* Info.plist */,
 				28EB791D25DCD0C90065EEEF /* Images */,
 				3CC08ABC25DCF20700AB456A /* StoryBoard */,
@@ -147,6 +145,7 @@
 		3CC08ABC25DCF20700AB456A /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				28454B5D25DC07830016119D /* LaunchScreen.storyboard */,
 				28454B5825DC077F0016119D /* Main.storyboard */,
 			);
 			path = StoryBoard;
@@ -158,13 +157,6 @@
 				28EB791E25DCD0DE0065EEEF /* heart.png */,
 			);
 			name = PNG;
-			sourceTree = "<group>";
-		};
-		3CC08ABF25DCF29700AB456A /* JPG */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JPG;
 			sourceTree = "<group>";
 		};
 		8D51A030A7C28BA27EC69618 /* Pods */ = {
