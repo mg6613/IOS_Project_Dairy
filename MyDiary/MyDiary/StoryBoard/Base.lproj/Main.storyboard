@@ -108,7 +108,7 @@
         <!--리스트-->
         <scene sceneID="BWl-nV-SRO">
             <objects>
-                <viewController id="gRU-q4-Pbg" customClass="ListViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gRU-q4-Pbg" customClass="TableViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="boA-va-kSS">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,7 +117,7 @@
                                 <rect key="frame" x="18" y="183" width="354" height="627"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="136" id="UHB-Ej-r0J">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="136" id="UHB-Ej-r0J" customClass="TableViewCell" customModule="MyDiary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="354" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UHB-Ej-r0J" id="HOh-YV-7jT">
@@ -154,6 +154,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="gRU-q4-Pbg" id="bkn-04-dxp"/>
+                                </connections>
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="SiN-lz-0s2">
                                 <rect key="frame" x="140" y="91" width="108" height="84"/>
