@@ -64,29 +64,24 @@ end
 # Create folder Pods, Kanna_07.xcworkspace, Podfile.lock 
 pod install     
 ```
-
+--- 
 # Folder
 ## Image
 ![image](https://user-images.githubusercontent.com/46651965/108167033-6d40c280-7138-11eb-81f4-b693d868488b.png)
 
 ## Supporting Files
-```
-Images = Image File
 
+### Images = Image File
 - JPG
 - PNG
 
-StoryBoard
+### StoryBoard
 
-- Main StoryBoard
-
-Assets
-
+### Assets
 - Assets.xcassets
 
 ## Source
 
-Models = Bean
+### Models = Bean
+### VCs = View Controller's
 
-VCs = View Controller's
-```
