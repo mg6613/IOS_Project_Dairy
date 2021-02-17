@@ -53,7 +53,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="시작" id="sK1-DW-uWc">
-                        <barButtonItem key="leftBarButtonItem" title="차트" id="jau-Gd-exI"/>
+                        <barButtonItem key="leftBarButtonItem" title="차트" id="jau-Gd-exI">
+                            <connections>
+                                <action selector="openChart:" destination="BYZ-38-t0r" id="6ST-yk-PCf"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="설정" id="2PX-DO-FkV">
                             <connections>
                                 <segue destination="Boa-mg-iQq" kind="show" id="ch2-cR-VLT"/>

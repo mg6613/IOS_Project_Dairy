@@ -73,6 +73,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Check path of simulator
         print(self.getDocumentDirectory())
     }
+    
+    
+    @IBAction func openChart(_ sender: UIBarButtonItem) {
+        let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
+        present(chartViewController, animated: true)
+    }
+    
+    
     // Button for move to last month on Calendar
     @IBAction func btnLastMonth(_ sender: UIButton) {
         btnNextOutlet.isHidden = false
