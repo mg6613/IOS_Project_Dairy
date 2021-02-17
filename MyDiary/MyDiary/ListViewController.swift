@@ -1,14 +1,15 @@
 //
 //  ListViewController.swift
-//  autoLayout_Test02
+//  MyDiary
 //
-//  Created by 이민우 on 2021/02/17.
+//  Created by 유민규 on 2021/02/18.
 //
 
 import UIKit
 
 class ListViewController: UIViewController {
 
+    @IBOutlet weak var listTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
