@@ -9,6 +9,9 @@ import UIKit
 import FSCalendar
 import SQLite3
 
+var test = 0
+
+@IBDesignable
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
     @IBOutlet weak var myCalendar: FSCalendar!
@@ -41,6 +44,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return Date()
     }()
     
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +77,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         // Check path of simulator
         print(self.getDocumentDirectory())
+        
+        myCalendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
     }
     
     // Reload data when back from other view
@@ -80,12 +87,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print("viewWillAppear")
         myCalendar.reloadData()
 
+        // DB select action
+        readValues()
+        
         // Connect FSCalendar
         myCalendar.delegate = self
         myCalendar.dataSource = self
- 
-        // DB select action
-        readValues()
     }
     
     
@@ -123,6 +130,24 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         
     }
+
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+        let cell: FSCalendarCell = calendar.dequeueReusableCell(withIdentifier: "CELL", for: date, at: position)
+        let dateFromStringFormatter = DateFormatter();
+        dateFromStringFormatter.dateFormat = "YYYY-MM-dd";
+        let calendarDate = dateFromStringFormatter.string(from: date)
+        
+        // Disable date is string Array of Dates
+        if self.eventDates.contains(date){
+            print("여기여기여기")
+            cell.isUserInteractionEnabled = false;
+        }
+        
+        print("CELL : \(cell.isUserInteractionEnabled), DATE : \(calendarDate)")
+        return cell
+    }
+    
+    
     
     // Func for Calendar Design
     func calendarDesign(){
@@ -136,10 +161,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         myCalendar.appearance.selectionColor = UIColor(red: 38/255, green: 153/255, blue: 251/255, alpha: 1)
         
         // Today date color
-        myCalendar.appearance.todayColor = UIColor(red: 188/255, green: 224/255, blue: 253/255, alpha: 1)
+//        myCalendar.appearance.todayColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
         
         // Allow multiple selection
-        myCalendar.allowsMultipleSelection = true
+//        myCalendar.allowsMultipleSelection = true
         
         // Allow multiple swipe
 //        myCalendar.swipeToChooseGesture.isEnabled = true
@@ -216,20 +241,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             print("데이트 타입 확인 : \(type(of: date))")
             print("날짜 : \(date)")
 
-            return UIImage(named: "48.png")
+            return UIImage(named: "reresize.png")
         }
         return nil
     }
     
     // Maximum number of dates available
-    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-            // 날짜 3개까지만 선택되도록
-            if calendar.selectedDates.count > 0 {
-                return false
-            } else {
-                return true
-            }
-    }
+//    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
+//            // 날짜 3개까지만 선택되도록
+//            if calendar.selectedDates.count > 0 {
+//                return false
+//            } else {
+//                return true
+//            }
+//    }
     
     // Can select date until today
     func maximumDate(for calendar: FSCalendar) -> Date {

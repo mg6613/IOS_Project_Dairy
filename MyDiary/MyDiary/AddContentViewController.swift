@@ -121,6 +121,7 @@ class AddContentViewController: UIViewController {
     func showAlert(value : Int){
         let alert : UIAlertController
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
+            test = 1
             self.navigationController?.popToRootViewController(animated: true)
         })
 
