@@ -88,6 +88,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         readValues()
     }
     
+    
+    @IBAction func openChart(_ sender: UIBarButtonItem) {
+        let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
+        present(chartViewController, animated: true)
+    }
+    
+    
     // Button for move to last month on Calendar
     @IBAction func btnLastMonth(_ sender: UIButton) {
         btnNextOutlet.isHidden = false
