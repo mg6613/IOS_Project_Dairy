@@ -22,10 +22,13 @@ class CheckPWViewController: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
         let password = UserDefaults.standard.string(forKey: "password")!
         
+        // Exception handling when don't type anything
         if txtPassword.text!.isEmpty {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }else{
+            
+            // When type correct password
             if password == txtPassword.text!{
                 let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainView")
                 vcName?.modalPresentationStyle = .fullScreen

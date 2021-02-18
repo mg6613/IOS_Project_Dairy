@@ -191,7 +191,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a7-Kl-RFL">
-                                        <rect key="frame" x="66" y="269" width="30" height="30"/>
+                                        <rect key="frame" x="66.666666666666657" y="269" width="30" height="30"/>
                                         <state key="normal" title="확인"/>
                                         <connections>
                                             <action selector="btnUpdatePassword:" destination="9XE-s4-Hoo" eventType="touchUpInside" id="GXh-CL-WG6"/>
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zgj-7a-IgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1970.7692307692307" y="88.862559241706151"/>
+            <point key="canvasLocation" x="1971" y="89"/>
         </scene>
         <!--상세보기-->
         <scene sceneID="QvB-HC-MoM">
@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2C-Ai-KJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983.0769230769229" y="88.862559241706151"/>
+            <point key="canvasLocation" x="2983" y="89"/>
         </scene>
         <!--감정 선택-->
         <scene sceneID="XPH-JU-AK3">

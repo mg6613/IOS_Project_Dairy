@@ -126,7 +126,6 @@ class SelectEmotionViewController: UIViewController {
         image10.addGestureRecognizer(tapGR10)
         image11.addGestureRecognizer(tapGR11)
         image12.addGestureRecognizer(tapGR12)
-
     }
 
     // Set border of clicked Image

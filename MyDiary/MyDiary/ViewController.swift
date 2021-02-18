@@ -44,8 +44,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return Date()
     }()
     
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,16 +81,17 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     // Reload data when back from other view
     override func viewWillAppear(_ animated: Bool) {
-        // DB select action
+        print("----------------")
         print("viewWillAppear")
+        // Connect FSCalendar
+        myCalendar.delegate = self
+        myCalendar.dataSource = self
+        
+        // Reload Data
         myCalendar.reloadData()
 
         // DB select action
         readValues()
-        
-        // Connect FSCalendar
-        myCalendar.delegate = self
-        myCalendar.dataSource = self
     }
     
     
@@ -128,24 +127,23 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             selectDate_EmotionView = selectDate
             self.performSegue(withIdentifier: "moveSelectEmo", sender: self)
         }
-        
     }
 
-    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-        let cell: FSCalendarCell = calendar.dequeueReusableCell(withIdentifier: "CELL", for: date, at: position)
-        let dateFromStringFormatter = DateFormatter();
-        dateFromStringFormatter.dateFormat = "YYYY-MM-dd";
-        let calendarDate = dateFromStringFormatter.string(from: date)
-        
-        // Disable date is string Array of Dates
-        if self.eventDates.contains(date){
-            print("여기여기여기")
-            cell.isUserInteractionEnabled = false;
-        }
-        
-        print("CELL : \(cell.isUserInteractionEnabled), DATE : \(calendarDate)")
-        return cell
-    }
+//    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+//        let cell: FSCalendarCell = calendar.dequeueReusableCell(withIdentifier: "CELL", for: date, at: position)
+//        let dateFromStringFormatter = DateFormatter();
+//        dateFromStringFormatter.dateFormat = "YYYY-MM-dd";
+//        let calendarDate = dateFromStringFormatter.string(from: date)
+//
+//        // Disable date is string Array of Dates
+//        if self.eventDates.contains(date){
+//            print("여기여기여기")
+//            cell.isUserInteractionEnabled = false;
+//        }
+//
+//        print("CELL : \(cell.isUserInteractionEnabled), DATE : \(calendarDate)")
+//        return cell
+//    }
     
     
     
@@ -294,14 +292,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     // Create SQLite DB
     func createSQLite(){
-        // SQLite 생성하기
+        // For create DB
           let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("MyDiaryData.sqlite")
           
           if sqlite3_open(fileURL.path, &db) != SQLITE_OK{
               print("error opening database")
           }
           
-          // 테이블 없으면 만들고 있으면 패스
+          // If table exist don't create else create table
           if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT, cDeleteDate TEXT, cCount TEXT)", nil, nil, nil) != SQLITE_OK{
               let errmsg = String(cString: sqlite3_errmsg(db)!)
               print("error creating table : \(errmsg)")
@@ -315,14 +313,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let queryString = "SELECT * FROM contents"
         var stmt : OpaquePointer?
         
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing select : \(errmsg)")
             return
         }
         
-        // 읽어올 행이 있으면 데이터 가져오기
         while sqlite3_step(stmt) == SQLITE_ROW{
             let cInsertDate = String(cString: sqlite3_column_text(stmt, 4))
             
