@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                         window?.rootViewController = loginVC
         }else{
             // if not, connect MainView
-            print("스위치 OFF", UserDefaults.standard.string(forKey: "switchValue")!)
+//            print("스위치 OFF", UserDefaults.standard.string(forKey: "switchValue")!)
             guard let mainVC = storyboard.instantiateViewController(withIdentifier: "MainView") as? ViewController else { return }
                        window?.rootViewController = mainVC
         }

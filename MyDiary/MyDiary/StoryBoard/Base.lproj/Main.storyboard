@@ -529,26 +529,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="11O-5O-lAj">
-                            <rect key="frame" x="0.0" y="0.0" width="390" height="114"/>
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="Jto-Ga-Pk7">
-                                    <rect key="frame" x="134" y="8" width="123" height="84"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="123" id="DVs-YW-sqE"/>
-                                    </constraints>
-                                </datePicker>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000년 00월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGU-zU-FRn">
+                                    <rect key="frame" x="147" y="40" width="96" height="20"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="Jto-Ga-Pk7" secondAttribute="bottom" constant="22" id="OaP-wY-e25"/>
-                                <constraint firstItem="Jto-Ga-Pk7" firstAttribute="centerX" secondItem="11O-5O-lAj" secondAttribute="centerX" id="W0N-DI-Fet"/>
-                                <constraint firstItem="Jto-Ga-Pk7" firstAttribute="top" secondItem="11O-5O-lAj" secondAttribute="topMargin" id="zKf-be-TZc"/>
+                                <constraint firstItem="eGU-zU-FRn" firstAttribute="centerY" secondItem="11O-5O-lAj" secondAttribute="centerY" id="0fV-ut-Ods"/>
+                                <constraint firstItem="eGU-zU-FRn" firstAttribute="centerX" secondItem="11O-5O-lAj" secondAttribute="centerX" id="PDv-ar-yNq"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="134" id="dTI-99-uFH" customClass="TableViewCell" customModule="MyDiary" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="142" width="390" height="134"/>
+                                <rect key="frame" x="0.0" y="128" width="390" height="134"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dTI-99-uFH" id="veE-g9-w6L">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="134"/>
