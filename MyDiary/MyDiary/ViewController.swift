@@ -15,8 +15,6 @@ var test = 0
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
     @IBOutlet weak var myCalendar: FSCalendar!
-    @IBOutlet weak var btnPreviewOutlet: UIButton!
-    @IBOutlet weak var btnNextOutlet: UIButton!
     
     // For Connect SQLite3
     var db : OpaquePointer?
@@ -49,10 +47,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         // Calendar design
         calendarDesign()
-        
-        // Block move next month on first loaded view
-        btnNextOutlet.isHidden = true
-        
+
         // Connect FSCalendar
         myCalendar.delegate = self
         myCalendar.dataSource = self
@@ -64,8 +59,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         // For when use button with other buttons on same view
         view.addSubview(myCalendar)
-        myCalendar.addSubview(btnPreviewOutlet)
-        myCalendar.addSubview(btnNextOutlet)
+        myCalendar.addSubview(myCalendar.calendarHeaderView)
+        
+        let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        myCalendar.calendarHeaderView.addGestureRecognizer(tapGR)
         
         // Create SQLite DB
         createSQLite()
@@ -77,6 +74,16 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(self.getDocumentDirectory())
         
         myCalendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
+    }
+
+    
+    @objc func imageTapped(sender: UITapGestureRecognizer) {
+        print("\(myCalendar.currentPage)")
+        currentPageDate = dateFormatter.string(from: myCalendar.currentPage)
+        // Save current page on calendar
+        let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
+
+        print("varDate : ", varDate!)
     }
     
     // Reload data when back from other view
@@ -92,26 +99,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         // DB select action
         readValues()
+
     }
-    
     
     @IBAction func openChart(_ sender: UIBarButtonItem) {
         let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
         present(chartViewController, animated: true)
     }
-    
-    
-    // Button for move to last month on Calendar
-    @IBAction func btnLastMonth(_ sender: UIButton) {
-        btnNextOutlet.isHidden = false
-        self.moveCurrentPage(moveUp: false)
-    }
-    
-    // Button for move to next month on Calendar
-    @IBAction func btnNextMonth(_ sender: UIButton) {
-        cantMoveNextMonth()
-    }
-    
+
     // Button for move to SelectEmotionViewController
     @IBAction func btnNew(_ sender: UIButton) {
         // Exception handling when if don't select any date
@@ -244,51 +239,41 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return nil
     }
     
-    // Maximum number of dates available
-//    func calendar(_ calendar: FSCalendar, shouldSelect date: Date, at monthPosition: FSCalendarMonthPosition) -> Bool {
-//            // 날짜 3개까지만 선택되도록
-//            if calendar.selectedDates.count > 0 {
-//                return false
-//            } else {
-//                return true
-//            }
-//    }
-    
     // Can select date until today
     func maximumDate(for calendar: FSCalendar) -> Date {
         return Date()
     }
     
     // When move last mont or next month on calendar
-    func moveCurrentPage(moveUp: Bool) {
-        
-        let calendar = Calendar.current
-        var dateComponents = DateComponents()
-        dateComponents.month = moveUp ? 1 : -1 // If value is true then return 1 else return -1
-        
-        self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
-        self.myCalendar.setCurrentPage(self.currentPage!, animated: true)
-        
-        currentPageDate = dateFormatter.string(from: currentPage!)
-    }
+//    func moveCurrentPage(moveUp: Bool) {
+//
+//        let calendar = Calendar.current
+//        var dateComponents = DateComponents()
+//        dateComponents.month = moveUp ? 1 : -1 // If value is true then return 1 else return -1
+//
+//        self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
+//        self.myCalendar.setCurrentPage(self.currentPage!, animated: true)
+//
+//        currentPageDate = dateFormatter.string(from: currentPage!)
+//    }
     
     // Current monthly moving limit function for months
-    func cantMoveNextMonth(){
-        
-        // Save current page on calendar
-        let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
-        // Save current date on IOS
-        let pixedDate = Int(String(current_date_string.split(separator: "-")[0]) + String(current_date_string.split(separator: "-")[1]))
-
-        self.moveCurrentPage(moveUp: true)
-        
-        // Compare by varDate + 1 because the button must be hidden after pressing the button
-        if (varDate! + 1) == pixedDate!{
-            btnNextOutlet.isHidden = true
-        }else{
-            btnNextOutlet.isHidden = false
-        }
-    }
+//    func cantMoveNextMonth(){
+//
+//        // Save current page on calendar
+//        let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
+//        // Save current date on IOS
+//        let pixedDate = Int(String(current_date_string.split(separator: "-")[0]) + String(current_date_string.split(separator: "-")[1]))
+//
+//        self.moveCurrentPage(moveUp: true)
+//
+//        // Compare by varDate + 1 because the button must be hidden after pressing the button
+//        if (varDate! + 1) == pixedDate!{
+//            btnNextOutlet.isHidden = true
+//        }else{
+//            btnNextOutlet.isHidden = false
+//        }
+//    }
     
     // Create SQLite DB
     func createSQLite(){
