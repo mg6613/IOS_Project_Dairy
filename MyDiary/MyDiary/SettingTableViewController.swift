@@ -11,7 +11,8 @@ class SettingTableViewController: UITableViewController {
 
     @IBOutlet var listTableView: UITableView!
     
-    var datas = ["비밀번호 설정", "공유하기"]
+    // Items to be listed
+    var datas = ["비밀번호 설정", "공유하기", "백업하기", "개발자에게"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,12 @@ class SettingTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
+
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+  
         return datas.count
     }
 
@@ -44,11 +45,25 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row{
         case 0 : performSegue(withIdentifier: "moveSettingPassword", sender: self)
+        case 1:
+            showAlert(title: "준비중", message: "준비중인 기능입니다.")
+        case 2:
+            showAlert(title: "준비중", message: "준비중인 기능입니다.")
         default:
-            print("준비중입니다.")
+            showAlert(title: "개발자에게", message: "문의사항 : tnctis21@naver.com")
         }
         
     }
+    
+    // Alert Function
+    func showAlert(title : String, message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     
 
     /*
