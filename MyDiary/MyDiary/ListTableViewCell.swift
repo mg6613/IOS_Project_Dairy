@@ -9,9 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    
-    @IBOutlet weak var lblDate: UILabel!
-    
+
     @IBOutlet weak var lblTitle: UILabel!
     
     
