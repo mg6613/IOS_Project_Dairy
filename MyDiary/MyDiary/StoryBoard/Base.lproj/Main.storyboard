@@ -19,24 +19,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7RI-W1-Pny" customClass="FSCalendar">
                                 <rect key="frame" x="16" y="107" width="358" height="584"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TkV-a4-qim">
-                                        <rect key="frame" x="75" y="16" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="&lt;"/>
-                                        <connections>
-                                            <action selector="btnLastMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljU-gb-SdW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeV-o3-DJ3">
-                                        <rect key="frame" x="250" y="16" width="30" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="&gt;"/>
-                                        <connections>
-                                            <action selector="btnNextMonth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rd7-mi-9zP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
@@ -76,8 +58,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="btnNextOutlet" destination="MeV-o3-DJ3" id="gMi-NS-icd"/>
-                        <outlet property="btnPreviewOutlet" destination="TkV-a4-qim" id="hxO-hn-hya"/>
                         <outlet property="myCalendar" destination="7RI-W1-Pny" id="c9I-gT-M7Z"/>
                         <segue destination="cpQ-DR-Ool" kind="show" identifier="moveSelectEmo" id="6dR-V9-d0V"/>
                         <segue destination="gRU-q4-Pbg" kind="show" identifier="moveList" id="IHq-1b-ean"/>
