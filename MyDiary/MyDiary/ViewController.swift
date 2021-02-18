@@ -84,6 +84,11 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
 
         print("varDate : ", varDate!)
+        
+        // 21.02.18 세미
+        
+        self.performSegue(withIdentifier: "moveList", sender: self)
+
     }
     
     // Reload data when back from other view

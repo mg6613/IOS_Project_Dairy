@@ -304,7 +304,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2C-Ai-KJV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="89"/>
+            <point key="canvasLocation" x="2982" y="70"/>
         </scene>
         <!--감정 선택-->
         <scene sceneID="XPH-JU-AK3">
@@ -549,7 +549,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HA8-Cy-MPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971" y="89"/>
+            <point key="canvasLocation" x="2018" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jkE-rW-4g0">
