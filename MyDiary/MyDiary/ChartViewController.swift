@@ -76,7 +76,7 @@ class ChartViewController: UIViewController, ChartViewDelegate {
     func setChart(dataPoints: [String], values: [Double]) {
       var dataEntries: [ChartDataEntry] = []
       for i in 0..<dataPoints.count {
-          let dataEntry1 = PieChartDataEntry(value: Double(i*10), label: dataPoints[i], data:  dataPoints[i] as AnyObject)
+          let dataEntry1 = PieChartDataEntry(value: Double(values[i]*10), label: dataPoints[i], data:  dataPoints[i] as AnyObject)
         dataEntries.append(dataEntry1)
       }
       print(dataEntries[0].data as Any)
