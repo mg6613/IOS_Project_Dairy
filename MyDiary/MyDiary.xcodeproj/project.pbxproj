@@ -13,6 +13,8 @@
 		28454B5A25DC077F0016119D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28454B5825DC077F0016119D /* Main.storyboard */; };
 		28454B5C25DC07830016119D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28454B5B25DC07830016119D /* Assets.xcassets */; };
 		28454B5F25DC07830016119D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28454B5D25DC07830016119D /* LaunchScreen.storyboard */; };
+		28467EB125DF840E00F5B356 /* pink.png in Resources */ = {isa = PBXBuildFile; fileRef = 28467EB025DF840E00F5B356 /* pink.png */; };
+		287B331E25DEC1EC00CA752C /* ChangeEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287B331D25DEC1EC00CA752C /* ChangeEmotionViewController.swift */; };
 		2882C61C25DC0F7000DEB105 /* SelectEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C61B25DC0F7000DEB105 /* SelectEmotionViewController.swift */; };
 		2882C61F25DC0FCD00DEB105 /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C61E25DC0FCD00DEB105 /* AddContentViewController.swift */; };
 		2882C62625DC1CB600DEB105 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882C62525DC1CB500DEB105 /* DetailViewController.swift */; };
@@ -39,6 +41,8 @@
 		28454B5B25DC07830016119D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28454B5E25DC07830016119D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28454B6025DC07830016119D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28467EB025DF840E00F5B356 /* pink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pink.png; sourceTree = "<group>"; };
+		287B331D25DEC1EC00CA752C /* ChangeEmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmotionViewController.swift; sourceTree = "<group>"; };
 		2882C61B25DC0F7000DEB105 /* SelectEmotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEmotionViewController.swift; sourceTree = "<group>"; };
 		2882C61E25DC0FCD00DEB105 /* AddContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		2882C62525DC1CB500DEB105 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				28B8BCBA25DD6E2300573D21 /* PasswordViewController.swift */,
 				28B8BCBD25DD845700573D21 /* CheckPWViewController.swift */,
 				3CC08B2F25DE396700AB456A /* ListTableViewController.swift */,
+				287B331D25DEC1EC00CA752C /* ChangeEmotionViewController.swift */,
 			);
 			name = VCs;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 		3CC08ABE25DCF28F00AB456A /* PNG */ = {
 			isa = PBXGroup;
 			children = (
+				28467EB025DF840E00F5B356 /* pink.png */,
 				28EB791E25DCD0DE0065EEEF /* heart.png */,
 				28B8BCB125DD4EBC00573D21 /* 48.png */,
 				28B8BCB625DD580500573D21 /* reresize.png */,
@@ -261,6 +267,7 @@
 				28EB791F25DCD0DE0065EEEF /* heart.png in Resources */,
 				28454B5F25DC07830016119D /* LaunchScreen.storyboard in Resources */,
 				28B8BCB725DD580500573D21 /* reresize.png in Resources */,
+				28467EB125DF840E00F5B356 /* pink.png in Resources */,
 				28454B5C25DC07830016119D /* Assets.xcassets in Resources */,
 				28454B5A25DC077F0016119D /* Main.storyboard in Resources */,
 			);
@@ -327,6 +334,7 @@
 				2882C62625DC1CB600DEB105 /* DetailViewController.swift in Sources */,
 				28B8BCBE25DD845700573D21 /* CheckPWViewController.swift in Sources */,
 				3CC08B0825DD309000AB456A /* ChartViewController.swift in Sources */,
+				287B331E25DEC1EC00CA752C /* ChangeEmotionViewController.swift in Sources */,
 				3CC08B2525DD766300AB456A /* ListContents.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -42,6 +42,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return Date()
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +55,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
         // For get current date
         dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.locale = Locale(identifier: "ko")
         current_date_string = dateFormatter.string(from: Date())
         print("초기 날짜 : \(Date())")
         
@@ -74,7 +76,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print(self.getDocumentDirectory())
         
         myCalendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
-    }
+            }
 
     
     @objc func imageTapped(sender: UITapGestureRecognizer) {
@@ -90,6 +92,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     override func viewWillAppear(_ animated: Bool) {
         print("----------------")
         print("viewWillAppear")
+        
+        // DB select action
+        readValues()
+        
         // Connect FSCalendar
         myCalendar.delegate = self
         myCalendar.dataSource = self
@@ -97,9 +103,21 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Reload Data
         myCalendar.reloadData()
 
-        // DB select action
-        readValues()
-
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print("----------------")
+        print("viewWillDisappear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("----------------")
+        print("viewDidAppear")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("----------------")
+        print("viewDidDisappear")
     }
     
     @IBAction func openChart(_ sender: UIBarButtonItem) {
@@ -128,16 +146,24 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 //        let cell: FSCalendarCell = calendar.dequeueReusableCell(withIdentifier: "CELL", for: date, at: position)
 //        let dateFromStringFormatter = DateFormatter();
 //        dateFromStringFormatter.dateFormat = "YYYY-MM-dd";
-//        let calendarDate = dateFromStringFormatter.string(from: date)
+////        let calendarDate = dateFromStringFormatter.string(from: date)
 //
 //        // Disable date is string Array of Dates
 //        if self.eventDates.contains(date){
-//            print("여기여기여기")
-//            cell.isUserInteractionEnabled = false;
+////            cell.appearance.selectionColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
 //        }
 //
-//        print("CELL : \(cell.isUserInteractionEnabled), DATE : \(calendarDate)")
 //        return cell
+//    }
+    
+    // 날짜별 선택 색상 변경
+//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+//
+//        if self.eventDates.contains(date){
+//            return .blue
+//        }else{
+//            return appearance.selectionColor
+//        }
 //    }
     
     
@@ -209,6 +235,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
     }
     
+    
     // When click a date
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         dateFormatter.dateFormat = "YYYY-MM-dd"
@@ -218,7 +245,8 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         // When the date is registered
         if self.eventDates.contains(date){
-            self.performSegue(withIdentifier: "moveList", sender: self)
+            strDate = selectDate
+            self.performSegue(withIdentifier: "MoveDetailDirect", sender: self)
         }
     }
     
@@ -229,12 +257,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     
     // Image output instead of date
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
-        
+
         if self.eventDates.contains(date){
             print("데이트 타입 확인 : \(type(of: date))")
             print("날짜 : \(date)")
 
-            return UIImage(named: "reresize.png")
+            return UIImage(named: "pink.png")
         }
         return nil
     }
@@ -297,6 +325,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func readValues(){
         let queryString = "SELECT * FROM contents"
         var stmt : OpaquePointer?
+        var tempDate = [Date]()
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -306,13 +335,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         while sqlite3_step(stmt) == SQLITE_ROW{
             let cInsertDate = String(cString: sqlite3_column_text(stmt, 4))
-            
+            dateFormatter.locale = Locale(identifier: "ko")
+
             print("DB에서 불러온 날짜 : \(cInsertDate)")
+            print("변환 날짜 : \(dateFormatter.date(from: cInsertDate)!)")
             
-            eventDates.append(dateFormatter.date(from: cInsertDate)!)
+            
+            tempDate.append(dateFormatter.date(from: cInsertDate)!)
+            
+            eventDates = tempDate
 
         }
         print("eventDates : \(eventDates)")
+        print("//////////////////////")
+        print("tempDate : \(tempDate)")
         print("readValues()확인")
     }
     
@@ -321,5 +357,9 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+//    func customColor(string : String) -> UIColor{
+//        return UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
+//    }
 }
 

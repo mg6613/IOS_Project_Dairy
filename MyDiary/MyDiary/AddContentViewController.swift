@@ -121,8 +121,11 @@ class AddContentViewController: UIViewController {
     func showAlert(value : Int){
         let alert : UIAlertController
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
-            test = 1
-            self.navigationController?.popToRootViewController(animated: true)
+//            self.navigationController?.popToRootViewController(animated: true)
+            let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainViewModal")
+            vcName?.modalPresentationStyle = .fullScreen
+
+            self.present(vcName!, animated: true, completion: nil)
         })
 
         if value == 0{
@@ -155,4 +158,9 @@ class AddContentViewController: UIViewController {
             return "1"
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+         self.view.endEditing(true)
+   }
+
 }
