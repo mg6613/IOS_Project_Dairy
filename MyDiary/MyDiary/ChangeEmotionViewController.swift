@@ -27,7 +27,7 @@ class ChangeEmotionViewController: UIViewController {
 
         // Set GestureRecognizer each imageviews
         setGestureRecognizer()
-        
+
     }
     
     // When touch each images
@@ -113,7 +113,8 @@ class ChangeEmotionViewController: UIViewController {
 
     func tapAction(num : Int, imageName : String){
         imageNum_DetailView = num
-        imageName_DetailView = "heart.png"
-        self.dismiss(animated: true, completion: nil)
+        imageName_DetailView = "48.png"
+        whereValue = 1
+        self.navigationController?.popViewController(animated: true)
     }
 }
