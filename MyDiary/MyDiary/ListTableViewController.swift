@@ -11,6 +11,7 @@ import SQLite3
 var ListDateYear = ""
 var ListDateMonth = ""
 var ListDateYM = ""
+var itemsImageFile = [String]()
 class ListTableViewController: UITableViewController {
 
 
@@ -49,6 +50,7 @@ class ListTableViewController: UITableViewController {
         ContentsList.removeAll()
         
         let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%'"
+        let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%' order by cInsertDate desc"
         var stmt : OpaquePointer?
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
@@ -66,6 +68,7 @@ class ListTableViewController: UITableViewController {
             print(title)
             ContentsList.append(ListContents(cTitle: String(describing: title), cInsertDate: String(describing: insertdate), cImageFileName: String(describing: imgfilename))
             )}
+        
         self.listTableView.reloadData()
         }
     
@@ -94,13 +97,14 @@ class ListTableViewController: UITableViewController {
             // Configure the cell...
             let contents: ListContents  // Students는 class. studentsList에 class타입으로 들어있기 때문에 정의해줌
         contents = ContentsList[indexPath.row]
-        
-            
+
             // Title과 subTitle은 변수명이 정해져있음
 //        cell.imgCell
         cell.lblCellTitle?.text = "\(contents.cTitle!)"
         cell.lblCellDate?.text = "\(contents.cInsertDate!)"
         cell.imgCell?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
+        cell.imgCell?.image = UIImage(named: contents.cImageFileName!)
+
             return cell
         }
         
@@ -109,14 +113,6 @@ class ListTableViewController: UITableViewController {
         // Table 내용 불러오기
         //readValues()
         
-        
-        
-
-        
-    
-    
-
-
     
     // MARK: - Navigation
 

@@ -9,8 +9,6 @@ import UIKit
 import FSCalendar
 import SQLite3
 
-var test = 0
-
 @IBDesignable
 class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
@@ -36,12 +34,15 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     // 이벤트 추가할 날짜 배열(글 등록한 날을 저장해야할 듯)
     var eventDates = [Date]()
     
+    var imageNum = 0
+    
+    var imageFileNames = [String]()
+    
     // Variables for func called moveCurrentPage
     private var currentPage: Date?
     private lazy var today: Date = {
         return Date()
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,21 +112,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Reload Data
         myCalendar.reloadData()
 
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("----------------")
-        print("viewWillDisappear")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("----------------")
-        print("viewDidAppear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("----------------")
-        print("viewDidDisappear")
     }
     
     @IBAction func openChart(_ sender: UIBarButtonItem) {
@@ -240,7 +226,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         
         // Remove placeholder on calnedar
         myCalendar.appearance.headerMinimumDissolvedAlpha = 0
-
     }
     
     
@@ -270,7 +255,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             print("데이트 타입 확인 : \(type(of: date))")
             print("날짜 : \(date)")
 
-            return UIImage(named: "pink.png")
+            return UIImage(named: imageFileNames[eventDates.firstIndex(of: date)!])
         }
         return nil
     }
@@ -321,7 +306,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
           }
           
           // If table exist don't create else create table
-          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT, cDeleteDate TEXT, cCount TEXT)", nil, nil, nil) != SQLITE_OK{
+          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT, cCount TEXT)", nil, nil, nil) != SQLITE_OK{
               let errmsg = String(cString: sqlite3_errmsg(db)!)
               print("error creating table : \(errmsg)")
           }
@@ -334,6 +319,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let queryString = "SELECT * FROM contents"
         var stmt : OpaquePointer?
         var tempDate = [Date]()
+        var tempImageFileNames = [String]()
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -342,18 +328,20 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         }
         
         while sqlite3_step(stmt) == SQLITE_ROW{
+            let cImageFileName = String(cString: sqlite3_column_text(stmt, 3))
             let cInsertDate = String(cString: sqlite3_column_text(stmt, 4))
             dateFormatter.locale = Locale(identifier: "ko")
+            
 
             print("DB에서 불러온 날짜 : \(cInsertDate)")
-            print("변환 날짜 : \(dateFormatter.date(from: cInsertDate)!)")
-            
-            
+            tempImageFileNames.append(changeDotImage(before: cImageFileName))
             tempDate.append(dateFormatter.date(from: cInsertDate)!)
             
             eventDates = tempDate
+            imageFileNames = tempImageFileNames
 
         }
+        print("imageFileNames : \(imageFileNames)")
         print("eventDates : \(eventDates)")
         print("//////////////////////")
         print("tempDate : \(tempDate)")
@@ -366,9 +354,31 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return paths[0]
     }
     
-//    func customColor(string : String) -> UIColor{
-//        return UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
-//    }
+    func changeDotImage(before : String) -> String{
+        switch before{
+        case "img_Happy.png":
+            return "cal_Happy.png"
+        case "img_Pleasure.png":
+            return "cal_Pleasure.png"
+        case "img_Anger.png":
+            return "cal_Anger.png"
+        case "img_calmness.png":
+            return "cal_Calmness.png"
+        case "img_Despressed.png":
+            return "cal_Despressed.png"
+        case "img_Embarrassment.png":
+            return "cal_Embarrassment.png"
+        case "img_Proud.png":
+            return "cal_Proud.png"
+        case "img_Sad.png":
+            return "cal_Sad.png"
+        case "img_Tired.png":
+            return "cal_Tired.png"
+        // default부터는 더 추가하기
+        default :
+            return "cal_Sad.png"
+        }
+    }
 }
 
 

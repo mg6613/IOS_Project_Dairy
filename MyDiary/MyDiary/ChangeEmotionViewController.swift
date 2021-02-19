@@ -33,51 +33,51 @@ class ChangeEmotionViewController: UIViewController {
     // When touch each images
     // -------------------------------------------------------
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        tapAction(num: 1, imageName: "heart.png")
+        tapAction(num: 1, imageName: "img_Happy.png")
     }
     
     @objc func imageTapped2(sender: UITapGestureRecognizer){
-        tapAction(num: 2, imageName: "")
+        tapAction(num: 2, imageName: "img_Pleasure.png")
     }
     
     @objc func imageTapped3(sender: UITapGestureRecognizer){
-        tapAction(num: 3, imageName: "")
+        tapAction(num: 3, imageName: "img_calmness.png")
     }
     
     @objc func imageTapped4(sender: UITapGestureRecognizer){
-        tapAction(num: 4, imageName: "")
+        tapAction(num: 4, imageName: "img_Proud.png")
     }
     
     @objc func imageTapped5(sender: UITapGestureRecognizer){
-        tapAction(num: 5, imageName: "")
+        tapAction(num: 5, imageName: "cal_Happy.png")
     }
     
     @objc func imageTapped6(sender: UITapGestureRecognizer){
-        tapAction(num: 6, imageName: "")
+        tapAction(num: 6, imageName: "img_Sad.png")
     }
     
     @objc func imageTapped7(sender: UITapGestureRecognizer){
-        tapAction(num: 7, imageName: "")
+        tapAction(num: 7, imageName: "img_Anger.png")
     }
     
     @objc func imageTapped8(sender: UITapGestureRecognizer){
-        tapAction(num: 8, imageName: "")
+        tapAction(num: 8, imageName: "img_Tired.png")
     }
     
     @objc func imageTapped9(sender: UITapGestureRecognizer){
-        tapAction(num: 9, imageName: "")
+        tapAction(num: 9, imageName: "img_Depressed.png")
     }
     
     @objc func imageTapped10(sender: UITapGestureRecognizer){
-        tapAction(num: 10, imageName: "")
+        tapAction(num: 10, imageName: "img_Embarrassment.png")
     }
     
     @objc func imageTapped11(sender: UITapGestureRecognizer){
-        tapAction(num: 11, imageName: "")
+        tapAction(num: 11, imageName: "cal_Sad.png")
     }
     
     @objc func imageTapped12(sender: UITapGestureRecognizer){
-        tapAction(num: 12, imageName: "")
+        tapAction(num: 12, imageName: "cal_Tired.png")
     }
     // -------------------------------------------------------
 
@@ -113,7 +113,7 @@ class ChangeEmotionViewController: UIViewController {
 
     func tapAction(num : Int, imageName : String){
         imageNum_DetailView = num
-        imageName_DetailView = "48.png"
+        imageName_DetailView = imageName
         whereValue = 1
         self.navigationController?.popViewController(animated: true)
     }

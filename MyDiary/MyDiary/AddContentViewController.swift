@@ -12,7 +12,7 @@ var selectedDate_AddContentView = ""
 var selectedImage_AddContentView = ""
 var selectedImageNum_AddContentView = 0
 
-class AddContentViewController: UIViewController {
+class AddContentViewController: UIViewController{
 
     @IBOutlet weak var lblSelectedDate: UILabel!
     @IBOutlet weak var imgSelectedImage: UIImageView!
@@ -23,6 +23,8 @@ class AddContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewDesign()
         
         // Show date, image from previous views
         lblSelectedDate.text = selectedDate_AddContentView
@@ -159,5 +161,11 @@ class AddContentViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
    }
+    
+    func viewDesign(){
+        txtViewContent.layer.borderWidth = 2
+        txtViewContent.layer.borderColor = UIColor.black.cgColor
+        
+    }
 
 }

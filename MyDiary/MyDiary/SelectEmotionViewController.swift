@@ -29,7 +29,7 @@ class SelectEmotionViewController: UIViewController {
     var clickImageNum = 1
     
     // Variable for next view
-    var clickImageName = "heart.png"
+    var clickImageName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,51 +50,51 @@ class SelectEmotionViewController: UIViewController {
     // When touch each images
     // -------------------------------------------------------
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        tapActions(num: 1, imageName: "", imageView: image1)
+        tapActions(num: 1, imageName: "img_Happy.png", imageView: image1)
     }
     
     @objc func imageTapped2(sender: UITapGestureRecognizer){
-        tapActions(num: 2, imageName: "", imageView: image2)
+        tapActions(num: 2, imageName: "img_Pleasure.png", imageView: image2)
     }
     
     @objc func imageTapped3(sender: UITapGestureRecognizer){
-        tapActions(num: 3, imageName: "", imageView: image3)
+        tapActions(num: 3, imageName: "img_calmness.png", imageView: image3)
     }
     
     @objc func imageTapped4(sender: UITapGestureRecognizer){
-        tapActions(num: 4, imageName: "", imageView: image4)
+        tapActions(num: 4, imageName: "img_Proud.png", imageView: image4)
     }
     
     @objc func imageTapped5(sender: UITapGestureRecognizer){
-        tapActions(num: 5, imageName: "", imageView: image5)
+        tapActions(num: 5, imageName: "cal_Happy.png", imageView: image5)
     }
     
     @objc func imageTapped6(sender: UITapGestureRecognizer){
-        tapActions(num: 6, imageName: "", imageView: image6)
+        tapActions(num: 6, imageName: "img_Sad.png", imageView: image6)
     }
     
     @objc func imageTapped7(sender: UITapGestureRecognizer){
-        tapActions(num: 7, imageName: "", imageView: image9)
+        tapActions(num: 7, imageName: "img_Anger.png", imageView: image7)
     }
     
     @objc func imageTapped8(sender: UITapGestureRecognizer){
-        tapActions(num: 8, imageName: "", imageView: image8)
+        tapActions(num: 8, imageName: "img_Tired.png", imageView: image8)
     }
     
     @objc func imageTapped9(sender: UITapGestureRecognizer){
-        tapActions(num: 9, imageName: "", imageView: image9)
+        tapActions(num: 9, imageName: "img_Depressed.png", imageView: image9)
     }
     
     @objc func imageTapped10(sender: UITapGestureRecognizer){
-        tapActions(num: 10, imageName: "", imageView: image10)
+        tapActions(num: 10, imageName: "img_Embarrassment.png", imageView: image10)
     }
     
     @objc func imageTapped11(sender: UITapGestureRecognizer){
-        tapActions(num: 11, imageName: "", imageView: image11)
+        tapActions(num: 11, imageName: "cal_Sad.png", imageView: image11)
     }
     
     @objc func imageTapped12(sender: UITapGestureRecognizer){
-        tapActions(num: 12, imageName: "", imageView: image12)
+        tapActions(num: 12, imageName: "cal_Tired.png", imageView: image12)
     }
     // -------------------------------------------------------
 
@@ -156,7 +156,7 @@ class SelectEmotionViewController: UIViewController {
     // A collection of functions
     func tapActions(num : Int, imageName : String, imageView : UIImageView){
         clickImageNum = num
-        clickImageName = "heart.png" // 값 바꿔야된다
+        clickImageName = imageName
         resetBorder()
         clickImageOnlyOne(image: imageView)
     }
