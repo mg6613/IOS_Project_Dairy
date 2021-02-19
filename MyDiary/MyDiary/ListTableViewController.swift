@@ -11,7 +11,7 @@ import SQLite3
 var ListDateYear = ""
 var ListDateMonth = ""
 var ListDateYM = ""
-var itemsImageFile = ["heart.png", "48.png","reresize.png"]
+var itemsImageFile = [String]()
 class ListTableViewController: UITableViewController {
 
 
@@ -94,6 +94,13 @@ class ListTableViewController: UITableViewController {
             // Configure the cell...
             let contents: ListContents  // Students는 class. studentsList에 class타입으로 들어있기 때문에 정의해줌
         contents = ContentsList[indexPath.row]
+        print(itemsImageFile.count, indexPath.row)
+        
+        for i in 0..<itemsImageFile.count{
+            print("값 : \(itemsImageFile[i])")
+        }
+        	
+
         
             
             // Title과 subTitle은 변수명이 정해져있음
@@ -101,6 +108,8 @@ class ListTableViewController: UITableViewController {
         cell.lblCellTitle?.text = "\(contents.cTitle!)"
         cell.lblCellDate?.text = "\(contents.cInsertDate!)"
         cell.imgCell?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
+//        cell.imgCell?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
+        //cell.imgCell?.image =
             return cell
         }
         
@@ -109,14 +118,6 @@ class ListTableViewController: UITableViewController {
         // Table 내용 불러오기
         //readValues()
         
-        
-        
-
-        
-    
-    
-
-
     
     // MARK: - Navigation
 
