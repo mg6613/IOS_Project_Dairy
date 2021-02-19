@@ -238,16 +238,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A40-fD-u13">
-                                <rect key="frame" x="160.66666666666666" y="263" width="69" height="33"/>
+                                <rect key="frame" x="160.66666666666666" y="268" width="69" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-kt-osb">
-                                <rect key="frame" x="144" y="142" width="102" height="92"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-kt-osb">
+                                <rect key="frame" x="144" y="142" width="102" height="97"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-5d-6qh">
-                                <rect key="frame" x="91" y="335" width="208" height="34"/>
+                                <rect key="frame" x="91" y="340" width="208" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Zgv-KO-juG"/>
                                 </constraints>
@@ -255,7 +255,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-hk-qUv">
-                                <rect key="frame" x="16" y="398" width="358" height="262"/>
+                                <rect key="frame" x="16" y="403" width="358" height="262"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="262" id="1FD-Jl-ajf"/>
@@ -265,14 +265,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pK-ux-2Q6">
-                                <rect key="frame" x="113" y="670.66666666666663" width="30" height="30"/>
+                                <rect key="frame" x="113" y="673" width="30" height="30"/>
                                 <state key="normal" title="저장"/>
                                 <connections>
                                     <action selector="btnUpdate:" destination="M89-VD-D6P" eventType="touchUpInside" id="qtQ-9n-WSC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cla-m7-zg2">
-                                <rect key="frame" x="255" y="668" width="30" height="35"/>
+                                <rect key="frame" x="255" y="673" width="30" height="30"/>
                                 <state key="normal" title="삭제"/>
                                 <connections>
                                     <action selector="btnDelete:" destination="M89-VD-D6P" eventType="touchUpInside" id="ugz-DG-rlR"/>
@@ -323,51 +323,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
                                 <rect key="frame" x="60" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
                                 <rect key="frame" x="162" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
                                 <rect key="frame" x="260" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
                                 <rect key="frame" x="60" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-xu-xo6">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-xu-xo6">
                                 <rect key="frame" x="162" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
                                 <rect key="frame" x="260" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
                                 <rect key="frame" x="60" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
                                 <rect key="frame" x="162" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
                                 <rect key="frame" x="260" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
                                 <rect key="frame" x="60" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-sn-P3N">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-sn-P3N">
                                 <rect key="frame" x="162" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="48.png" translatesAutoresizingMaskIntoConstraints="NO" id="8IY-Wv-NsR">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="8IY-Wv-NsR">
                                 <rect key="frame" x="260" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -417,51 +417,51 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUF-Ke-rXT">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="313.33333333333331"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
                                                 <rect key="frame" x="103" y="2" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
                                                 <rect key="frame" x="201" y="162" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
                                                 <rect key="frame" x="0.0" y="4" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
                                                 <rect key="frame" x="201" y="82" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
                                                 <rect key="frame" x="201" y="1" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
                                                 <rect key="frame" x="0.0" y="165" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
                                                 <rect key="frame" x="103" y="163" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
                                                 <rect key="frame" x="0.0" y="85" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
                                                 <rect key="frame" x="0.0" y="245" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-N3-UQE">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-N3-UQE">
                                                 <rect key="frame" x="103" y="83" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-nG-VkF">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-nG-VkF">
                                                 <rect key="frame" x="103" y="245" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Ei-p1L">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Ei-p1L">
                                                 <rect key="frame" x="201" y="244" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -686,11 +686,21 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Jva-zS-OgN"/>
+        <segue reference="DwD-O4-V0s"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="48.png" width="24" height="22.5"/>
-        <image name="heart.png" width="104" height="92"/>
+        <image name="cal_Happy.png" width="15" height="15"/>
+        <image name="cal_Sad.png" width="15" height="15"/>
+        <image name="cal_Tired.png" width="15" height="15"/>
+        <image name="img_Anger.png" width="32" height="30"/>
+        <image name="img_Depressed.png" width="32" height="28.5"/>
+        <image name="img_Embarrassment.png" width="32" height="27.5"/>
+        <image name="img_Happy.png" width="32" height="30"/>
+        <image name="img_Pleasure.png" width="32" height="33.5"/>
+        <image name="img_Proud.png" width="32" height="29"/>
+        <image name="img_Sad.png" width="32" height="28.5"/>
+        <image name="img_Tired.png" width="32" height="31.5"/>
+        <image name="img_calmness.png" width="32" height="26.5"/>
         <image name="trash.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

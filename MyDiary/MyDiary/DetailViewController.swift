@@ -39,16 +39,13 @@ class DetailViewController: UIViewController {
         
         connectDB()
         readValues()
-        
-        print("초기 이미지 넘버 : \(imageNum_DetailView)")
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("선택한 이미지 넘버 : \(imageNum_DetailView)")
-        print("선택한 이미지 네임 : \(imageName_DetailView)")
+
         if whereValue == 1{
             imgEmotion.image = UIImage(named: imageName_DetailView)
+            print("이미지 ?? : \(imageName_DetailView)")
         }
     }
 
@@ -102,7 +99,7 @@ class DetailViewController: UIViewController {
             return
         }
         
-        if sqlite3_bind_text(stmt, 3, "heart.png", -1, SQLITE_TRANSIENT) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 3, imageName_DetailView, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding UpdateDate : \(errmsg)")
             return
@@ -197,7 +194,6 @@ class DetailViewController: UIViewController {
             return
         }
         
-       
         if sqlite3_bind_text(stmt, 1, strDate, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding InsertDate : \(errmsg)")
@@ -213,12 +209,15 @@ class DetailViewController: UIViewController {
             print("DB에서 불러온 제목 : \(cTitle)")
             print("DB에서 불러온 내용 : \(cContent)")
             print("DB에서 불러온 사진 : \(cImageFileName)")
-
+            imageName_DetailView = cImageFileName
         }
         
         txtTitle.text = cTitle
         txtViewContent.text = cContent
-        imgEmotion.image = UIImage(named: "heart.png")
+        imgEmotion.image = UIImage(named: cImageFileName)
+        
+
+        print("이미지 ?? : \(cImageFileName)")
     }
     
     // Alert Function
@@ -320,9 +319,5 @@ class DetailViewController: UIViewController {
         }else{
             return "1"
         }
-    }
-    
-    public func changeImage(){
-        imgEmotion.image = UIImage(named: imageName_DetailView)
     }
 }

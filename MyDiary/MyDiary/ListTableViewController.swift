@@ -48,7 +48,7 @@ class ListTableViewController: UITableViewController {
     func readValues() {
         ContentsList.removeAll()
         
-        let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%'"
+        let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%' order by cInsertDate desc"
         var stmt : OpaquePointer?
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
