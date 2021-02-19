@@ -49,7 +49,7 @@ class ListTableViewController: UITableViewController {
     func readValues() {
         ContentsList.removeAll()
         
-        let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%'"
+       
         let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%' order by cInsertDate desc"
         var stmt : OpaquePointer?
         
@@ -101,8 +101,7 @@ class ListTableViewController: UITableViewController {
             // Title과 subTitle은 변수명이 정해져있음
 //        cell.imgCell
         cell.lblCellTitle?.text = "\(contents.cTitle!)"
-        cell.lblCellDate?.text = "\(contents.cInsertDate!)"
-        cell.imgCell?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
+        cell.lblCellDate?.text = "\(contents.cInsertDate!)" 
         cell.imgCell?.image = UIImage(named: contents.cImageFileName!)
 
             return cell
