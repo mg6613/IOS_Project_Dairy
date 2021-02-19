@@ -34,11 +34,11 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         readValues()
         
         // Values of Chart
-        let months = ["Positive", "Negative"]
-        print("\(months)")
+        let Emotion = ["Positive", "Negative"]
+        print("\(Emotion)")
         let unitsSold = [PositiveCNT, NegativeCNT]
         print("\(unitsSold)")
-        setChart(dataPoints: months, values: unitsSold)
+        setChart(dataPoints: Emotion, values: unitsSold)
     
 
     }
