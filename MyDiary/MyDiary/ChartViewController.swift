@@ -14,9 +14,11 @@ class ChartViewController: UIViewController, ChartViewDelegate {
     // ======================  sqlite3
     var db: OpaquePointer?
     
-    var countList: [Int] = []
   
+    // PieChart View
     @IBOutlet weak var pieChartView: PieChartView!
+    
+    // Variable to accumulate value
     var PositiveCNT = 0.0
     var NegativeCNT = 0.0
     
@@ -24,42 +26,43 @@ class ChartViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         
         
-        // SQLite 생성하기
+        // Find SQLite folder
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("MyDiaryData.sqlite") // 폴더 명
         
-        // 파일 열기
+        // Open File
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK{
-            print("error opening database")
+            
         }
         readValues()
         
         // Values of Chart
         let Emotion = ["Positive", "Negative"]
-        print("\(Emotion)")
         let unitsSold = [PositiveCNT, NegativeCNT]
-        print("\(unitsSold)")
+       
         setChart(dataPoints: Emotion, values: unitsSold)
     
 
     }
     
     func readValues() {
-        //contentsList.removeAll()
-        print("readValues in()")
+
+        // Select cCount Value
         let queryString = "SELECT cCount From Contents"
         var stmt : OpaquePointer?
         
+        // Prepare SQLite3 With Error Sign
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error preparing select: \(errmsg)") // 입력시 에러
+            _ = String(cString: sqlite3_errmsg(db)!)
             return
         }
      
-        while sqlite3_step(stmt) == SQLITE_ROW{ // SQLITE_ROW 읽어올 데이터가 있는지 확인
-            let cCount = String(cString: sqlite3_column_text(stmt, 0)) // 스트링으로 변환해서 넣어준다
+        // Checking in SQLite for Data
+        while sqlite3_step(stmt) == SQLITE_ROW{
+            
+            // Convert to string and input
+            let cCount = String(cString: sqlite3_column_text(stmt, 0))
             
             // Positive, Negative Count
-            print("차트 Count \(cCount)")
                 if cCount == "0"{
                     PositiveCNT += 1
                 }else if cCount == "1"{
@@ -67,35 +70,59 @@ class ChartViewController: UIViewController, ChartViewDelegate {
                 }
             }
         
-        print(PositiveCNT)
-        print(NegativeCNT)
-        //print("countList \(countList.count - 1)")
         
         }
     
+    // Setting For Chart
     func setChart(dataPoints: [String], values: [Double]) {
+    
+        // Put values in chart format
       var dataEntries: [ChartDataEntry] = []
       for i in 0..<dataPoints.count {
           let dataEntry1 = PieChartDataEntry(value: Double(values[i]*10), label: dataPoints[i], data:  dataPoints[i] as AnyObject)
         dataEntries.append(dataEntry1)
       }
-      print(dataEntries[0].data as Any)
-      let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: "Units Sold")
+
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries)
+                
       let pieChartData = PieChartData(dataSet: pieChartDataSet)
       pieChartView.data = pieChartData
+       
+
+      let Lengend = self.pieChartView.legend
+        
+        let formSize =  CGFloat.nan
+
+        let legendEntry1 = LegendEntry(label: "Positive", form: .default, formSize: formSize, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: NSUIColor(displayP3Red: CGFloat(Double(245)/255), green: CGFloat(Double(200)/255), blue: CGFloat(Double(250)/255), alpha: 1))
+        
+        //set formSize, formLizeWidth, and formLineDashLengths to .nan to use default
+        let legendEntry2 = LegendEntry(label: "Negative", form: .default, formSize: formSize, formLineWidth: .nan, formLineDashPhase: .nan, formLineDashLengths: .none, formColor: NSUIColor(displayP3Red: CGFloat(Double(175)/255), green: CGFloat(Double(212)/255), blue: CGFloat(Double(220)/255), alpha: 1))
+        
+
+
+
+        let customLegendEntries = [legendEntry1, legendEntry2]
+        Lengend.setCustom(entries: customLegendEntries)
+        Lengend.orientation = .horizontal
+        Lengend.textColor = UIColor.black
+        // l.font = myFonts.openSansRegular.of(size: 6)
+        Lengend.font = NSUIFont.boldSystemFont(ofSize: 10)
       
-      var colors: [UIColor] = []
-      
-      for _ in 0..<dataPoints.count {
-        let red = Double(arc4random_uniform(256))
-        let green = Double(arc4random_uniform(256))
-        let blue = Double(arc4random_uniform(256))
-          
-        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-        colors.append(color)
-      }
-      pieChartDataSet.colors = colors
+        let NegativeCustomColor = UIColor(red: CGFloat(Double(175)/255), green: CGFloat(Double(212)/255), blue: CGFloat(Double(220)/255), alpha: 1)
+        
+        let PositiveCustomColor = UIColor(red: CGFloat(Double(245)/255), green: CGFloat(Double(200)/255), blue: CGFloat(Double(250)/255), alpha: 1)
+        
+        
+        var colors: [UIColor] = []
+
+        // Set Colors
+        colors.append(PositiveCustomColor)
+        colors.append(NegativeCustomColor)
+        
+        
+        pieChartDataSet.colors = colors
     }
+    
 
 
 }
