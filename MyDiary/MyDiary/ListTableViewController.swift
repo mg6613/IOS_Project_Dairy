@@ -11,10 +11,10 @@ import SQLite3
 var ListDateYear = ""
 var ListDateMonth = ""
 var ListDateYM = ""
-var itemsImageFile = ["heart.png", "48.png","reresize.png"]
 class ListTableViewController: UITableViewController {
 
 
+    
     
     @IBOutlet weak var lblYearMonth: UILabel!
     @IBOutlet var listTableView: UITableView!

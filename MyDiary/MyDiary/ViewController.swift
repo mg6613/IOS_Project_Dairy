@@ -185,7 +185,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 //        myCalendar.backgroundColor = UIColor(red: 241/255, green: 249/255, blue: 255/255, alpha: 1)
         
         // Click date color
-        myCalendar.appearance.selectionColor = UIColor(red: 38/255, green: 153/255, blue: 251/255, alpha: 1)
+        myCalendar.appearance.selectionColor = UIColor(red: 204/255, green: 226/255, blue: 203/255, alpha: 1)
         
         // Today date color
 //        myCalendar.appearance.todayColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
@@ -212,10 +212,10 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         myCalendar.appearance.titleWeekendColor = .red
 
         // Set color title of year and month
-        myCalendar.appearance.headerTitleColor = .systemPink
+        myCalendar.appearance.headerTitleColor = .black
 
         // Set color weekday text
-        myCalendar.appearance.weekdayTextColor = .orange
+        myCalendar.appearance.weekdayTextColor = .gray
         
         // Set color title
         myCalendar.appearance.titleSelectionColor = .black
