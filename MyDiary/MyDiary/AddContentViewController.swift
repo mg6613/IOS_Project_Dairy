@@ -122,10 +122,7 @@ class AddContentViewController: UIViewController {
         let alert : UIAlertController
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
 //            self.navigationController?.popToRootViewController(animated: true)
-            let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainViewModal")
-            vcName?.modalPresentationStyle = .fullScreen
-
-            self.present(vcName!, animated: true, completion: nil)
+            self.navigationController?.popToRootViewController(animated: true)
         })
 
         if value == 0{
