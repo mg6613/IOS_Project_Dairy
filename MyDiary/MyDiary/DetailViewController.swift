@@ -40,9 +40,8 @@ class DetailViewController: UIViewController {
         connectDB()
         readValues()
         
-        
         print("초기 이미지 넘버 : \(imageNum_DetailView)")
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,18 +51,7 @@ class DetailViewController: UIViewController {
             imgEmotion.image = UIImage(named: imageName_DetailView)
         }
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("//////////////")
-        print("viewDidAppear")
-    }
-    override func viewDidDisappear(_ animated: Bool) {
-        print("//////////////")
-        print("viewDidDisappear")
-    }
-    
-    
-    
+
     @IBAction func btnUpdate(_ sender: UIButton) {
         checkNil()
     }
