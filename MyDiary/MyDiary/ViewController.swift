@@ -83,9 +83,17 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         print("\(myCalendar.currentPage)")
         currentPageDate = dateFormatter.string(from: myCalendar.currentPage)
         // Save current page on calendar
-        let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
+        let varDate = String(currentPageDate.split(separator: "-")[0]) + "-" + String(currentPageDate.split(separator: "-")[1])
 
-        print("varDate : ", varDate!)
+//        let varDate = currentPageDate
+        
+        // 21.02.18 세미 추가
+        // 헤더 클릭시 리스트 화면으로 이동
+        self.performSegue(withIdentifier: "moveList", sender: self)
+        ListDateYear = String(currentPageDate.split(separator: "-")[0])
+        ListDateMonth = String(currentPageDate.split(separator: "-")[1])
+        ListDateYM = String(varDate)
+        print("varDate : ", varDate)
     }
     
     // Reload data when back from other view
@@ -362,4 +370,5 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 //        return UIColor(red: <#T##CGFloat#>, green: <#T##CGFloat#>, blue: <#T##CGFloat#>, alpha: <#T##CGFloat#>)
 //    }
 }
+
 

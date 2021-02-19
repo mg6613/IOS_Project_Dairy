@@ -8,8 +8,15 @@
 import UIKit
 import SQLite3
 
+var ListDateYear = ""
+var ListDateMonth = ""
+var ListDateYM = ""
+var itemsImageFile = ["heart.png", "48.png","reresize.png"]
 class ListTableViewController: UITableViewController {
 
+
+    
+    @IBOutlet weak var lblYearMonth: UILabel!
     @IBOutlet var listTableView: UITableView!
     
     // sqlite3
@@ -28,14 +35,20 @@ class ListTableViewController: UITableViewController {
                 print("error opening database")
             }
         
+        lblYearMonth.text = "\(ListDateYear)년 \(ListDateMonth)월"
+            listTableView.rowHeight = 100
+        
+        print("값 확인 : \(ListDateYM)")
+
         } // ================================== viewDidLoad
+    
     
     
     // ==================================================  Select
     func readValues() {
         ContentsList.removeAll()
         
-        let queryString = "Select cTitle From contents"
+        let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%'"
         var stmt : OpaquePointer?
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
@@ -47,10 +60,11 @@ class ListTableViewController: UITableViewController {
         while sqlite3_step(stmt) == SQLITE_ROW{ // SQLITE_ROW Checks whether there is data to be read
            
             let title = String(cString: sqlite3_column_text(stmt, 0)) // Convert it to a string and put it in
-            
+            let insertdate = String(cString: sqlite3_column_text(stmt, 1))
+            let imgfilename = String(cString: sqlite3_column_text(stmt, 2))
             
             print(title)
-            ContentsList.append(ListContents(cTitle: String(describing: title))
+            ContentsList.append(ListContents(cTitle: String(describing: title), cInsertDate: String(describing: insertdate), cImageFileName: String(describing: imgfilename))
             )}
         self.listTableView.reloadData()
         }
@@ -75,16 +89,18 @@ class ListTableViewController: UITableViewController {
     
     // mycell이랑 연결 해준다
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
 
             // Configure the cell...
             let contents: ListContents  // Students는 class. studentsList에 class타입으로 들어있기 때문에 정의해줌
         contents = ContentsList[indexPath.row]
+        
             
             // Title과 subTitle은 변수명이 정해져있음
-        cell.textLabel?.text = "\(contents.cTitle!)"
-            
-
+//        cell.imgCell
+        cell.lblCellTitle?.text = "\(contents.cTitle!)"
+        cell.lblCellDate?.text = "\(contents.cInsertDate!)"
+        cell.imgCell?.image = UIImage(named: itemsImageFile[(indexPath as NSIndexPath).row])
             return cell
         }
         

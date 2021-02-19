@@ -1,17 +1,18 @@
 //
-//  ListTableViewCell.swift
+//  TableViewCell.swift
 //  MyDiary
 //
-//  Created by 유민규 on 2021/02/18.
+//  Created by ssemm on 2021/02/19.
 //
 
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
-
-    @IBOutlet weak var lblTitle: UILabel!
     
+    
+    @IBOutlet weak var imgCell: UIImageView!
+    @IBOutlet weak var lblCellTitle: UILabel!
+    @IBOutlet weak var lblCellDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

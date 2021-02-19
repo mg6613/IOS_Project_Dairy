@@ -11,7 +11,8 @@ class ListContents: NSObject{
     
     // Properties
     var cTitle: String?
-    
+    var cInsertDate: String?
+    var cImageFileName: String?
     
     // Empty constructor
     override init() {
@@ -19,8 +20,10 @@ class ListContents: NSObject{
     }
     
     //Constructors must be created unconditionally 
-    init(cTitle: String){
+    init(cTitle: String, cInsertDate: String, cImageFileName: String){
         self.cTitle = cTitle
+        self.cInsertDate = cInsertDate
+        self.cImageFileName = cImageFileName
     }
     
 }
