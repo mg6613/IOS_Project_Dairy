@@ -12,6 +12,7 @@ var selectDate_EmotionView = ""
 
 class SelectEmotionViewController: UIViewController {
 
+    @IBOutlet weak var lblEmotion: UILabel!
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
     @IBOutlet weak var image3: UIImageView!
@@ -29,7 +30,7 @@ class SelectEmotionViewController: UIViewController {
     var clickImageNum = 1
     
     // Variable for next view
-    var clickImageName = ""
+    var clickImageName = "img_Happy.png"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,50 +52,62 @@ class SelectEmotionViewController: UIViewController {
     // -------------------------------------------------------
     @objc func imageTapped(sender: UITapGestureRecognizer) {
         tapActions(num: 1, imageName: "img_Happy.png", imageView: image1)
+        lblEmotion.text = "행복"
     }
     
     @objc func imageTapped2(sender: UITapGestureRecognizer){
         tapActions(num: 2, imageName: "img_Pleasure.png", imageView: image2)
+        lblEmotion.text = "기쁨"
     }
     
     @objc func imageTapped3(sender: UITapGestureRecognizer){
         tapActions(num: 3, imageName: "img_calmness.png", imageView: image3)
+        lblEmotion.text = "평온"
     }
     
     @objc func imageTapped4(sender: UITapGestureRecognizer){
         tapActions(num: 4, imageName: "img_Proud.png", imageView: image4)
+        lblEmotion.text = "뿌듯"
     }
     
     @objc func imageTapped5(sender: UITapGestureRecognizer){
         tapActions(num: 5, imageName: "cal_Happy.png", imageView: image5)
+        lblEmotion.text = "미정"
     }
     
     @objc func imageTapped6(sender: UITapGestureRecognizer){
         tapActions(num: 6, imageName: "img_Sad.png", imageView: image6)
+        lblEmotion.text = "슬픔"
     }
     
     @objc func imageTapped7(sender: UITapGestureRecognizer){
         tapActions(num: 7, imageName: "img_Anger.png", imageView: image7)
+        lblEmotion.text = "화남"
     }
     
     @objc func imageTapped8(sender: UITapGestureRecognizer){
         tapActions(num: 8, imageName: "img_Tired.png", imageView: image8)
+        lblEmotion.text = "피곤"
     }
     
     @objc func imageTapped9(sender: UITapGestureRecognizer){
         tapActions(num: 9, imageName: "img_Depressed.png", imageView: image9)
+        lblEmotion.text = "우울"
     }
     
     @objc func imageTapped10(sender: UITapGestureRecognizer){
         tapActions(num: 10, imageName: "img_Embarrassment.png", imageView: image10)
+        lblEmotion.text = "당황"
     }
     
     @objc func imageTapped11(sender: UITapGestureRecognizer){
         tapActions(num: 11, imageName: "cal_Sad.png", imageView: image11)
+        lblEmotion.text = "미정"
     }
     
     @objc func imageTapped12(sender: UITapGestureRecognizer){
         tapActions(num: 12, imageName: "cal_Tired.png", imageView: image12)
+        lblEmotion.text = "미정"
     }
     // -------------------------------------------------------
 
@@ -133,8 +146,8 @@ class SelectEmotionViewController: UIViewController {
         image.layer.borderWidth = 3
         image.layer.borderColor = UIColor.blue.cgColor
 //        image.layer.cornerRadius = image.frame.height/2
-        image.layer.backgroundColor = UIColor.blue.cgColor
-        image.clipsToBounds = true
+//        image.layer.backgroundColor = UIColor.blue.cgColor
+//        image.clipsToBounds = true
     }
     
     // Reset border of all buttons
