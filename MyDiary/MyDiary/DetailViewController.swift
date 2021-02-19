@@ -12,6 +12,7 @@ import SQLite3
 var strDate = ""
 var imageNum_DetailView = 1
 var imageName_DetailView = ""
+var whereValue = 0
 
 class DetailViewController: UIViewController {
 
@@ -38,11 +39,27 @@ class DetailViewController: UIViewController {
         
         connectDB()
         readValues()
+        
+        
+        print("초기 이미지 넘버 : \(imageNum_DetailView)")
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         print("선택한 이미지 넘버 : \(imageNum_DetailView)")
+        print("선택한 이미지 네임 : \(imageName_DetailView)")
+        if whereValue == 1{
+            imgEmotion.image = UIImage(named: imageName_DetailView)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("//////////////")
+        print("viewDidAppear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        print("//////////////")
+        print("viewDidDisappear")
     }
     
     
@@ -76,9 +93,7 @@ class DetailViewController: UIViewController {
         print("cContent = \(cContent)")
         
         let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ?, cCount = ? WHERE cInsertDate = ?"
-        
-//        let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cCount = ? WHERE cInsertDate = ?"
-        
+            
         // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -301,11 +316,12 @@ class DetailViewController: UIViewController {
     }
     
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        print("imageTapped")
-        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ChangeEmotionView")
-        vcName?.modalPresentationStyle = .formSheet
-
-        self.present(vcName!, animated: true, completion: nil)
+//        print("imageTapped")
+//        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ChangeEmotionView")
+//        vcName?.modalPresentationStyle = .formSheet
+//
+//        self.present(vcName!, animated: true, completion: nil)
+        performSegue(withIdentifier: "moveChangeEmotion", sender: self)
     }
     
     // Return cCount(DB Column)
