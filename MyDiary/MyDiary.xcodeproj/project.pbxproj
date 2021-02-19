@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21D97C0D25E01C3E00AD19FB /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D97C0C25E01C3E00AD19FB /* launch.png */; };
 		28454B5325DC077F0016119D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454B5225DC077F0016119D /* AppDelegate.swift */; };
 		28454B5525DC077F0016119D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454B5425DC077F0016119D /* SceneDelegate.swift */; };
 		28454B5725DC077F0016119D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28454B5625DC077F0016119D /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21D97C0C25E01C3E00AD19FB /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
 		28454B4F25DC077F0016119D /* MyDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28454B5225DC077F0016119D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28454B5425DC077F0016119D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		3CC08ABE25DCF28F00AB456A /* PNG */ = {
 			isa = PBXGroup;
 			children = (
+				21D97C0C25E01C3E00AD19FB /* launch.png */,
 				28467ECE25DFABB700F5B356 /* cal_Anger.png */,
 				28467ECF25DFABB700F5B356 /* cal_Calmness.png */,
 				28467ECC25DFABB600F5B356 /* cal_Depressed.png */,
@@ -318,6 +321,7 @@
 				28454B5C25DC07830016119D /* Assets.xcassets in Resources */,
 				28467ED225DFABB700F5B356 /* cal_Sad.png in Resources */,
 				28467ED325DFABB700F5B356 /* cal_Tired.png in Resources */,
+				21D97C0D25E01C3E00AD19FB /* launch.png in Resources */,
 				28467ED625DFABB700F5B356 /* cal_Proud.png in Resources */,
 				28467EC625DFABAE00F5B356 /* img_Anger.png in Resources */,
 				28467ED725DFABB700F5B356 /* cal_Anger.png in Resources */,
