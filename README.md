@@ -5,6 +5,13 @@ Our team's project for App store
 
 ## Demo video
 
+## Version
+### Swift version
+- Swift 5
+- 
+### Xcode Version
+- 12.4
+
 
 ## Add Library
 
