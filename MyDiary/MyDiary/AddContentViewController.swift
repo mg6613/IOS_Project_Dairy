@@ -164,8 +164,7 @@ class AddContentViewController: UIViewController{
     
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
-        txtViewContent.layer.borderColor = UIColor.black.cgColor
-        
+        txtViewContent.layer.borderColor = UIColor.black.cgColor        
     }
 
 }

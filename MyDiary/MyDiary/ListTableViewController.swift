@@ -15,8 +15,6 @@ var itemsImageFile = [String]()
 class ListTableViewController: UITableViewController {
 
 
-    
-    
     @IBOutlet weak var lblYearMonth: UILabel!
     @IBOutlet var listTableView: UITableView!
     

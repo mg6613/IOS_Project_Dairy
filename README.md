@@ -1,9 +1,19 @@
-# IOS_MyDiary (WORKING TITLE)
-Our team's project for App store
+# Ssdam(Stroke)
+Stroke the mood of the day
 
 @copyright : 
 
 ## Demo video
+
+## Logo
+
+
+# Version
+### Swift version
+- Swift 5
+
+### Xcode Version
+- 12.4
 
 
 ## Add Library
@@ -13,9 +23,6 @@ Our team's project for App store
 
 # For Charts
 pod 'Charts'
-
-# For Animation
-pod 'lottie-ios' 
 
 # For Password Pattern
 pod "CCGestureLock"
@@ -72,7 +79,6 @@ pod install
 ## Supporting Files
 
 ### Images = Image File
-- JPG
 - PNG
 
 ### StoryBoard
@@ -82,6 +88,6 @@ pod install
 
 ## Source
 
-### Models = Bean
+### Models = Data
 ### VCs = View Controller's
 

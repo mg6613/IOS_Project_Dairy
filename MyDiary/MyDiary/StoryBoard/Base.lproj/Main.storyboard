@@ -323,19 +323,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
                                 <rect key="frame" x="60" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
                                 <rect key="frame" x="162" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
                                 <rect key="frame" x="260" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
                                 <rect key="frame" x="60" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -343,23 +343,23 @@
                                 <rect key="frame" x="162" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
                                 <rect key="frame" x="260" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
                                 <rect key="frame" x="60" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
                                 <rect key="frame" x="162" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
                                 <rect key="frame" x="260" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
                                 <rect key="frame" x="60" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -395,7 +395,7 @@
             </objects>
             <point key="canvasLocation" x="3946" y="89"/>
         </scene>
-        <!--감정 선택-->
+        <!--색 선택-->
         <scene sceneID="XPH-JU-AK3">
             <objects>
                 <viewController id="cpQ-DR-Ool" customClass="SelectEmotionViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -417,39 +417,39 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUF-Ke-rXT">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="313.33333333333331"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
                                                 <rect key="frame" x="103" y="2" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
                                                 <rect key="frame" x="201" y="162" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
                                                 <rect key="frame" x="0.0" y="4" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
                                                 <rect key="frame" x="201" y="82" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
                                                 <rect key="frame" x="201" y="1" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
                                                 <rect key="frame" x="0.0" y="165" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
                                                 <rect key="frame" x="103" y="163" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
                                                 <rect key="frame" x="0.0" y="85" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
                                                 <rect key="frame" x="0.0" y="245" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -480,17 +480,26 @@
                                     <constraint firstItem="tUF-Ke-rXT" firstAttribute="centerX" secondItem="UzJ-Ww-pa5" secondAttribute="centerX" id="wdm-ek-WDj"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="느낌에 맞는 색을 골라주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-tg-plc">
+                                <rect key="frame" x="80" y="160" width="238" height="26"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="L6S-g6-vKf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UzJ-Ww-pa5" firstAttribute="centerY" secondItem="B9C-Hs-B56" secondAttribute="centerY" id="18p-gc-KIO"/>
+                            <constraint firstItem="L6S-g6-vKf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="b3u-tg-plc" secondAttribute="trailing" symbolic="YES" id="ATO-My-7AA"/>
                             <constraint firstItem="UzJ-Ww-pa5" firstAttribute="leading" secondItem="L6S-g6-vKf" secondAttribute="leading" constant="59" id="COR-ng-KeG"/>
                             <constraint firstItem="UzJ-Ww-pa5" firstAttribute="centerX" secondItem="B9C-Hs-B56" secondAttribute="centerX" id="Ins-3P-FdX"/>
                             <constraint firstItem="UzJ-Ww-pa5" firstAttribute="top" secondItem="L6S-g6-vKf" secondAttribute="top" constant="145" id="Nlf-JM-oSX"/>
+                            <constraint firstItem="b3u-tg-plc" firstAttribute="top" secondItem="L6S-g6-vKf" secondAttribute="top" constant="72" id="p3N-KX-GdI"/>
+                            <constraint firstItem="b3u-tg-plc" firstAttribute="leading" secondItem="L6S-g6-vKf" secondAttribute="leading" constant="80" id="zQt-lP-4W5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="감정 선택" id="1jN-ga-3y2"/>
+                    <navigationItem key="navigationItem" title="색 선택" id="1jN-ga-3y2"/>
                     <connections>
                         <outlet property="image1" destination="bG5-jr-sYT" id="zfa-ep-GaH"/>
                         <outlet property="image10" destination="wUu-vd-WcW" id="287-dB-eLQ"/>
@@ -504,6 +513,7 @@
                         <outlet property="image7" destination="6Xu-5n-U25" id="1Kn-dt-YYK"/>
                         <outlet property="image8" destination="Q6c-am-K3J" id="W7U-ut-vRY"/>
                         <outlet property="image9" destination="lJu-8L-DUz" id="QSd-dZ-rZe"/>
+                        <outlet property="lblEmotion" destination="b3u-tg-plc" id="l2J-jP-9Tl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bwe-9L-V85" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -527,13 +537,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-JM-nOe">
-                                <rect key="frame" x="143" y="172" width="104" height="95.999999999999986"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-JM-nOe">
+                                <rect key="frame" x="143" y="171" width="104" height="97.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97.333333333333329" id="eWa-9j-FTM"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y61-09-r6U">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="오늘의 느낌을 적어주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y61-09-r6U">
                                 <rect key="frame" x="91" y="297" width="208" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Mgl-xg-WBu"/>
@@ -623,28 +633,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTj-B1-7Qr">
-                                            <rect key="frame" x="129" y="39" width="241" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-JD-y7r">
-                                            <rect key="frame" x="129" y="68" width="241" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AOl-hd-cIM">
-                                            <rect key="frame" x="20" y="11" width="91" height="78"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KIZ-Og-pQ7">
+                                            <rect key="frame" x="0.0" y="-9" width="390" height="118"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wL-JD-y7r">
+                                                    <rect key="frame" x="129" y="78" width="241" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AOl-hd-cIM">
+                                                    <rect key="frame" x="20" y="20" width="91" height="78"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTj-B1-7Qr">
+                                                    <rect key="frame" x="129" y="48" width="241" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="241" id="fP9-X4-90X"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="leading" secondItem="AOl-hd-cIM" secondAttribute="trailing" constant="18" id="26D-e5-0Gm"/>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="trailing" secondItem="5wL-JD-y7r" secondAttribute="trailing" id="29w-Ri-EGD"/>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="leading" secondItem="5wL-JD-y7r" secondAttribute="leading" id="8y0-qL-XcC"/>
+                                                <constraint firstAttribute="trailing" secondItem="LTj-B1-7Qr" secondAttribute="trailing" constant="20" id="A1O-97-dPD"/>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="centerY" secondItem="KIZ-Og-pQ7" secondAttribute="centerY" id="J2D-GA-mBa"/>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="top" secondItem="KIZ-Og-pQ7" secondAttribute="top" constant="48" id="OOU-kK-WzR"/>
+                                                <constraint firstItem="5wL-JD-y7r" firstAttribute="top" secondItem="LTj-B1-7Qr" secondAttribute="bottom" constant="8" id="Plk-aC-KBY"/>
+                                                <constraint firstItem="AOl-hd-cIM" firstAttribute="leading" secondItem="KIZ-Og-pQ7" secondAttribute="leading" constant="20" id="cXK-TB-tgq"/>
+                                                <constraint firstItem="LTj-B1-7Qr" firstAttribute="centerY" secondItem="AOl-hd-cIM" secondAttribute="centerY" id="ofB-Tc-kyg"/>
+                                                <constraint firstItem="AOl-hd-cIM" firstAttribute="top" secondItem="KIZ-Og-pQ7" secondAttribute="top" constant="20" id="tOf-kh-ysK"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KIZ-Og-pQ7" firstAttribute="centerX" secondItem="veE-g9-w6L" secondAttribute="centerX" id="FuD-eX-3qC"/>
+                                        <constraint firstItem="KIZ-Og-pQ7" firstAttribute="centerY" secondItem="veE-g9-w6L" secondAttribute="centerY" id="U0s-vU-TM8"/>
+                                        <constraint firstItem="KIZ-Og-pQ7" firstAttribute="leading" secondItem="veE-g9-w6L" secondAttribute="leadingMargin" constant="-20" id="X3K-uV-1tk"/>
+                                        <constraint firstItem="KIZ-Og-pQ7" firstAttribute="top" secondItem="veE-g9-w6L" secondAttribute="topMargin" constant="-20" id="sIc-7u-lxr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imgCell" destination="AOl-hd-cIM" id="O6Y-98-Si5"/>
+                                    <outlet property="lblCellDate" destination="5wL-JD-y7r" id="vfV-Zq-0mS"/>
+                                    <outlet property="lblCellTitle" destination="LTj-B1-7Qr" id="jtI-6a-r5T"/>
                                     <segue destination="M89-VD-D6P" kind="show" identifier="moveDetail" id="DwD-O4-V0s"/>
                                 </connections>
                             </tableViewCell>
@@ -687,19 +723,15 @@
         <segue reference="DwD-O4-V0s"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="cal_Anger.png" width="15" height="15"/>
+        <image name="cal_Calmness.png" width="15" height="15"/>
+        <image name="cal_Depressed.png" width="15" height="15"/>
+        <image name="cal_Embarrassment.png" width="15" height="15"/>
         <image name="cal_Happy.png" width="15" height="15"/>
+        <image name="cal_Pleasure.png" width="15" height="15"/>
+        <image name="cal_Proud.png" width="15" height="15"/>
         <image name="cal_Sad.png" width="15" height="15"/>
         <image name="cal_Tired.png" width="15" height="15"/>
-        <image name="img_Anger.png" width="32" height="30"/>
-        <image name="img_Depressed.png" width="32" height="28.5"/>
-        <image name="img_Embarrassment.png" width="32" height="27.5"/>
-        <image name="img_Happy.png" width="32" height="30"/>
-        <image name="img_Pleasure.png" width="32" height="33.5"/>
-        <image name="img_Proud.png" width="32" height="29"/>
-        <image name="img_Sad.png" width="32" height="28.5"/>
-        <image name="img_Tired.png" width="32" height="31.5"/>
-        <image name="img_calmness.png" width="32" height="26.5"/>
-        <image name="trash.circle" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -334,7 +334,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             
 
             print("DB에서 불러온 날짜 : \(cInsertDate)")
-            tempImageFileNames.append(changeDotImage(before: cImageFileName))
+            tempImageFileNames.append(cImageFileName)
             tempDate.append(dateFormatter.date(from: cInsertDate)!)
             
             eventDates = tempDate
@@ -354,31 +354,31 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return paths[0]
     }
     
-    func changeDotImage(before : String) -> String{
-        switch before{
-        case "img_Happy.png":
-            return "cal_Happy.png"
-        case "img_Pleasure.png":
-            return "cal_Pleasure.png"
-        case "img_Anger.png":
-            return "cal_Anger.png"
-        case "img_calmness.png":
-            return "cal_Calmness.png"
-        case "img_Despressed.png":
-            return "cal_Despressed.png"
-        case "img_Embarrassment.png":
-            return "cal_Embarrassment.png"
-        case "img_Proud.png":
-            return "cal_Proud.png"
-        case "img_Sad.png":
-            return "cal_Sad.png"
-        case "img_Tired.png":
-            return "cal_Tired.png"
-        // default부터는 더 추가하기
-        default :
-            return "cal_Sad.png"
-        }
-    }
+//    func changeDotImage(before : String) -> String{
+//        switch before{
+//        case "img_Happy.png":
+//            return "cal_Happy.png"
+//        case "img_Pleasure.png":
+//            return "cal_Pleasure.png"
+//        case "img_Anger.png":
+//            return "cal_Anger.png"
+//        case "img_calmness.png":
+//            return "cal_Calmness.png"
+//        case "img_Despressed.png":
+//            return "cal_Despressed.png"
+//        case "img_Embarrassment.png":
+//            return "cal_Embarrassment.png"
+//        case "img_Proud.png":
+//            return "cal_Proud.png"
+//        case "img_Sad.png":
+//            return "cal_Sad.png"
+//        case "img_Tired.png":
+//            return "cal_Tired.png"
+//        // default부터는 더 추가하기
+//        default :
+//            return "cal_Sad.png"
+//        }
+//    }
 }
 
 
