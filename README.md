@@ -21,9 +21,6 @@ Our team's project for App store
 # For Charts
 pod 'Charts'
 
-# For Animation
-pod 'lottie-ios' 
-
 # For Password Pattern
 pod "CCGestureLock"
 ```
