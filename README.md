@@ -6,7 +6,7 @@ Stroke the mood of the day
 ## Demo video
 
 ## Logo
-
+<img src="https://user-images.githubusercontent.com/46651965/108586872-58606b00-7394-11eb-87db-a2efb79a1680.png" width="70%">
 
 # Version
 ### Swift version
