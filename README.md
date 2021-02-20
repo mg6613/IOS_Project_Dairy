@@ -1,4 +1,4 @@
-# ssdam(Stroke)
+# Ssdam(Stroke)
 Stroke the mood of the day
 
 @copyright : 
