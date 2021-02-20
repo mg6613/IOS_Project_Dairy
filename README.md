@@ -5,6 +5,9 @@ Stroke the mood of the day
 
 ## Demo video
 
+## Logo
+
+
 # Version
 ### Swift version
 - Swift 5
