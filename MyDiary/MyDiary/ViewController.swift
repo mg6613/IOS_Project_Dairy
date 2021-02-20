@@ -114,10 +114,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
 
     }
     
-    @IBAction func openChart(_ sender: UIBarButtonItem) {
-        let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
-        present(chartViewController, animated: true)
-    }
+   
 
     // Button for move to SelectEmotionViewController
     @IBAction func btnNew(_ sender: UIButton) {
