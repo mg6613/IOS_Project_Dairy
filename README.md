@@ -1,5 +1,5 @@
-# IOS_MyDiary (WORKING TITLE)
-Our team's project for App store
+# Sseudam(Stroke)
+Stroke the mood of the day
 
 @copyright : 
 
