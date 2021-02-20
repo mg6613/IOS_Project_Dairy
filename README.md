@@ -5,7 +5,7 @@ Our team's project for App store
 
 ## Demo video
 
-## Version
+# Version
 ### Swift version
 - Swift 5
 
