@@ -41,8 +41,6 @@
 		28B8BCBB25DD6E2300573D21 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8BCBA25DD6E2300573D21 /* PasswordViewController.swift */; };
 		28B8BCBE25DD845700573D21 /* CheckPWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B8BCBD25DD845700573D21 /* CheckPWViewController.swift */; };
 		28EB791B25DCB4A20065EEEF /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EB791A25DCB4A20065EEEF /* Contents.swift */; };
-		3CC08B0825DD309000AB456A /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC08B0725DD309000AB456A /* ChartViewController.swift */; };
-		3CC08B0F25DD30F900AB456A /* ChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CC08B0E25DD30F900AB456A /* ChartViewController.xib */; };
 		3CC08B2525DD766300AB456A /* ListContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC08B2425DD766300AB456A /* ListContents.swift */; };
 		3CC08B3025DE396700AB456A /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC08B2F25DE396700AB456A /* ListTableViewController.swift */; };
 		496B62729940D02BAE3AA1E1 /* Pods_MyDiary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A87F3B43F4B163E9140C0F /* Pods_MyDiary.framework */; };
@@ -86,8 +84,6 @@
 		28B8BCBA25DD6E2300573D21 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		28B8BCBD25DD845700573D21 /* CheckPWViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPWViewController.swift; sourceTree = "<group>"; };
 		28EB791A25DCB4A20065EEEF /* Contents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
-		3CC08B0725DD309000AB456A /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
-		3CC08B0E25DD30F900AB456A /* ChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartViewController.xib; sourceTree = "<group>"; };
 		3CC08B2425DD766300AB456A /* ListContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContents.swift; sourceTree = "<group>"; };
 		3CC08B2F25DE396700AB456A /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		867C0C1B25DECA3A00CC4535 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -190,7 +186,6 @@
 				2882C61E25DC0FCD00DEB105 /* AddContentViewController.swift */,
 				2882C62525DC1CB500DEB105 /* DetailViewController.swift */,
 				2882C62825DC1E8D00DEB105 /* SettingTableViewController.swift */,
-				3CC08B0725DD309000AB456A /* ChartViewController.swift */,
 				28B8BCBA25DD6E2300573D21 /* PasswordViewController.swift */,
 				28B8BCBD25DD845700573D21 /* CheckPWViewController.swift */,
 				3CC08B2F25DE396700AB456A /* ListTableViewController.swift */,
@@ -205,7 +200,6 @@
 			children = (
 				28454B5D25DC07830016119D /* LaunchScreen.storyboard */,
 				28454B5825DC077F0016119D /* Main.storyboard */,
-				3CC08B0E25DD30F900AB456A /* ChartViewController.xib */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -313,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CC08B0F25DD30F900AB456A /* ChartViewController.xib in Resources */,
 				28467ED925DFABB700F5B356 /* cal_Embarrassment.png in Resources */,
 				28467EC425DFABAE00F5B356 /* img_Embarrassment.png in Resources */,
 				28467ED425DFABB700F5B356 /* cal_Happy.png in Resources */,
@@ -401,7 +394,6 @@
 				28454B5525DC077F0016119D /* SceneDelegate.swift in Sources */,
 				2882C62625DC1CB600DEB105 /* DetailViewController.swift in Sources */,
 				28B8BCBE25DD845700573D21 /* CheckPWViewController.swift in Sources */,
-				3CC08B0825DD309000AB456A /* ChartViewController.swift in Sources */,
 				287B331E25DEC1EC00CA752C /* ChangeEmotionViewController.swift in Sources */,
 				3CC08B2525DD766300AB456A /* ListContents.swift in Sources */,
 			);
