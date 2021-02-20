@@ -76,7 +76,6 @@ pod install
 ## Supporting Files
 
 ### Images = Image File
-- JPG
 - PNG
 
 ### StoryBoard
@@ -86,6 +85,6 @@ pod install
 
 ## Source
 
-### Models = Bean
+### Models = Data
 ### VCs = View Controller's
 
