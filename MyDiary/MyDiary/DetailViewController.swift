@@ -14,7 +14,7 @@ var imageNum_DetailView = 1
 var imageName_DetailView = ""
 var whereValue = 0
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController{
 
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
@@ -23,8 +23,8 @@ class DetailViewController: UIViewController {
     
     var db : OpaquePointer?
     
-    let timeSelector : Selector = #selector(DetailViewController.updateTime) // 현재 ViewController에 있는 updateTime이라는 함수를 이용!
-    let interval = 1.0 // 시간 interval 1초
+    let timeSelector : Selector = #selector(DetailViewController.autoSave) // 현재 ViewController에 있는 updateTime이라는 함수를 이용!
+    let interval = 60.0 // 시간 interval 1초
 
     var currentTime = ""
     override func viewDidLoad() {
@@ -39,6 +39,9 @@ class DetailViewController: UIViewController {
         
         connectDB()
         readValues()
+        
+        Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
+   
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +57,21 @@ class DetailViewController: UIViewController {
     }
     @IBAction func btnDelete(_ sender: UIButton) {
         print("선택한 이미지 넘버 : \(imageNum_DetailView)")
+        
         showAlert(title: "삭제 확인", message: "정말로 삭제하시겠습니까?")
+        
+//        let alert = UIAlertController(title: "삭제 확인", message: "정말로 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
+//        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.destructive, handler: { [self]ACTION in
+//            deleteAction()
+//            self.navigationController?.popViewController(animated: true)
+//        })
+//        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+//
+//        alert.addAction(okAction)
+//        alert.addAction(cancelAction)
+//        present(alert, animated: true, completion: nil)
+        
+        
     }
     
     // Connect DB(SQLite3)
@@ -67,7 +84,7 @@ class DetailViewController: UIViewController {
     }
     
     // DB update action
-    func updateAction(){
+    func updateAction(value : Int){
 
         var stmt : OpaquePointer?
         // 중요 (한글 문제 해결)
@@ -137,7 +154,11 @@ class DetailViewController: UIViewController {
             return
         }
 
-        showAlert(title: "글 저장 성공", message: "글 저장이 완료되었습니다.")
+        if value == 0{
+            showAlert(title: "글 저장 성공", message: "글 저장이 완료되었습니다.")
+        }else{
+            showToast()
+        }
     }
     
     // DB update action
@@ -170,9 +191,6 @@ class DetailViewController: UIViewController {
             showAlert(title: "오류 발생", message: "글 삭제 중 오류가 발생했습니다.")
             return
         }
-
-        showAlert(title: "글 삭제 성공", message: "글 삭제가 완료되었습니다.")
-
     }
     
     // DB select action
@@ -224,23 +242,14 @@ class DetailViewController: UIViewController {
     func showAlert(title : String, message : String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
-        
-        
-        if title != "알림"{
-            okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
-            })
-        }
-        
+        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
+
         if title == "삭제 확인"{
-            okAction = UIAlertAction(title: "삭제", style: UIAlertAction.Style.default, handler: { [self]ACTION in
+            okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.destructive, handler: { [self]ACTION in
                 deleteAction()
+                self.navigationController?.popViewController(animated: true)
             })
-            let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
             alert.addAction(cancelAction)
-        }
-        
-        if title == "글 삭제 성공"{
-            self.navigationController?.popToRootViewController(animated: true)
         }
         
         alert.addAction(okAction)
@@ -262,14 +271,14 @@ class DetailViewController: UIViewController {
         if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true{
             showAlert(title: "알림", message: "제목과 내용을 빈칸없이 입력해주세요.")
         }else{
-            updateAction()
+            updateAction(value : 0)
         }
     }
     
     // Async Task로 1초당 1번씩 구동
     // objc 타입으로 func을 생성
-    @objc func updateTime(){
-       
+    @objc func autoSave(){
+        updateAction(value : 1)
     }
     
     func getCurrentTime() -> String{
@@ -303,11 +312,7 @@ class DetailViewController: UIViewController {
     }
     
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-//        print("imageTapped")
-//        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "ChangeEmotionView")
-//        vcName?.modalPresentationStyle = .formSheet
-//
-//        self.present(vcName!, animated: true, completion: nil)
+
         performSegue(withIdentifier: "moveChangeEmotion", sender: self)
     }
     
@@ -319,5 +324,19 @@ class DetailViewController: UIViewController {
         }else{
             return "1"
         }
+    }
+    
+    func showToast(){
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+            toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont.boldSystemFont(ofSize: 14)
+        toastLabel.textAlignment = .center
+        toastLabel.text = "자동으로 저장되었습니다."
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds = true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
     }
 }
