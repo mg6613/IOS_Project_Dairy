@@ -21,9 +21,6 @@ Stroke the mood of the day
 ```swift
 # For Library import
 
-# For Charts
-pod 'Charts'
-
 # For Use a calendar
 pod 'FSCalendar'
 ```
