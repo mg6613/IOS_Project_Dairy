@@ -24,8 +24,8 @@ Stroke the mood of the day
 # For Charts
 pod 'Charts'
 
-# For Password Pattern
-pod "CCGestureLock"
+# For Use a calendar
+pod 'FSCalendar'
 ```
 
 ---
