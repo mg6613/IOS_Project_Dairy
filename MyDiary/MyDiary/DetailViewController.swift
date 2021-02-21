@@ -317,7 +317,7 @@ class DetailViewController: UIViewController{
             border.backgroundColor = UIColor.lightGray.cgColor
             txtTitle.layer.addSublayer((border))
             txtTitle.textAlignment = .center
-            txtTitle.textColor = UIColor.black
+            txtTitle.textColor = UIColor.lightGray
         }
     
     // Change imagefilename for show on calendar
