@@ -274,8 +274,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     
     // Design view
     func viewDesign(){
-        txtViewContent.layer.borderWidth = 2
-        txtViewContent.layer.borderColor = UIColor.darkGray.cgColor
+        txtViewContent.layer.borderWidth = 1
+        txtViewContent.layer.borderColor = UIColor.lightGray.cgColor
         txtViewContent.layer.cornerRadius = 10
         txtViewContent.textColor = UIColor.black
         txtViewContent.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
@@ -314,6 +314,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
     }
     
+    // For change placeholder on txtViewContent
     override func viewDidLayoutSubviews() {
             txtTitle.borderStyle = .none
                     let border = CALayer()
