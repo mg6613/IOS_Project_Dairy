@@ -8,8 +8,7 @@
 import UIKit
 import SQLite3
 
-// test values
-var strDate = ""
+var strDate = "test"
 var imageName_DetailView = ""
 var whereValue = 0
 
@@ -213,10 +212,11 @@ class DetailViewController: UIViewController{
         
         txtTitle.text = cTitle
         txtViewContent.text = cContent
-        imgEmotion.image = UIImage(named: cImageFileName)
+        imgEmotion.image = UIImage(named: changeImageName(beforename: cImageFileName))
         
-
         print("이미지 ?? : \(cImageFileName)")
+        
+        print("strdate : \(strDate)")
     }
     
     // Alert Function
@@ -300,5 +300,37 @@ class DetailViewController: UIViewController{
         toastLabel.clipsToBounds = true
         self.view.addSubview(toastLabel)
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
+    }
+    
+    // Change imagefilename for show on calendar
+    func changeImageName(beforename : String) -> String{
+        switch beforename{
+        case "beige.png":
+            return "list_beige.png"
+        case "deepgray.png":
+            return "list_deepgray.png"
+        case "green.png":
+            return "list_green.png"
+        case "deepPurple.png":
+            return "list_deepPurple.png"
+        case "liteblue.png":
+            return "list_liteblue.png"
+        case "yellow.png":
+            return "list_yellow.png"
+        case "purple.png":
+            return "list_purple.png"
+        case "pink2.png":
+            return "list_pink2.png"
+        case "deepRed.png":
+            return "list_deepRed.png"
+        case "laidgray.png":
+            return "list_laidgray.png"
+        case "orange.png":
+            return "list_orange.png"
+        case "navy.png":
+            return "list_navy.png"
+        default:
+            return ""
+        }
     }
 }
