@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtTitle.delegate = self
         // Set GestureRecognizer each imageviews
         setGestureRecognizer()
         
@@ -56,6 +57,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
             print("이미지 ?? : \(imageName_DetailView)")
         }
     }
+    // Title Check MaxLength
+    @IBAction func textDidChanged(_ sender: Any) {
+        checkMaxLength(textField: txtTitle, maxLength: 10)
+    }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         mTimer?.invalidate()
@@ -350,6 +356,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
             return "list_navy.png"
         default:
             return ""
+        }
+    }
+    
+    // Title Check MaxLength
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text?.count ?? 10 > maxLength) {
+            txtTitle.deleteBackward()
         }
     }
 }

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--시작-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MainViewModel" id="BYZ-38-t0r" customClass="ViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="시작" id="sK1-DW-uWc">
+                    <navigationItem key="navigationItem" id="sK1-DW-uWc">
                         <barButtonItem key="rightBarButtonItem" title="설정" id="2PX-DO-FkV">
                             <connections>
                                 <segue destination="Boa-mg-iQq" kind="show" id="ch2-cR-VLT"/>
@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="2983" y="-643"/>
         </scene>
-        <!--상세보기-->
+        <!--Detail View Controller-->
         <scene sceneID="QvB-HC-MoM">
             <objects>
                 <viewController storyboardIdentifier="MoveDetailDirect" id="M89-VD-D6P" customClass="DetailViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -250,6 +250,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChanged:" destination="M89-VD-D6P" eventType="editingChanged" id="Gw9-Oj-A0n"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-hk-qUv">
                                 <rect key="frame" x="16" y="403" width="358" height="262"/>
@@ -299,7 +302,7 @@
                             <constraint firstItem="cla-m7-zg2" firstAttribute="top" secondItem="KQ0-hk-qUv" secondAttribute="bottom" constant="8" symbolic="YES" id="wjm-j1-Ty3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="상세보기" id="E7I-tj-FLg"/>
+                    <navigationItem key="navigationItem" id="E7I-tj-FLg"/>
                     <connections>
                         <outlet property="imgEmotion" destination="PaJ-kt-osb" id="wX2-R2-hqM"/>
                         <outlet property="lblDate" destination="A40-fD-u13" id="4aM-bJ-PJl"/>
@@ -392,7 +395,7 @@
             </objects>
             <point key="canvasLocation" x="3944.6153846153843" y="88.862559241706151"/>
         </scene>
-        <!--색 선택-->
+        <!--Select Emotion View Controller-->
         <scene sceneID="XPH-JU-AK3">
             <objects>
                 <viewController id="cpQ-DR-Ool" customClass="SelectEmotionViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -496,7 +499,7 @@
                             <constraint firstItem="b3u-tg-plc" firstAttribute="leading" secondItem="L6S-g6-vKf" secondAttribute="leading" constant="80" id="zQt-lP-4W5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="색 선택" id="1jN-ga-3y2"/>
+                    <navigationItem key="navigationItem" id="1jN-ga-3y2"/>
                     <connections>
                         <outlet property="image1" destination="bG5-jr-sYT" id="zfa-ep-GaH"/>
                         <outlet property="image10" destination="wUu-vd-WcW" id="287-dB-eLQ"/>
@@ -517,7 +520,7 @@
             </objects>
             <point key="canvasLocation" x="973.84615384615381" y="824.64454976303318"/>
         </scene>
-        <!--글쓰기-->
+        <!--Add Content View Controller-->
         <scene sceneID="QXj-0b-5An">
             <objects>
                 <viewController id="rX2-DE-ssK" customClass="AddContentViewController" customModule="MyDiary" customModuleProvider="target" sceneMemberID="viewController">
@@ -547,6 +550,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChanged:" destination="rX2-DE-ssK" eventType="editingChanged" id="YMp-lF-BDI"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="좋은 아침!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-Z2-ycr">
                                 <rect key="frame" x="16" y="358" width="358" height="287"/>
@@ -583,7 +589,7 @@
                             <constraint firstItem="2Ml-JL-ZAm" firstAttribute="bottom" secondItem="G7w-3Y-E7u" secondAttribute="bottom" constant="106" id="uUU-Gg-H5p"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="글쓰기" id="fRt-tA-Ch2"/>
+                    <navigationItem key="navigationItem" id="fRt-tA-Ch2"/>
                     <connections>
                         <outlet property="imgSelectedImage" destination="qgT-JM-nOe" id="dH5-ps-aAw"/>
                         <outlet property="lblSelectedDate" destination="cxc-cd-e3y" id="Syl-Gy-vSW"/>

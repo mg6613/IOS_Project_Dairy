@@ -136,7 +136,8 @@ class SelectEmotionViewController: UIViewController {
     // Set border of clicked Image
     func clickImageOnlyOne(image : UIImageView){
         image.layer.borderWidth = 3
-        image.layer.borderColor = UIColor.blue.cgColor
+        image.layer.borderColor = UIColor.lightGray.cgColor
+        image.layer.cornerRadius = 10
     }
     
     // Reset border of all buttons
