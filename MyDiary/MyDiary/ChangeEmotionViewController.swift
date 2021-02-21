@@ -111,6 +111,7 @@ class ChangeEmotionViewController: UIViewController {
         image12.addGestureRecognizer(tapGR12)
     }
 
+    // Action for when touch images
     func tapAction(num : Int, imageName : String){
         imageNum_DetailView = num
         imageName_DetailView = imageName

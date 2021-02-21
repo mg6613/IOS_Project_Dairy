@@ -21,12 +21,18 @@ class DetailViewController: UIViewController{
     @IBOutlet weak var txtViewContent: UITextView!
     @IBOutlet weak var imgEmotion: UIImageView!
     
+    // For connect SQLite3
     var db : OpaquePointer?
     
-    let timeSelector : Selector = #selector(DetailViewController.autoSave) // 현재 ViewController에 있는 updateTime이라는 함수를 이용!
-    let interval = 60.0 // 시간 interval 1초
-
-    var currentTime = ""
+    // For use timer
+    let timeSelector : Selector = #selector(DetailViewController.autoSave)
+    
+    // Time interval of timer
+    let interval = 60.0
+    
+    // Declaration for use timer
+    var mTimer : Timer? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,39 +45,32 @@ class DetailViewController: UIViewController{
         
         connectDB()
         readValues()
-        
-        Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
-   
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        mTimer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: timeSelector, userInfo: nil, repeats: true)
 
         if whereValue == 1{
             imgEmotion.image = UIImage(named: imageName_DetailView)
             print("이미지 ?? : \(imageName_DetailView)")
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        mTimer?.invalidate()
+    }
 
+    // Button for db update action
     @IBAction func btnUpdate(_ sender: UIButton) {
         checkNil()
     }
+    
+    // Button for db delete action
     @IBAction func btnDelete(_ sender: UIButton) {
         print("선택한 이미지 넘버 : \(imageNum_DetailView)")
         
         showAlert(title: "삭제 확인", message: "정말로 삭제하시겠습니까?")
-        
-//        let alert = UIAlertController(title: "삭제 확인", message: "정말로 삭제하시겠습니까?", preferredStyle: UIAlertController.Style.alert)
-//        let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.destructive, handler: { [self]ACTION in
-//            deleteAction()
-//            self.navigationController?.popViewController(animated: true)
-//        })
-//        let cancelAction = UIAlertAction(title: "취소", style: UIAlertAction.Style.default, handler: nil)
-//
-//        alert.addAction(okAction)
-//        alert.addAction(cancelAction)
-//        present(alert, animated: true, completion: nil)
-        
-        
     }
     
     // Connect DB(SQLite3)
@@ -96,14 +95,12 @@ class DetailViewController: UIViewController{
         
         let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ?, cCount = ? WHERE cInsertDate = ?"
             
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing update : \(errmsg)")
             return
         }
         
-        // ?에 값을 넣는 것 (컬럼마다 if로 체크해주는 것이 좋다)
         if sqlite3_bind_text(stmt, 1, cTitle, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding Title : \(errmsg)")
@@ -146,7 +143,6 @@ class DetailViewController: UIViewController{
         print("업데이트 날짜 : \(getCurrentTime())")
         print("Insert Date : \(strDate)")
         
-        // 실행하기 (잘 끝나지 않았으면 에러 출력)
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure updating : \(errmsg)")
@@ -165,12 +161,10 @@ class DetailViewController: UIViewController{
     func deleteAction(){
 
         var stmt : OpaquePointer?
-        // 중요 (한글 문제 해결)
         let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
 
         let queryString = "DELETE FROM contents WHERE cInsertDate = ?"
         
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing delete : \(errmsg)")
@@ -184,7 +178,6 @@ class DetailViewController: UIViewController{
             return
         }
         
-        // 실행하기 (잘 끝나지 않았으면 에러 출력)
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure deleting : \(errmsg)")
@@ -198,14 +191,12 @@ class DetailViewController: UIViewController{
         var cTitle = ""
         var cContent = ""
         var cImageFileName = ""
-        
+
         var stmt : OpaquePointer?
-        // 중요 (한글 문제 해결)
         let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
 
         let queryString = "SELECT * FROM contents WHERE cInsertDate = ?"
         
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing delete : \(errmsg)")
@@ -256,16 +247,6 @@ class DetailViewController: UIViewController{
         present(alert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     // Exception handling when if don't type anything
     func checkNil(){
         if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true{
@@ -275,17 +256,17 @@ class DetailViewController: UIViewController{
         }
     }
     
-    // Async Task로 1초당 1번씩 구동
-    // objc 타입으로 func을 생성
+    // Function when using timer
     @objc func autoSave(){
         updateAction(value : 1)
     }
     
+    // Check current time when db update action
     func getCurrentTime() -> String{
-        let date = NSDate() // NS : Next Step // OS로 부터 Date를 가져오는 것
+        let date = NSDate()
         let formatter = DateFormatter()
         
-        formatter.locale = Locale(identifier: "ko") // 한국 지역에 맞추기
+        formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "yyyy-MM-dd EEE a hh:mm:ss"
         
         print("현재시간 : \(formatter.string(from: date as Date))")
@@ -293,26 +274,26 @@ class DetailViewController: UIViewController{
         return formatter.string(from: date as Date)
     }
     
+    // Design view
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
         txtViewContent.layer.borderColor = UIColor.black.cgColor
     }
 
+    // Lower keyboard when click outside click
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
    }
     
     // Set GestureRecognizer each buttons
     func setGestureRecognizer(){
-        
-        imgEmotion.isUserInteractionEnabled = true
-        
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped))
+        imgEmotion.isUserInteractionEnabled = true
         imgEmotion.addGestureRecognizer(tapGR)
     }
     
+    // When touch imgEmotion
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-
         performSegue(withIdentifier: "moveChangeEmotion", sender: self)
     }
     
@@ -326,6 +307,7 @@ class DetailViewController: UIViewController{
         }
     }
     
+    // Show toast message when complete autosave
     func showToast(){
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
             toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)

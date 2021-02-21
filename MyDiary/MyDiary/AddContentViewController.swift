@@ -19,6 +19,7 @@ class AddContentViewController: UIViewController{
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtViewContent: UITextView!
     
+    // For connect SQLite3
     var db : OpaquePointer?
     
     override func viewDidLoad() {
@@ -50,8 +51,8 @@ class AddContentViewController: UIViewController{
     
     // DB insert action
     func insertAction(){
+        
         var stmt : OpaquePointer?
-        // 중요 (한글 문제 해결)
         let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
         
         let cTitle = txtTitle.text!
@@ -61,7 +62,6 @@ class AddContentViewController: UIViewController{
         
         let queryString = "INSERT INTO contents (cTitle, cContent, cImageFileName, cInsertDate, cCount) VALUES (?, ?, ?, ?, ?)"
         
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing insert : \(errmsg)")
@@ -69,7 +69,6 @@ class AddContentViewController: UIViewController{
             return
         }
         
-        // ?에 값을 넣는 것 (컬럼마다 if로 체크해주는 것이 좋다)
         if sqlite3_bind_text(stmt, 1, cTitle, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding Title : \(errmsg)")
@@ -105,8 +104,6 @@ class AddContentViewController: UIViewController{
             return
         }
        
-        
-        // 실행하기 (잘 끝나지 않았으면 에러 출력)
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting : \(errmsg)")
@@ -123,7 +120,6 @@ class AddContentViewController: UIViewController{
     func showAlert(value : Int){
         let alert : UIAlertController
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
-//            self.navigationController?.popToRootViewController(animated: true)
             self.navigationController?.popToRootViewController(animated: true)
         })
 
@@ -158,10 +154,12 @@ class AddContentViewController: UIViewController{
         }
     }
     
+    // Lower keyboard when click outside click
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
    }
     
+    // Design view
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
         txtViewContent.layer.borderColor = UIColor.black.cgColor        
