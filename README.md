@@ -1,9 +1,11 @@
 # Ssdam(Stroke)
+
+
 Stroke the mood of the day
-> Life is good:smile:   
+> Life is good :smile:   
 > But, Sometimes bad  
 > So.. Come here when you're lonely  
-> We'll Stroke(ssdam) your felling
+> We'll Stroke(ssdam) your felling  
 
      
 <details>
@@ -16,7 +18,7 @@ Stroke the mood of the day
 
 </details>
     
-@copyright : 
+@copyright : MInwoo Lee, Mingyu Yoo
     
 ## Demo video
 
