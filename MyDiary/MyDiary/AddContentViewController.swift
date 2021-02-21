@@ -10,7 +10,6 @@ import SQLite3
 
 var selectedDate_AddContentView = ""
 var selectedImage_AddContentView = ""
-var selectedImageNum_AddContentView = 0
 
 class AddContentViewController: UIViewController, UITextViewDelegate{
 
@@ -21,6 +20,9 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     
     // For connect SQLite3
     var db : OpaquePointer?
+    
+    // For check touch txtViewContent
+    var touchSwitch = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +37,8 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
 
         // Connect DB
         connectDB()
+        
+        print(selectedDate_AddContentView)
     }
     
     // Button for DB insert action
@@ -44,7 +48,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     
     // Exception handling when if don't type anything
     func checkNil(){
-        if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true{
+        if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true || touchSwitch == 0{
             showAlert(value : 0)
         }else{
             insertAction()
@@ -169,18 +173,24 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     
     // Start edit
     func textViewDidBeginEditing(_ textView: UITextView) {
+        print("테스트 1")
         textViewSetupView()
     }
     
     // End edit
     func textViewDidEndEditing(_ textView: UITextView) {
+        print("테스트 2")
         if txtViewContent.text == ""{
             textViewSetupView()
+            touchSwitch = 0
+        }else{
+            touchSwitch = 1
         }
     }
     
     // Editing
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        print("테스트 3")
         if text == "\n"{
             txtViewContent.resignFirstResponder()
         }
@@ -188,33 +198,47 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     }
     
     // Check current time for changePlaceholder
-    func getCurrentTime() -> Int{
+    func getCurrentTime() -> (Int, String){
         let date = NSDate()
         let formatter = DateFormatter()
-        
+    
         formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "HHmm"
         
-        print("현재시간 : \(formatter.string(from: date as Date))")
+        let currentTime = Int(formatter.string(from: date as Date))
+        
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "YYYY-MM-dd"
+        
+        let currentDate = formatter.string(from: date as Date)
 
-        return Int(formatter.string(from: date as Date))!
+        
+        
+
+        return (currentTime!, currentDate)
     }
     
     // For change placeholder on txtViewContent
     func changePlaceholder() -> String{
-        let currentTime = getCurrentTime()
+        let currentTime = getCurrentTime().0
         
         print("현재시간 : ", currentTime)
+        print("현재날짜 : ", getCurrentTime().1)
         
-        if currentTime >= 600 && currentTime < 1200{
-            return "좋은 아침입니다! 잠은 푹 잤나요?"
-        }else if currentTime >= 1200 && currentTime < 1800{
-            return "오늘 먹은 점심메뉴는 뭐였어요?"
-        }else if currentTime >= 1800 && currentTime < 2400{
-            return "저녁에는 뭐 할거에요?"
+        if getCurrentTime().1 == selectedDate_AddContentView{
+            if currentTime >= 600 && currentTime < 1200{
+                return "좋은 아침입니다! 잠은 푹 잤나요?"
+            }else if currentTime >= 1200 && currentTime < 1800{
+                return "오늘 먹은 점심메뉴는 뭐였어요?"
+            }else if currentTime >= 1800 && currentTime < 2400{
+                return "저녁에는 뭐 할거에요?"
+            }else{
+                return "감성 돋는 새벽에는 다이어리 쓰기 좋을 거 같네요!"
+            }
         }else{
-            return "감성 돋는 새벽에는 다이어리 쓰기 좋을 거 같네요!"
+            return "\(selectedDate_AddContentView) 에는 어떤 일이 있었나요?"
         }
+        
     }
 
 }
