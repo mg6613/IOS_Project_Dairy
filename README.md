@@ -1,12 +1,16 @@
 # Ssdam(Stroke)
 Stroke the mood of the day
 
-# Table of Contents
+
+<details>
+    <summary>Table of Contents</summary>
+
 [1.Demo video](#demo-video)    
 [2.Logo](#logo)    
 [3.Version](#version)    
-[4.Folder](#folder)    
+[4.Folder](#folder)   
 
+</details>
 @copyright : 
 
 ## Demo video
