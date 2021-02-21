@@ -10,7 +10,6 @@ import SQLite3
 
 // test values
 var strDate = ""
-var imageNum_DetailView = 1
 var imageName_DetailView = ""
 var whereValue = 0
 
@@ -67,9 +66,7 @@ class DetailViewController: UIViewController{
     }
     
     // Button for db delete action
-    @IBAction func btnDelete(_ sender: UIButton) {
-        print("선택한 이미지 넘버 : \(imageNum_DetailView)")
-        
+    @IBAction func btnDelete(_ sender: UIButton) {        
         showAlert(title: "삭제 확인", message: "정말로 삭제하시겠습니까?")
     }
     
@@ -93,7 +90,7 @@ class DetailViewController: UIViewController{
         let cContent = txtViewContent.text!
         print("cContent = \(cContent)")
         
-        let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ?, cCount = ? WHERE cInsertDate = ?"
+        let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ?, WHERE cInsertDate = ?"
             
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -125,13 +122,7 @@ class DetailViewController: UIViewController{
             return
         }
         
-        if sqlite3_bind_text(stmt, 5, getcCount(), -1, SQLITE_TRANSIENT) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error binding InsertDate : \(errmsg)")
-            return
-        }
-        
-        if sqlite3_bind_text(stmt, 6, strDate
+        if sqlite3_bind_text(stmt, 5, strDate
                              , -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding InsertDate : \(errmsg)")
@@ -295,16 +286,6 @@ class DetailViewController: UIViewController{
     // When touch imgEmotion
     @objc func imageTapped(sender: UITapGestureRecognizer) {
         performSegue(withIdentifier: "moveChangeEmotion", sender: self)
-    }
-    
-    // Return cCount(DB Column)
-    func getcCount() -> String{
-        print("선택한 이미지 넘버 : \(imageNum_DetailView)")
-        if imageNum_DetailView >= 1, imageNum_DetailView <= 5{
-            return "0"
-        }else{
-            return "1"
-        }
     }
     
     // Show toast message when complete autosave

@@ -221,7 +221,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
           }
           
           // If table exist don't create else create table
-          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT, cCount TEXT)", nil, nil, nil) != SQLITE_OK{
+          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT)", nil, nil, nil) != SQLITE_OK{
               let errmsg = String(cString: sqlite3_errmsg(db)!)
               print("error creating table : \(errmsg)")
           }
@@ -236,6 +236,9 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         var tempDate = [Date]()
         var tempImageFileNames = [String]()
         
+        eventDates.removeAll()
+        imageFileNames.removeAll()
+        
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing select : \(errmsg)")
@@ -248,13 +251,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             dateFormatter.locale = Locale(identifier: "ko")
             
             print("DB에서 불러온 날짜 : \(cInsertDate)")
-            tempImageFileNames.append(cImageFileName)
+            tempImageFileNames.append(changeCalendarImageName(beforename : cImageFileName))
             tempDate.append(dateFormatter.date(from: cInsertDate)!)
             
             eventDates = tempDate
             imageFileNames = tempImageFileNames
-
         }
+ 
         print("imageFileNames : \(imageFileNames)")
         print("eventDates : \(eventDates)")
         print("//////////////////////")
@@ -267,6 +270,40 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
+    
+    // Change imagefilename for show on calendar
+    func changeCalendarImageName(beforename : String) -> String{
+        switch beforename{
+        case "beige.png":
+            return "cal_beige.png"
+        case "deepgray.png":
+            return "cal_deepgray.png"
+        case "green.png":
+            return "cal_green.png"
+        case "deepPurple.png":
+            return "cal_deepPurple.png"
+        case "liteblue.png":
+            return "cal_liteblut.png"
+        case "yellow.png.png":
+            return "cal_yellow.png"
+        case "purple.png.png":
+            return "cal_purple.png"
+        case "pink2.png":
+            return "cal_pink2.png"
+        case "deepRed.png.png":
+            return "cal_deepRed.png"
+        case "laidgray.png":
+            return "cal_laidgray.png"
+        case "orange.png":
+            return "cal_orange.png"
+        case "navy.png":
+            return "cal_navy.png"
+        default:
+            return ""
+        }
+    }
+    
+    
 }
 
 

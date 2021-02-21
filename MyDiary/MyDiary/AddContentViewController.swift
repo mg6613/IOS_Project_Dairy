@@ -12,7 +12,7 @@ var selectedDate_AddContentView = ""
 var selectedImage_AddContentView = ""
 var selectedImageNum_AddContentView = 0
 
-class AddContentViewController: UIViewController{
+class AddContentViewController: UIViewController, UITextViewDelegate{
 
     @IBOutlet weak var lblSelectedDate: UILabel!
     @IBOutlet weak var imgSelectedImage: UIImageView!
@@ -24,6 +24,8 @@ class AddContentViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtViewContent.delegate = self
         
         viewDesign()
         
@@ -60,7 +62,7 @@ class AddContentViewController: UIViewController{
         let cImageFileName = selectedImage_AddContentView
         let cInsertDate = selectedDate_AddContentView
         
-        let queryString = "INSERT INTO contents (cTitle, cContent, cImageFileName, cInsertDate, cCount) VALUES (?, ?, ?, ?, ?)"
+        let queryString = "INSERT INTO contents (cTitle, cContent, cImageFileName, cInsertDate) VALUES (?, ?, ?, ?)"
         
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -91,13 +93,6 @@ class AddContentViewController: UIViewController{
         }
         
         if sqlite3_bind_text(stmt, 4, cInsertDate, -1, SQLITE_TRANSIENT) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error binding InsertDate : \(errmsg)")
-            showAlert(value: 2)
-            return
-        }
-        
-        if sqlite3_bind_text(stmt, 5, getcCount(), -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding InsertDate : \(errmsg)")
             showAlert(value: 2)
@@ -144,16 +139,6 @@ class AddContentViewController: UIViewController{
         }
     }
     
-    // Return cCount(DB Column)
-    func getcCount() -> String{
-        print("선택한 이미지 넘버 : \(selectedImageNum_AddContentView)")
-        if selectedImageNum_AddContentView >= 1, selectedImageNum_AddContentView <= 5{
-            return "0"
-        }else{
-            return "1"
-        }
-    }
-    
     // Lower keyboard when click outside click
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
@@ -165,7 +150,71 @@ class AddContentViewController: UIViewController{
         txtViewContent.layer.borderColor = UIColor.black.cgColor
         txtViewContent.layer.cornerRadius = 10
         txtViewContent.layer.borderWidth = 0
+        txtViewContent.textColor = UIColor.lightGray
+        txtViewContent.text = changePlaceholder()
+    }
+    
+    // TextView placeholder
+    func textViewSetupView(){
+        let placeholder = changePlaceholder()
         
+        if txtViewContent.text == placeholder{
+            txtViewContent.text = ""
+            txtViewContent.textColor = UIColor.black
+        }else if txtViewContent.text == ""{
+            txtViewContent.text = placeholder
+            txtViewContent.textColor = UIColor.lightGray
+        }
+    }
+    
+    // Start edit
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textViewSetupView()
+    }
+    
+    // End edit
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if txtViewContent.text == ""{
+            textViewSetupView()
+        }
+    }
+    
+    // Editing
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n"{
+            txtViewContent.resignFirstResponder()
+        }
+        return true
+    }
+    
+    // Check current time for changePlaceholder
+    func getCurrentTime() -> Int{
+        let date = NSDate()
+        let formatter = DateFormatter()
+        
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "HHmm"
+        
+        print("현재시간 : \(formatter.string(from: date as Date))")
+
+        return Int(formatter.string(from: date as Date))!
+    }
+    
+    // For change placeholder on txtViewContent
+    func changePlaceholder() -> String{
+        let currentTime = getCurrentTime()
+        
+        print("현재시간 : ", currentTime)
+        
+        if currentTime >= 600 && currentTime < 1200{
+            return "좋은 아침입니다! 잠은 푹 잤나요?"
+        }else if currentTime >= 1200 && currentTime < 1800{
+            return "오늘 먹은 점심메뉴는 뭐였어요?"
+        }else if currentTime >= 1800 && currentTime < 2400{
+            return "저녁에는 뭐 할거에요?"
+        }else{
+            return "감성 돋는 새벽에는 다이어리 쓰기 좋을 거 같네요!"
+        }
     }
 
 }
