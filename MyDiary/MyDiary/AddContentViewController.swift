@@ -262,7 +262,6 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         txtTitle.textAlignment = .center
         txtTitle.textColor = UIColor.black
         
-        
     }
     
     // Title Check MaxLength
