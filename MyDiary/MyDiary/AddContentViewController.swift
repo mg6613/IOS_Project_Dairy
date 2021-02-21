@@ -257,11 +257,6 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         txtTitle.textAlignment = .center
         txtTitle.textColor = UIColor.black
         
-        
     }
     
-    
-    
-    
-
 }
