@@ -171,6 +171,8 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         }
     }
     
+    
+    
     // Start edit
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("테스트 1")
@@ -240,5 +242,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         }
         
     }
+    
+    
 
 }
