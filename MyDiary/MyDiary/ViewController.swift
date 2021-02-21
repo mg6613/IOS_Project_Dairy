@@ -23,7 +23,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     // Variable for check current date
     var current_date_string = ""
     
-    // 현재 날짜 (currentPage)
+    // Date on current page of calendar
     var currentPageDate = ""
     
     // For DateFormatter
