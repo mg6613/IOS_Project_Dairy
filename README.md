@@ -1,9 +1,11 @@
 # Ssdam(Stroke)
+
+https://img.shields.io/static/v1?label=<LABEL>&message=<MESSAGE>&color=<COLOR>favorites/:fileId  
 Stroke the mood of the day
-> Life is good:smile:   
+> Life is good :smile:   
 > But, Sometimes bad  
 > So.. Come here when you're lonely  
-> We'll Stroke(ssdam) your felling
+> We'll Stroke(ssdam) your felling  
 
      
 <details>
