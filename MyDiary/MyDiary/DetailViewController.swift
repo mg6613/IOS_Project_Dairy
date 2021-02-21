@@ -44,6 +44,8 @@ class DetailViewController: UIViewController{
         
         connectDB()
         readValues()
+        
+        viewDidLayoutSubviews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -268,6 +270,9 @@ class DetailViewController: UIViewController{
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
         txtViewContent.layer.borderColor = UIColor.black.cgColor
+        txtViewContent.layer.cornerRadius = 10
+        txtViewContent.layer.borderWidth = 0
+        txtViewContent.textColor = UIColor.black
     }
 
     // Lower keyboard when click outside click
@@ -301,4 +306,18 @@ class DetailViewController: UIViewController{
         self.view.addSubview(toastLabel)
         UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: { toastLabel.alpha = 0.0 }, completion: {(isCompleted) in toastLabel.removeFromSuperview() })
     }
+    
+    override func viewDidLayoutSubviews() {
+            txtTitle.borderStyle = .none
+                    let border = CALayer()
+            border.frame = CGRect(x: 0,
+            y: txtTitle.frame.size.height-1,
+            width: txtTitle.frame.width,
+            height: 1)
+            border.backgroundColor = UIColor.lightGray.cgColor
+            txtTitle.layer.addSublayer((border))
+            txtTitle.textAlignment = .center
+            txtTitle.textColor = UIColor.black
+        }
+    
 }
