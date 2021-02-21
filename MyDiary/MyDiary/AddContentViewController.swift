@@ -152,12 +152,11 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     
     // Design view
     func viewDesign(){
-        txtViewContent.layer.borderWidth = 2
-        txtViewContent.layer.borderColor = UIColor.black.cgColor
+        txtViewContent.layer.borderWidth = 1
+        txtViewContent.layer.borderColor = UIColor.lightGray.cgColor
         txtViewContent.layer.cornerRadius = 10
-        txtViewContent.layer.borderWidth = 0
-        txtViewContent.textColor = UIColor.lightGray
         txtViewContent.text = changePlaceholder()
+        txtViewContent.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
     
     // TextView placeholder
@@ -165,16 +164,16 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         let placeholder = changePlaceholder()
         
         if txtViewContent.text == placeholder{
-            txtViewContent.text = ""
+            print("dsdsg")
             txtViewContent.textColor = UIColor.black
+            txtViewContent.text = ""
         }else if txtViewContent.text == ""{
-            txtViewContent.text = placeholder
+            print("sgsgd")
             txtViewContent.textColor = UIColor.lightGray
+            txtViewContent.text = placeholder
         }
     }
-    
-    
-    
+
     // Start edit
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("테스트 1")
@@ -216,9 +215,6 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         
         let currentDate = formatter.string(from: date as Date)
 
-        
-        
-
         return (currentTime!, currentDate)
     }
     
@@ -244,7 +240,9 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         }
         
     }
+
     
+    // Add underline to title
     override func viewDidLayoutSubviews() {
         txtTitle.borderStyle = .none
                 let border = CALayer()

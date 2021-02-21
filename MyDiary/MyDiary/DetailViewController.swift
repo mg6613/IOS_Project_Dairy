@@ -12,7 +12,7 @@ var strDate = "test"
 var imageName_DetailView = ""
 var whereValue = 0
 
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
@@ -269,10 +269,11 @@ class DetailViewController: UIViewController{
     // Design view
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
-        txtViewContent.layer.borderColor = UIColor.black.cgColor
+        txtViewContent.layer.borderColor = UIColor.darkGray.cgColor
         txtViewContent.layer.cornerRadius = 10
-        txtViewContent.layer.borderWidth = 0
         txtViewContent.textColor = UIColor.black
+        txtViewContent.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
+
     }
 
     // Lower keyboard when click outside click
