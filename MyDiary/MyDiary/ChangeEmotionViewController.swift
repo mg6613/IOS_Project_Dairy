@@ -33,47 +33,47 @@ class ChangeEmotionViewController: UIViewController {
     // When touch each images
     // -------------------------------------------------------
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        tapAction(imageName: "beige.png")
-    }
-    
-    @objc func imageTapped2(sender: UITapGestureRecognizer){
-        tapAction(imageName: "deepgray.png")
-    }
-    
-    @objc func imageTapped3(sender: UITapGestureRecognizer){
-        tapAction(imageName: "green.png")
-    }
-    
-    @objc func imageTapped4(sender: UITapGestureRecognizer){
-        tapAction(imageName: "deepPurple.png")
-    }
-    
-    @objc func imageTapped5(sender: UITapGestureRecognizer){
-        tapAction(imageName: "liteblue.png")
-    }
-    
-    @objc func imageTapped6(sender: UITapGestureRecognizer){
         tapAction(imageName: "yellow.png")
     }
     
-    @objc func imageTapped7(sender: UITapGestureRecognizer){
-        tapAction(imageName: "purple.png")
+    @objc func imageTapped2(sender: UITapGestureRecognizer){
+        tapAction(imageName: "green.png")
     }
     
-    @objc func imageTapped8(sender: UITapGestureRecognizer){
-        tapAction(imageName: "pink2.png")
-    }
-    
-    @objc func imageTapped9(sender: UITapGestureRecognizer){
+    @objc func imageTapped3(sender: UITapGestureRecognizer){
         tapAction(imageName: "deepRed.png")
     }
     
-    @objc func imageTapped10(sender: UITapGestureRecognizer){
+    @objc func imageTapped4(sender: UITapGestureRecognizer){
+        tapAction(imageName: "orange.png")
+    }
+    
+    @objc func imageTapped5(sender: UITapGestureRecognizer){
+        tapAction(imageName: "beige.png")
+    }
+    
+    @objc func imageTapped6(sender: UITapGestureRecognizer){
         tapAction(imageName: "laidgray.png")
     }
     
+    @objc func imageTapped7(sender: UITapGestureRecognizer){
+        tapAction(imageName: "pink2.png")
+    }
+    
+    @objc func imageTapped8(sender: UITapGestureRecognizer){
+        tapAction(imageName: "purple.png")
+    }
+    
+    @objc func imageTapped9(sender: UITapGestureRecognizer){
+        tapAction(imageName: "deepPurple.png")
+    }
+    
+    @objc func imageTapped10(sender: UITapGestureRecognizer){
+        tapAction(imageName: "liteblue.png")
+    }
+    
     @objc func imageTapped11(sender: UITapGestureRecognizer){
-        tapAction(imageName: "orange.png")
+        tapAction(imageName: "deepgray.png")
     }
     
     @objc func imageTapped12(sender: UITapGestureRecognizer){

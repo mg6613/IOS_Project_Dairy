@@ -27,7 +27,7 @@ class SelectEmotionViewController: UIViewController {
     @IBOutlet weak var image12: UIImageView!
 
     // Variable for next view
-    var clickImageName = "beige.png"
+    var clickImageName = "yellow.png"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class SelectEmotionViewController: UIViewController {
         // Store text change NSMutableAttributedString Type
         let attributedStr = NSMutableAttributedString(string: lblEmotion.text!)
 
-        attributedStr.addAttribute(.foregroundColor, value: UIColor.blue, range: (lblEmotion.text! as NSString).range(of: "느낌"))
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.black, range: (lblEmotion.text! as NSString).range(of: "느낌"))
 
         // 설정이 적용된 text를 label의 attributedText에 저장
         lblEmotion.attributedText = attributedStr
@@ -55,47 +55,47 @@ class SelectEmotionViewController: UIViewController {
     // When touch each images
     // -------------------------------------------------------
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        tapActions(imageName: "beige.png", imageView: image1)
+        tapActions(imageName: "yellow.png", imageView: image1)
     }
     
     @objc func imageTapped2(sender: UITapGestureRecognizer){
-        tapActions(imageName: "deepgray.png", imageView: image2)
+        tapActions(imageName: "green.png", imageView: image2)
     }
     
     @objc func imageTapped3(sender: UITapGestureRecognizer){
-        tapActions(imageName: "green.png", imageView: image3)
+        tapActions(imageName: "deepRed.png", imageView: image3)
     }
     
     @objc func imageTapped4(sender: UITapGestureRecognizer){
-        tapActions(imageName: "deepPurple.png", imageView: image4)
+        tapActions(imageName: "orange.png", imageView: image4)
     }
     
     @objc func imageTapped5(sender: UITapGestureRecognizer){
-        tapActions(imageName: "liteblue.png", imageView: image5)
+        tapActions(imageName: "beige.png", imageView: image5)
     }
     
     @objc func imageTapped6(sender: UITapGestureRecognizer){
-        tapActions(imageName: "yellow.png", imageView: image6)
+        tapActions(imageName: "laidgray.png", imageView: image6)
     }
     
     @objc func imageTapped7(sender: UITapGestureRecognizer){
-        tapActions(imageName: "purple.png", imageView: image7)
+        tapActions(imageName: "pink2.png", imageView: image7)
     }
     
     @objc func imageTapped8(sender: UITapGestureRecognizer){
-        tapActions(imageName: "pink2.png", imageView: image8)
+        tapActions(imageName: "purple.png", imageView: image8)
     }
     
     @objc func imageTapped9(sender: UITapGestureRecognizer){
-        tapActions(imageName: "deepRed.png", imageView: image9)
+        tapActions(imageName: "deepPurple.png", imageView: image9)
     }
     
     @objc func imageTapped10(sender: UITapGestureRecognizer){
-        tapActions(imageName: "laidgray.png", imageView: image10)
+        tapActions(imageName: "liteblue.png", imageView: image10)
     }
     
     @objc func imageTapped11(sender: UITapGestureRecognizer){
-        tapActions(imageName: "orange.png", imageView: image11)
+        tapActions(imageName: "deepgray.png", imageView: image11)
     }
     
     @objc func imageTapped12(sender: UITapGestureRecognizer){
