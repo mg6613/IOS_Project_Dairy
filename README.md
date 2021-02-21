@@ -2,7 +2,7 @@
 Stroke the mood of the day
 > Life is good:smile:   
 > But, Sometimes bad  
-> So.. Come here when you're lonely
+> So.. Come here when you're lonely  
 > We'll Stroke(ssdam) your felling
 
      
