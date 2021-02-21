@@ -249,10 +249,10 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         txtTitle.borderStyle = .none
                 let border = CALayer()
         border.frame = CGRect(x: 0,
-                                                y: txtTitle.frame.size.height-1,
-                                                width: txtTitle.frame.width,
-                                                height: 1)
-        border.backgroundColor = UIColor.black.cgColor
+        y: txtTitle.frame.size.height-1,
+        width: txtTitle.frame.width,
+            height: 1)
+        border.backgroundColor = UIColor.lightGray.cgColor
         txtTitle.layer.addSublayer((border))
         txtTitle.textAlignment = .center
         txtTitle.textColor = UIColor.black
