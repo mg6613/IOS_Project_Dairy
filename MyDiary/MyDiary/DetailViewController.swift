@@ -59,7 +59,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     }
     // Title Check MaxLength
     @IBAction func textDidChanged(_ sender: Any) {
-        checkMaxLength(textField: txtTitle, maxLength: 10)
+        checkMaxLength(textField: txtTitle, maxLength: 15)
     }
     
     
@@ -362,7 +362,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     
     // Title Check MaxLength
     func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text?.count ?? 10 > maxLength) {
+        if (textField.text?.count ?? 15 > maxLength) {
             txtTitle.deleteBackward()
         }
     }
