@@ -547,6 +547,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChanged:" destination="rX2-DE-ssK" eventType="editingChanged" id="YMp-lF-BDI"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="좋은 아침!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-Z2-ycr">
                                 <rect key="frame" x="16" y="358" width="358" height="287"/>

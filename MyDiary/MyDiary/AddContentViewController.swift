@@ -11,7 +11,7 @@ import SQLite3
 var selectedDate_AddContentView = ""
 var selectedImage_AddContentView = ""
 
-class AddContentViewController: UIViewController, UITextViewDelegate{
+class AddContentViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate{
 
     @IBOutlet weak var lblSelectedDate: UILabel!
     @IBOutlet weak var imgSelectedImage: UIImageView!
@@ -26,7 +26,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        txtTitle.delegate = self
         txtViewContent.delegate = self
         
         viewDesign()
@@ -41,6 +41,11 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         print(selectedDate_AddContentView)
         
         viewDidLayoutSubviews()
+    }
+    
+    // Title Check MaxLength
+    @IBAction func textDidChanged(_ sender: Any) {
+        checkMaxLength(textField: txtTitle, maxLength: 10)
     }
     
     // Button for DB insert action
@@ -259,4 +264,14 @@ class AddContentViewController: UIViewController, UITextViewDelegate{
         
     }
     
+    // Title Check MaxLength
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text?.count ?? 10 > maxLength) {
+            txtTitle.deleteBackward()
+        }
+    }
+
+    
+    
+
 }
