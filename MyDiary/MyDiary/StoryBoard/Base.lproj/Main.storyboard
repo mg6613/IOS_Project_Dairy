@@ -235,13 +235,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A40-fD-u13">
-                                <rect key="frame" x="178.66666666666666" y="285.33333333333331" width="33" height="15.666666666666686"/>
-                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="18"/>
+                                <rect key="frame" x="173.33333333333334" y="279.33333333333331" width="43.666666666666657" height="21.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-kt-osb">
-                                <rect key="frame" x="144" y="142" width="102" height="114.33333333333331"/>
+                                <rect key="frame" x="144" y="142" width="102" height="108.33333333333331"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-5d-6qh">
                                 <rect key="frame" x="91" y="340" width="208" height="34"/>
@@ -303,7 +303,7 @@
                     <navigationItem key="navigationItem" title="상세보기" id="E7I-tj-FLg"/>
                     <connections>
                         <outlet property="imgEmotion" destination="PaJ-kt-osb" id="wX2-R2-hqM"/>
-                        <outlet property="lblDate" destination="A40-fD-u13" id="llU-iT-cnG"/>
+                        <outlet property="lblDate" destination="A40-fD-u13" id="4aM-bJ-PJl"/>
                         <outlet property="txtTitle" destination="yZY-5d-6qh" id="1KH-BR-N9L"/>
                         <outlet property="txtViewContent" destination="KQ0-hk-qUv" id="UYo-fT-G1N"/>
                         <segue destination="nEV-tC-XnF" kind="show" identifier="moveChangeEmotion" id="58t-LV-h5b"/>
@@ -391,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3X-CJ-ddL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3946" y="89"/>
+            <point key="canvasLocation" x="3944.6153846153843" y="88.862559241706151"/>
         </scene>
         <!--색 선택-->
         <scene sceneID="XPH-JU-AK3">

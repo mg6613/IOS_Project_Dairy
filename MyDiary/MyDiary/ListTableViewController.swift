@@ -90,7 +90,7 @@ class ListTableViewController: UITableViewController {
 
         cell.lblCellTitle?.text = "\(contents.cTitle!)"
         cell.lblCellDate?.text = "\(contents.cInsertDate!)" 
-        cell.imgCell?.image = UIImage(named: contents.cImageFileName!)
+        cell.imgCell?.image = UIImage(named: changeImageName(beforename : contents.cImageFileName!))
 
             return cell
         }
@@ -105,6 +105,38 @@ class ListTableViewController: UITableViewController {
             let item: ListContents = ContentsList[indexPath!.row]
             let cinsertdate = item.cInsertDate!
             strDate = cinsertdate
+        }
+    }
+    
+    // Change imagefilename for show on calendar
+    func changeImageName(beforename : String) -> String{
+        switch beforename{
+        case "beige.png":
+            return "list_beige.png"
+        case "deepgray.png":
+            return "list_deepgray.png"
+        case "green.png":
+            return "list_green.png"
+        case "deepPurple.png":
+            return "list_deepPurple.png"
+        case "liteblue.png":
+            return "list_liteblue.png"
+        case "yellow.png":
+            return "list_yellow.png"
+        case "purple.png":
+            return "list_purple.png"
+        case "pink2.png":
+            return "list_pink2.png"
+        case "deepRed.png":
+            return "list_deepRed.png"
+        case "laidgray.png":
+            return "list_laidgray.png"
+        case "orange.png":
+            return "list_orange.png"
+        case "navy.png":
+            return "list_navy.png"
+        default:
+            return ""
         }
     }
     
