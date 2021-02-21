@@ -12,7 +12,7 @@ var strDate = "test"
 var imageName_DetailView = ""
 var whereValue = 0
 
-class DetailViewController: UIViewController{
+class DetailViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var txtTitle: UITextField!
@@ -34,6 +34,7 @@ class DetailViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtTitle.delegate = self
         // Set GestureRecognizer each imageviews
         setGestureRecognizer()
         
@@ -56,6 +57,11 @@ class DetailViewController: UIViewController{
             print("이미지 ?? : \(imageName_DetailView)")
         }
     }
+    // Title Check MaxLength
+    @IBAction func textDidChanged(_ sender: Any) {
+        checkMaxLength(textField: txtTitle, maxLength: 10)
+    }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         mTimer?.invalidate()
@@ -349,6 +355,13 @@ class DetailViewController: UIViewController{
             return "list_navy.png"
         default:
             return ""
+        }
+    }
+    
+    // Title Check MaxLength
+    func checkMaxLength(textField: UITextField!, maxLength: Int) {
+        if (textField.text?.count ?? 10 > maxLength) {
+            txtTitle.deleteBackward()
         }
     }
 }

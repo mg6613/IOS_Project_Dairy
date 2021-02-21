@@ -250,6 +250,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textDidChanged:" destination="M89-VD-D6P" eventType="editingChanged" id="Gw9-Oj-A0n"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-hk-qUv">
                                 <rect key="frame" x="16" y="403" width="358" height="262"/>
