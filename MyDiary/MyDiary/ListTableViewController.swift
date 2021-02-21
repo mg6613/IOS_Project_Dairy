@@ -35,11 +35,13 @@ class ListTableViewController: UITableViewController {
             }
             
             lblYearMonth.text = "\(ListDateYear)년 \(ListDateMonth)월"
+        
+            // Cell custom. Cell height
             listTableView.rowHeight = 100
         
         }
     
-    // SQL Select Start
+    // DB select action
     func readValues() {
         ContentsList.removeAll()
         
@@ -57,8 +59,7 @@ class ListTableViewController: UITableViewController {
             let title = String(cString: sqlite3_column_text(stmt, 0)) // Convert it to a string and put it in
             let insertdate = String(cString: sqlite3_column_text(stmt, 1))
             let imgfilename = String(cString: sqlite3_column_text(stmt, 2))
-            
-            print(title)
+      
             ContentsList.append(ListContents(cTitle: String(describing: title), cInsertDate: String(describing: insertdate), cImageFileName: String(describing: imgfilename))
             )}
         

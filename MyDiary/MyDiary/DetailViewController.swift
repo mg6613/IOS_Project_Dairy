@@ -90,7 +90,7 @@ class DetailViewController: UIViewController{
         let cContent = txtViewContent.text!
         print("cContent = \(cContent)")
         
-        let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ?, WHERE cInsertDate = ?"
+        let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ? WHERE cInsertDate = ?"
             
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -122,8 +122,7 @@ class DetailViewController: UIViewController{
             return
         }
         
-        if sqlite3_bind_text(stmt, 5, strDate
-                             , -1, SQLITE_TRANSIENT) != SQLITE_OK{
+        if sqlite3_bind_text(stmt, 5, strDate, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding InsertDate : \(errmsg)")
             return
