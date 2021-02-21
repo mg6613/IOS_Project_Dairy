@@ -16,7 +16,7 @@ Stroke the mood of the day
 
 </details>
     
-@copyright : 
+@copyright : MInwoo Lee
     
 ## Demo video
 
