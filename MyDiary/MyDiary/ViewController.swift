@@ -284,13 +284,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             return "cal_deepPurple.png"
         case "liteblue.png":
             return "cal_liteblue.png"
-        case "yellow.png.png":
+        case "yellow.png":
             return "cal_yellow.png"
-        case "purple.png.png":
+        case "purple.png":
             return "cal_purple.png"
         case "pink2.png":
-            return "cal_pink2.png"
-        case "deepRed.png.png":
+            return "cal_pink.png"
+        case "deepRed.png":
             return "cal_deepRed.png"
         case "laidgray.png":
             return "cal_laidgray.png"
