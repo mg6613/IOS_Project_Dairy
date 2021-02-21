@@ -72,20 +72,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deq-gh-qe5">
-                                <rect key="frame" x="180.66666666666666" y="500" width="30" height="30"/>
+                                <rect key="frame" x="180.66666666666666" y="504.66666666666674" width="30" height="30"/>
                                 <state key="normal" title="확인"/>
                                 <connections>
                                     <action selector="btnCheck:" destination="bUS-zD-e8q" eventType="touchUpInside" id="5JJ-Cb-W8d"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TWH-p5-Sea">
-                                <rect key="frame" x="116" y="397" width="159" height="27"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TWH-p5-Sea">
+                                <rect key="frame" x="116" y="394.66666666666669" width="159" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 입력하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBM-iL-JIe">
-                                <rect key="frame" x="119" y="307" width="153" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="119" y="307" width="153" height="18.666666666666686"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -162,7 +163,7 @@
                                         </constraints>
                                         <string key="text">비밀번호를 입력해주세요
 (4자리 ~ 8자리)</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -179,8 +180,9 @@
                                             <action selector="swChangeOnOff:" destination="9XE-s4-Hoo" eventType="valueChanged" id="dvR-Q1-4VL"/>
                                         </connections>
                                     </switch>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eBp-EW-7pe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eBp-EW-7pe">
                                         <rect key="frame" x="2" y="157" width="159" height="34"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="tfd-Mk-nf6"/>
                                         </constraints>
@@ -233,20 +235,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A40-fD-u13">
-                                <rect key="frame" x="162.33333333333334" y="268" width="65.666666666666657" height="33"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                <rect key="frame" x="178.66666666666666" y="285.33333333333331" width="33" height="15.666666666666686"/>
+                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PaJ-kt-osb">
-                                <rect key="frame" x="144" y="142" width="102" height="97"/>
+                                <rect key="frame" x="144" y="142" width="102" height="114.33333333333331"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-5d-6qh">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yZY-5d-6qh">
                                 <rect key="frame" x="91" y="340" width="208" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Zgv-KO-juG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KQ0-hk-qUv">
@@ -256,7 +259,7 @@
                                     <constraint firstAttribute="height" constant="262" id="1FD-Jl-ajf"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pK-ux-2Q6">
@@ -318,51 +321,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="UJX-28-bEa">
                                 <rect key="frame" x="60" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="w5I-qQ-6ca">
                                 <rect key="frame" x="162" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepRed.png" translatesAutoresizingMaskIntoConstraints="NO" id="bKR-pZ-l0J">
                                 <rect key="frame" x="260" y="274" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="2IK-yh-MlA">
                                 <rect key="frame" x="60" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-xu-xo6">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beige.png" translatesAutoresizingMaskIntoConstraints="NO" id="t9j-xu-xo6">
                                 <rect key="frame" x="162" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="laidgray.png" translatesAutoresizingMaskIntoConstraints="NO" id="1C3-0i-kLW">
                                 <rect key="frame" x="260" y="350" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pink2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rkx-8l-sYF">
                                 <rect key="frame" x="60" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple.png" translatesAutoresizingMaskIntoConstraints="NO" id="PN1-Tn-VDq">
                                 <rect key="frame" x="162" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepPurple.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8m-AD-ejZ">
                                 <rect key="frame" x="260" y="426" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="liteblue.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7T-3I-LTC">
                                 <rect key="frame" x="60" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-sn-P3N">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepgray.png" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-sn-P3N">
                                 <rect key="frame" x="162" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="8IY-Wv-NsR">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navy.png" translatesAutoresizingMaskIntoConstraints="NO" id="8IY-Wv-NsR">
                                 <rect key="frame" x="260" y="502" width="71" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -412,51 +415,51 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUF-Ke-rXT">
                                         <rect key="frame" x="0.0" y="0.0" width="272" height="313.33333333333331"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Pleasure.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="green.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tuc-Mq-U0t">
                                                 <rect key="frame" x="103" y="2" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Depressed.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepPurple.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-8L-DUz">
                                                 <rect key="frame" x="201" y="162" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="bG5-jr-sYT">
                                                 <rect key="frame" x="0.0" y="4" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="laidgray.png" translatesAutoresizingMaskIntoConstraints="NO" id="YgF-k4-q4d">
                                                 <rect key="frame" x="201" y="82" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Calmness.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepRed.png" translatesAutoresizingMaskIntoConstraints="NO" id="yW6-Gy-Kke">
                                                 <rect key="frame" x="201" y="1" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Anger.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pink2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Xu-5n-U25">
                                                 <rect key="frame" x="0.0" y="165" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="purple.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-am-K3J">
                                                 <rect key="frame" x="103" y="163" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Proud.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="orange.png" translatesAutoresizingMaskIntoConstraints="NO" id="T3k-se-Fgy">
                                                 <rect key="frame" x="0.0" y="85" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Embarrassment.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="liteblue.png" translatesAutoresizingMaskIntoConstraints="NO" id="wUu-vd-WcW">
                                                 <rect key="frame" x="0.0" y="245" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Happy.png" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-N3-UQE">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beige.png" translatesAutoresizingMaskIntoConstraints="NO" id="3x8-N3-UQE">
                                                 <rect key="frame" x="103" y="83" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Sad.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-nG-VkF">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="deepgray.png" translatesAutoresizingMaskIntoConstraints="NO" id="BGl-nG-VkF">
                                                 <rect key="frame" x="103" y="245" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cal_Tired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Ei-p1L">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navy.png" translatesAutoresizingMaskIntoConstraints="NO" id="Br3-Ei-p1L">
                                                 <rect key="frame" x="201" y="244" width="71" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
@@ -475,10 +478,10 @@
                                     <constraint firstItem="tUF-Ke-rXT" firstAttribute="centerX" secondItem="UzJ-Ww-pa5" secondAttribute="centerX" id="wdm-ek-WDj"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="느낌에 맞는 색을 골라주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-tg-plc">
-                                <rect key="frame" x="80" y="160" width="238" height="26"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="느낌에 맞는 색을 골라주세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3u-tg-plc">
+                                <rect key="frame" x="80" y="160" width="221" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -528,8 +531,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="sON-y1-lbe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="21"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qgT-JM-nOe">
@@ -538,19 +541,20 @@
                                     <constraint firstAttribute="height" constant="97.333333333333329" id="eWa-9j-FTM"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="오늘의 느낌을 적어주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y61-09-r6U">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="오늘의 느낌을 적어주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y61-09-r6U">
                                 <rect key="frame" x="91" y="297" width="208" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Mgl-xg-WBu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-Z2-ycr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="좋은 아침!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rKf-Z2-ycr">
                                 <rect key="frame" x="16" y="358" width="358" height="287"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="1" green="0.93297094868527952" blue="0.60564372669825262" alpha="0.56086201570471939" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="AppleSymbols" family="Apple Symbols" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G7w-3Y-E7u">
@@ -718,20 +722,26 @@
         <segue reference="Jva-zS-OgN"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="cal_Anger.png" width="15" height="15"/>
-        <image name="cal_Calmness.png" width="15" height="15"/>
-        <image name="cal_Depressed.png" width="15" height="15"/>
-        <image name="cal_Embarrassment.png" width="15" height="15"/>
-        <image name="cal_Happy.png" width="15" height="15"/>
-        <image name="cal_Pleasure.png" width="15" height="15"/>
-        <image name="cal_Proud.png" width="15" height="15"/>
-        <image name="cal_Sad.png" width="15" height="15"/>
-        <image name="cal_Tired.png" width="15" height="15"/>
+        <image name="beige.png" width="200" height="200"/>
+        <image name="deepPurple.png" width="200" height="200"/>
+        <image name="deepRed.png" width="200" height="200"/>
+        <image name="deepgray.png" width="200" height="200"/>
+        <image name="green.png" width="200" height="200"/>
+        <image name="laidgray.png" width="200" height="200"/>
+        <image name="liteblue.png" width="200" height="200"/>
+        <image name="navy.png" width="200" height="200"/>
+        <image name="orange.png" width="200" height="200"/>
+        <image name="pink2.png" width="200" height="200"/>
+        <image name="purple.png" width="200" height="200"/>
+        <image name="yellow.png" width="200" height="200"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

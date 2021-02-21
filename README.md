@@ -1,8 +1,25 @@
 # Ssdam(Stroke)
+
+
 Stroke the mood of the day
+> Life is good :smile:   
+> But, Sometimes bad  
+> So.. Come here when you're lonely  
+> We'll Stroke(ssdam) your felling  
 
-@copyright : 
+     
+<details>
+    <summary>Table of Contents</summary>
 
+[1.Demo video](#demo-video)    
+[2.Logo](#logo)    
+[3.Version](#version)    
+[4.Folder](#folder)   
+
+</details>
+    
+@copyright : MInwoo Lee, Mingyu Yoo
+    
 ## Demo video
 
 ## Logo

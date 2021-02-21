@@ -17,25 +17,22 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     // For Connect SQLite3
     var db : OpaquePointer?
     
-//    var eventDateList : [Contents] = []
-    
     // Variable for save selected date
     var selectDate = ""
     
     // Variable for check current date
     var current_date_string = ""
     
-    // 현재 날짜 (currentPage)
+    // Date on current page of calendar
     var currentPageDate = ""
     
     // For DateFormatter
     let dateFormatter = DateFormatter()
     
-    // 이벤트 추가할 날짜 배열(글 등록한 날을 저장해야할 듯)
+    // List of days of registration
     var eventDates = [Date]()
     
-    var imageNum = 0
-    
+    // List of filenames of images
     var imageFileNames = [String]()
     
     // Variables for func called moveCurrentPage
@@ -79,17 +76,13 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         myCalendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
             }
 
-    
+    // When touch title on calendar
     @objc func imageTapped(sender: UITapGestureRecognizer) {
         print("\(myCalendar.currentPage)")
         currentPageDate = dateFormatter.string(from: myCalendar.currentPage)
         // Save current page on calendar
         let varDate = String(currentPageDate.split(separator: "-")[0]) + "-" + String(currentPageDate.split(separator: "-")[1])
-
-//        let varDate = currentPageDate
         
-        // 21.02.18 세미 추가
-        // 헤더 클릭시 리스트 화면으로 이동
         self.performSegue(withIdentifier: "moveList", sender: self)
         ListDateYear = String(currentPageDate.split(separator: "-")[0])
         ListDateMonth = String(currentPageDate.split(separator: "-")[1])
@@ -113,8 +106,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         myCalendar.reloadData()
 
     }
-    
-   
 
     // Button for move to SelectEmotionViewController
     @IBAction func btnNew(_ sender: UIButton) {
@@ -132,58 +123,17 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             self.performSegue(withIdentifier: "moveSelectEmo", sender: self)
         }
     }
-
-//    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
-//        let cell: FSCalendarCell = calendar.dequeueReusableCell(withIdentifier: "CELL", for: date, at: position)
-//        let dateFromStringFormatter = DateFormatter();
-//        dateFromStringFormatter.dateFormat = "YYYY-MM-dd";
-////        let calendarDate = dateFromStringFormatter.string(from: date)
-//
-//        // Disable date is string Array of Dates
-//        if self.eventDates.contains(date){
-////            cell.appearance.selectionColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-//        }
-//
-//        return cell
-//    }
-    
-    // 날짜별 선택 색상 변경
-//    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
-//
-//        if self.eventDates.contains(date){
-//            return .blue
-//        }else{
-//            return appearance.selectionColor
-//        }
-//    }
-    
-    
     
     // Func for Calendar Design
     func calendarDesign(){
         // Remove placeholder
         myCalendar.placeholderType = .none
         
-        // Backgroud color
-//        myCalendar.backgroundColor = UIColor(red: 241/255, green: 249/255, blue: 255/255, alpha: 1)
-        
         // Click date color
         myCalendar.appearance.selectionColor = UIColor(red: 204/255, green: 226/255, blue: 203/255, alpha: 1)
-        
-        // Today date color
-//        myCalendar.appearance.todayColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
-        
-        // Allow multiple selection
-//        myCalendar.allowsMultipleSelection = true
-        
-        // Allow multiple swipe
-//        myCalendar.swipeToChooseGesture.isEnabled = true
-        
+  
         // Allow scroll
         myCalendar.scrollEnabled = true
-        
-        // Set scroll direction of calnedar
-//        myCalendar.scrollDirection = .vertical
         
         // Set border radious of clicked date
         myCalendar.appearance.borderRadius = 1
@@ -225,7 +175,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         myCalendar.appearance.headerMinimumDissolvedAlpha = 0
     }
     
-    
     // When click a date
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         dateFormatter.dateFormat = "YYYY-MM-dd"
@@ -262,37 +211,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return Date()
     }
     
-    // When move last mont or next month on calendar
-//    func moveCurrentPage(moveUp: Bool) {
-//
-//        let calendar = Calendar.current
-//        var dateComponents = DateComponents()
-//        dateComponents.month = moveUp ? 1 : -1 // If value is true then return 1 else return -1
-//
-//        self.currentPage = calendar.date(byAdding: dateComponents, to: self.currentPage ?? self.today)
-//        self.myCalendar.setCurrentPage(self.currentPage!, animated: true)
-//
-//        currentPageDate = dateFormatter.string(from: currentPage!)
-//    }
-    
-    // Current monthly moving limit function for months
-//    func cantMoveNextMonth(){
-//
-//        // Save current page on calendar
-//        let varDate = Int(String(currentPageDate.split(separator: "-")[0]) + String(currentPageDate.split(separator: "-")[1]))
-//        // Save current date on IOS
-//        let pixedDate = Int(String(current_date_string.split(separator: "-")[0]) + String(current_date_string.split(separator: "-")[1]))
-//
-//        self.moveCurrentPage(moveUp: true)
-//
-//        // Compare by varDate + 1 because the button must be hidden after pressing the button
-//        if (varDate! + 1) == pixedDate!{
-//            btnNextOutlet.isHidden = true
-//        }else{
-//            btnNextOutlet.isHidden = false
-//        }
-//    }
-    
     // Create SQLite DB
     func createSQLite(){
         // For create DB
@@ -303,7 +221,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
           }
           
           // If table exist don't create else create table
-          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT, cCount TEXT)", nil, nil, nil) != SQLITE_OK{
+          if sqlite3_exec(db, "CREATE TABLE IF NOT EXISTS contents (cId INTEGER PRIMARY KEY AUTOINCREMENT, cTitle TEXT, cContent TEXT, cImageFileName TEXT, cInsertDate TEXT, cUpdateDate TEXT)", nil, nil, nil) != SQLITE_OK{
               let errmsg = String(cString: sqlite3_errmsg(db)!)
               print("error creating table : \(errmsg)")
           }
@@ -318,6 +236,9 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         var tempDate = [Date]()
         var tempImageFileNames = [String]()
         
+        eventDates.removeAll()
+        imageFileNames.removeAll()
+        
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing select : \(errmsg)")
@@ -329,15 +250,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             let cInsertDate = String(cString: sqlite3_column_text(stmt, 4))
             dateFormatter.locale = Locale(identifier: "ko")
             
-
             print("DB에서 불러온 날짜 : \(cInsertDate)")
-            tempImageFileNames.append(cImageFileName)
+            tempImageFileNames.append(changeCalendarImageName(beforename : cImageFileName))
             tempDate.append(dateFormatter.date(from: cInsertDate)!)
             
             eventDates = tempDate
             imageFileNames = tempImageFileNames
-
         }
+ 
         print("imageFileNames : \(imageFileNames)")
         print("eventDates : \(eventDates)")
         print("//////////////////////")
@@ -351,31 +271,39 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         return paths[0]
     }
     
-//    func changeDotImage(before : String) -> String{
-//        switch before{
-//        case "img_Happy.png":
-//            return "cal_Happy.png"
-//        case "img_Pleasure.png":
-//            return "cal_Pleasure.png"
-//        case "img_Anger.png":
-//            return "cal_Anger.png"
-//        case "img_calmness.png":
-//            return "cal_Calmness.png"
-//        case "img_Despressed.png":
-//            return "cal_Despressed.png"
-//        case "img_Embarrassment.png":
-//            return "cal_Embarrassment.png"
-//        case "img_Proud.png":
-//            return "cal_Proud.png"
-//        case "img_Sad.png":
-//            return "cal_Sad.png"
-//        case "img_Tired.png":
-//            return "cal_Tired.png"
-//        // default부터는 더 추가하기
-//        default :
-//            return "cal_Sad.png"
-//        }
-//    }
+    // Change imagefilename for show on calendar
+    func changeCalendarImageName(beforename : String) -> String{
+        switch beforename{
+        case "beige.png":
+            return "cal_beige.png"
+        case "deepgray.png":
+            return "cal_deepgray.png"
+        case "green.png":
+            return "cal_green.png"
+        case "deepPurple.png":
+            return "cal_deepPurple.png"
+        case "liteblue.png":
+            return "cal_liteblue.png"
+        case "yellow.png":
+            return "cal_yellow.png"
+        case "purple.png":
+            return "cal_purple.png"
+        case "pink2.png":
+            return "cal_pink.png"
+        case "deepRed.png":
+            return "cal_deepRed.png"
+        case "laidgray.png":
+            return "cal_laidgray.png"
+        case "orange.png":
+            return "cal_orange.png"
+        case "navy.png":
+            return "cal_navy.png"
+        default:
+            return ""
+        }
+    }
+    
+    
 }
 
 

@@ -17,6 +17,7 @@ class CheckPWViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Button for check correct password when user input password
     @IBAction func btnCheck(_ sender: UIButton) {
         let alert = UIAlertController(title: "알림", message: "올바른 비밀번호를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
         let okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil)
@@ -40,15 +41,4 @@ class CheckPWViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -10,19 +10,24 @@ import SQLite3
 
 var selectedDate_AddContentView = ""
 var selectedImage_AddContentView = ""
-var selectedImageNum_AddContentView = 0
 
-class AddContentViewController: UIViewController{
+class AddContentViewController: UIViewController, UITextViewDelegate{
 
     @IBOutlet weak var lblSelectedDate: UILabel!
     @IBOutlet weak var imgSelectedImage: UIImageView!
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var txtViewContent: UITextView!
     
+    // For connect SQLite3
     var db : OpaquePointer?
+    
+    // For check touch txtViewContent
+    var touchSwitch = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtViewContent.delegate = self
         
         viewDesign()
         
@@ -32,6 +37,8 @@ class AddContentViewController: UIViewController{
 
         // Connect DB
         connectDB()
+        
+        print(selectedDate_AddContentView)
     }
     
     // Button for DB insert action
@@ -41,7 +48,7 @@ class AddContentViewController: UIViewController{
     
     // Exception handling when if don't type anything
     func checkNil(){
-        if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true{
+        if txtTitle.text?.isEmpty == true || txtViewContent.text?.isEmpty == true || touchSwitch == 0{
             showAlert(value : 0)
         }else{
             insertAction()
@@ -50,8 +57,8 @@ class AddContentViewController: UIViewController{
     
     // DB insert action
     func insertAction(){
+        
         var stmt : OpaquePointer?
-        // 중요 (한글 문제 해결)
         let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
         
         let cTitle = txtTitle.text!
@@ -59,9 +66,8 @@ class AddContentViewController: UIViewController{
         let cImageFileName = selectedImage_AddContentView
         let cInsertDate = selectedDate_AddContentView
         
-        let queryString = "INSERT INTO contents (cTitle, cContent, cImageFileName, cInsertDate, cCount) VALUES (?, ?, ?, ?, ?)"
+        let queryString = "INSERT INTO contents (cTitle, cContent, cImageFileName, cInsertDate) VALUES (?, ?, ?, ?)"
         
-        // &stmt 에 ?에 대응하는 값을 넣어주면 된다
         if sqlite3_prepare(db, queryString, -1, &stmt, nil) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error preparing insert : \(errmsg)")
@@ -69,7 +75,6 @@ class AddContentViewController: UIViewController{
             return
         }
         
-        // ?에 값을 넣는 것 (컬럼마다 if로 체크해주는 것이 좋다)
         if sqlite3_bind_text(stmt, 1, cTitle, -1, SQLITE_TRANSIENT) != SQLITE_OK{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("error binding Title : \(errmsg)")
@@ -97,16 +102,7 @@ class AddContentViewController: UIViewController{
             showAlert(value: 2)
             return
         }
-        
-        if sqlite3_bind_text(stmt, 5, getcCount(), -1, SQLITE_TRANSIENT) != SQLITE_OK{
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("error binding InsertDate : \(errmsg)")
-            showAlert(value: 2)
-            return
-        }
        
-        
-        // 실행하기 (잘 끝나지 않았으면 에러 출력)
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
             print("failure inserting : \(errmsg)")
@@ -123,7 +119,6 @@ class AddContentViewController: UIViewController{
     func showAlert(value : Int){
         let alert : UIAlertController
         var okAction = UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: {ACTION in
-//            self.navigationController?.popToRootViewController(animated: true)
             self.navigationController?.popToRootViewController(animated: true)
         })
 
@@ -148,23 +143,106 @@ class AddContentViewController: UIViewController{
         }
     }
     
-    // Return cCount(DB Column)
-    func getcCount() -> String{
-        print("선택한 이미지 넘버 : \(selectedImageNum_AddContentView)")
-        if selectedImageNum_AddContentView >= 1, selectedImageNum_AddContentView <= 5{
-            return "0"
-        }else{
-            return "1"
-        }
-    }
-    
+    // Lower keyboard when click outside click
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
          self.view.endEditing(true)
    }
     
+    // Design view
     func viewDesign(){
         txtViewContent.layer.borderWidth = 2
-        txtViewContent.layer.borderColor = UIColor.black.cgColor        
+        txtViewContent.layer.borderColor = UIColor.black.cgColor
+        txtViewContent.layer.cornerRadius = 10
+        txtViewContent.layer.borderWidth = 0
+        txtViewContent.textColor = UIColor.lightGray
+        txtViewContent.text = changePlaceholder()
     }
+    
+    // TextView placeholder
+    func textViewSetupView(){
+        let placeholder = changePlaceholder()
+        
+        if txtViewContent.text == placeholder{
+            txtViewContent.text = ""
+            txtViewContent.textColor = UIColor.black
+        }else if txtViewContent.text == ""{
+            txtViewContent.text = placeholder
+            txtViewContent.textColor = UIColor.lightGray
+        }
+    }
+    
+    
+    
+    // Start edit
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("테스트 1")
+        textViewSetupView()
+    }
+    
+    // End edit
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("테스트 2")
+        if txtViewContent.text == ""{
+            textViewSetupView()
+            touchSwitch = 0
+        }else{
+            touchSwitch = 1
+        }
+    }
+    
+    // Editing
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        print("테스트 3")
+        if text == "\n"{
+            txtViewContent.resignFirstResponder()
+        }
+        return true
+    }
+    
+    // Check current time for changePlaceholder
+    func getCurrentTime() -> (Int, String){
+        let date = NSDate()
+        let formatter = DateFormatter()
+    
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "HHmm"
+        
+        let currentTime = Int(formatter.string(from: date as Date))
+        
+        formatter.locale = Locale(identifier: "ko")
+        formatter.dateFormat = "YYYY-MM-dd"
+        
+        let currentDate = formatter.string(from: date as Date)
+
+        
+        
+
+        return (currentTime!, currentDate)
+    }
+    
+    // For change placeholder on txtViewContent
+    func changePlaceholder() -> String{
+        let currentTime = getCurrentTime().0
+        
+        print("현재시간 : ", currentTime)
+        print("현재날짜 : ", getCurrentTime().1)
+        
+        if getCurrentTime().1 == selectedDate_AddContentView{
+            if currentTime >= 600 && currentTime < 1200{
+                return "좋은 아침입니다! 잠은 푹 잤나요?"
+            }else if currentTime >= 1200 && currentTime < 1800{
+                return "오늘 먹은 점심메뉴는 뭐였어요?"
+            }else if currentTime >= 1800 && currentTime < 2400{
+                return "저녁에는 뭐 할거에요?"
+            }else{
+                return "감성 돋는 새벽에는 다이어리 쓰기 좋을 거 같네요!"
+            }
+        }else{
+            return "\(selectedDate_AddContentView) 에는 어떤 일이 있었나요?"
+        }
+        
+    }
+    
+    
 
 }
