@@ -1,7 +1,7 @@
 # Ssdam(Stroke)
 Stroke the mood of the day
 
-
+     
 <details>
     <summary>Table of Contents</summary>
 
@@ -11,8 +11,9 @@ Stroke the mood of the day
 [4.Folder](#folder)   
 
 </details>
+    
 @copyright : 
-
+    
 ## Demo video
 
 ## Logo
