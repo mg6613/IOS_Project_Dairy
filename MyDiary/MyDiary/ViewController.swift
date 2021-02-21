@@ -83,8 +83,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Save current page on calendar
         let varDate = String(currentPageDate.split(separator: "-")[0]) + "-" + String(currentPageDate.split(separator: "-")[1])
         
-        // 21.02.18 세미 추가
-        // 헤더 클릭시 리스트 화면으로 이동
         self.performSegue(withIdentifier: "moveList", sender: self)
         ListDateYear = String(currentPageDate.split(separator: "-")[0])
         ListDateMonth = String(currentPageDate.split(separator: "-")[1])
@@ -107,12 +105,6 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Reload Data
         myCalendar.reloadData()
 
-    }
-    
-    // Bar button for move
-    @IBAction func openChart(_ sender: UIBarButtonItem) {
-        let chartViewController = ChartViewController(nibName: "ChartViewController", bundle: nil)
-        present(chartViewController, animated: true)
     }
 
     // Button for move to SelectEmotionViewController

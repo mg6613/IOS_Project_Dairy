@@ -1,9 +1,23 @@
-# IOS_MyDiary (WORKING TITLE)
-Our team's project for App store
+# Ssdam(Stroke)
+Stroke the mood of the day
 
+     
+<details>
+    <summary>Table of Contents</summary>
+
+[1.Demo video](#demo-video)    
+[2.Logo](#logo)    
+[3.Version](#version)    
+[4.Folder](#folder)   
+
+</details>
+    
 @copyright : 
-
+    
 ## Demo video
+
+## Logo
+<img src="https://user-images.githubusercontent.com/46651965/108586872-58606b00-7394-11eb-87db-a2efb79a1680.png" width="30%">
 
 # Version
 ### Swift version
@@ -18,11 +32,8 @@ Our team's project for App store
 ```swift
 # For Library import
 
-# For Charts
-pod 'Charts'
-
-# For Password Pattern
-pod "CCGestureLock"
+# For Use a calendar
+pod 'FSCalendar'
 ```
 
 ---

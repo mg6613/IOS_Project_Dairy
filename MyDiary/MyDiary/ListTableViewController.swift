@@ -33,21 +33,16 @@ class ListTableViewController: UITableViewController {
             if sqlite3_open(fileURL.path, &db) != SQLITE_OK{
                 print("error opening database")
             }
-        
-        lblYearMonth.text = "\(ListDateYear)년 \(ListDateMonth)월"
+            
+            lblYearMonth.text = "\(ListDateYear)년 \(ListDateMonth)월"
             listTableView.rowHeight = 100
         
-        print("값 확인 : \(ListDateYM)")
-
-        } // ================================== viewDidLoad
+        }
     
-    
-    
-    // ==================================================  Select
+    // SQL Select Start
     func readValues() {
         ContentsList.removeAll()
         
-       
         let queryString = "Select cTitle, cInsertDate, cImageFileName From contents where cInsertDate like '\(ListDateYM)%' order by cInsertDate desc"
         var stmt : OpaquePointer?
         
@@ -71,45 +66,34 @@ class ListTableViewController: UITableViewController {
         }
     
     
-    
+    // Reload Data
     override func viewWillAppear(_ animated: Bool) {
-        readValues() // readValues 해주면 self.tvListView.reloadData()로 다시 데이터값을 불러올 수 있다
-        // tvListView.reloadData()
+        readValues()
     }
     
-   
-    // 테이블 반복 횟수
+    // number Of Sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    // studentsList의 값만큼 보여준다
+    // ContentsList count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ContentsList.count
     }
     
-    // mycell이랑 연결 해준다
+    // connect mycell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! TableViewCell
 
-            // Configure the cell...
-            let contents: ListContents  // Students는 class. studentsList에 class타입으로 들어있기 때문에 정의해줌
+        let contents: ListContents
         contents = ContentsList[indexPath.row]
 
-            // Title과 subTitle은 변수명이 정해져있음
-//        cell.imgCell
         cell.lblCellTitle?.text = "\(contents.cTitle!)"
         cell.lblCellDate?.text = "\(contents.cInsertDate!)" 
         cell.imgCell?.image = UIImage(named: contents.cImageFileName!)
 
             return cell
         }
-        
-        // Temporary Insert
-        // tempInsert()
-        // Table 내용 불러오기
-        //readValues()
-        
     
     // MARK: - Navigation
 
@@ -118,14 +102,10 @@ class ListTableViewController: UITableViewController {
         if segue.identifier == "moveDetail"{
             let cell = sender as! UITableViewCell
             let indexPath = self.listTableView.indexPath(for: cell)
-//            let detailView = segue.destination as! DetailViewController
             let item: ListContents = ContentsList[indexPath!.row]
-            
             let cinsertdate = item.cInsertDate!
             strDate = cinsertdate
-            print("detail넘기는 날짜 확인 : \(strDate)")
         }
     }
     
-
 }
