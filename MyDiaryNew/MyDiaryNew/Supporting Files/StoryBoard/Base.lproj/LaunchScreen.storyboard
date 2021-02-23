@@ -16,23 +16,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gGv-pS-ddj">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-wn-XvN">
                                 <rect key="frame" x="16" y="44" width="358" height="766"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APl-ux-I5Y">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Khm-EQ-KnV">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="766"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DIu-Su-8d7">
+                                                <rect key="frame" x="47" y="236" width="265" height="294"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="dot_ssdam.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="6aF-vd-vOF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="265" height="273.66666666666669"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘을 쓰담" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0Z-P4-cjV">
+                                                        <rect key="frame" x="0.0" y="273.66666666666663" width="265" height="20.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="DIu-Su-8d7" secondAttribute="trailing" constant="46" id="0DN-rg-nTK"/>
+                                            <constraint firstItem="DIu-Su-8d7" firstAttribute="top" secondItem="Khm-EQ-KnV" secondAttribute="top" constant="236" id="B5V-26-dGC"/>
+                                            <constraint firstItem="DIu-Su-8d7" firstAttribute="leading" secondItem="Khm-EQ-KnV" secondAttribute="leading" constant="47" id="Kh8-5c-O6b"/>
+                                            <constraint firstAttribute="bottom" secondItem="DIu-Su-8d7" secondAttribute="bottom" constant="236" id="cpU-q9-FAn"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Khm-EQ-KnV" firstAttribute="top" secondItem="7Hs-wn-XvN" secondAttribute="top" id="KKL-qa-tnQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Khm-EQ-KnV" secondAttribute="bottom" id="Lxj-ID-BZB"/>
+                                    <constraint firstItem="Khm-EQ-KnV" firstAttribute="leading" secondItem="7Hs-wn-XvN" secondAttribute="leading" id="kAU-d3-APt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Khm-EQ-KnV" secondAttribute="trailing" id="mhF-Jd-XYh"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gGv-pS-ddj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="9eW-08-N1G"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gGv-pS-ddj" secondAttribute="trailing" constant="16" id="HEf-ie-6Wy"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gGv-pS-ddj" secondAttribute="bottom" id="mGb-5A-2X2"/>
-                            <constraint firstItem="gGv-pS-ddj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wlQ-eZ-SWF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Hs-wn-XvN" secondAttribute="trailing" constant="16" id="BEI-lr-zqp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7Hs-wn-XvN" secondAttribute="bottom" id="Rdm-80-Gy4"/>
+                            <constraint firstItem="7Hs-wn-XvN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="s64-pY-5Eh"/>
+                            <constraint firstItem="7Hs-wn-XvN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wHP-K3-nxQ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -42,6 +70,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dot_ssdam.jpeg" width="300" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

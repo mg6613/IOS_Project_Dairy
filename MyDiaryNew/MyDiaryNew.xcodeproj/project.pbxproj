@@ -64,6 +64,7 @@
 		281B6F1525E397A500302370 /* AddContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B6F0C25E397A500302370 /* AddContentViewController.swift */; };
 		281B6F1625E397A500302370 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B6F0D25E397A500302370 /* DetailViewController.swift */; };
 		281B6F1725E397A500302370 /* ChangeEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281B6F0E25E397A500302370 /* ChangeEmotionViewController.swift */; };
+		2844B26925E4BB9700543700 /* dot_ssdam.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 2844B26825E4BB9700543700 /* dot_ssdam.jpeg */; };
 		286E9B0D25E40F9500E07BFA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E9B0C25E40F9500E07BFA /* ViewController.swift */; };
 		EFC4805277C9F82D1185D2C1 /* Pods_MyDiaryNew.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB5A371727E1C44792E9B35F /* Pods_MyDiaryNew.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		281B6F0C25E397A500302370 /* AddContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContentViewController.swift; sourceTree = "<group>"; };
 		281B6F0D25E397A500302370 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		281B6F0E25E397A500302370 /* ChangeEmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmotionViewController.swift; sourceTree = "<group>"; };
+		2844B26825E4BB9700543700 /* dot_ssdam.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dot_ssdam.jpeg; sourceTree = "<group>"; };
 		286E9B0C25E40F9500E07BFA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68A751381CF5759C74A530F6 /* Pods-MyDiaryNew.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyDiaryNew.release.xcconfig"; path = "Target Support Files/Pods-MyDiaryNew/Pods-MyDiaryNew.release.xcconfig"; sourceTree = "<group>"; };
 		BB5A371727E1C44792E9B35F /* Pods_MyDiaryNew.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyDiaryNew.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 		281B6EA625E396AB00302370 /* PNG */ = {
 			isa = PBXGroup;
 			children = (
+				2844B26825E4BB9700543700 /* dot_ssdam.jpeg */,
 				281B6EAF25E396D200302370 /* 48.png */,
 				281B6EAA25E396D200302370 /* beige.png */,
 				281B6ED125E396D500302370 /* cal_beige.png */,
@@ -408,6 +411,7 @@
 				281B6EE525E396D500302370 /* list_deepgray.png in Resources */,
 				281B6EF125E396D500302370 /* list_purple.png in Resources */,
 				281B6EDC25E396D500302370 /* pink2.png in Resources */,
+				2844B26925E4BB9700543700 /* dot_ssdam.jpeg in Resources */,
 				281B6EE325E396D500302370 /* reresize.png in Resources */,
 				281B6EDD25E396D500302370 /* cal_navy.png in Resources */,
 				281B6EEC25E396D500302370 /* cal_pink.png in Resources */,
