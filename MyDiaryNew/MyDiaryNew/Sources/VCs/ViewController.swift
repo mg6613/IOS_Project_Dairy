@@ -129,6 +129,9 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // Remove placeholder
         myCalendar.placeholderType = .none
         
+        // Today color
+        myCalendar.appearance.todayColor = UIColor(red: 170/255, green: 193/255, blue: 214/255, alpha: 1)
+        
         // Click date color
         myCalendar.appearance.selectionColor = UIColor(red: 204/255, green: 226/255, blue: 203/255, alpha: 1)
   
