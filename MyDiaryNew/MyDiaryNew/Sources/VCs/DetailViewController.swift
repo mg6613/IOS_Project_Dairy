@@ -8,7 +8,7 @@
 import UIKit
 import SQLite3
 
-var strDate = "test"
+var strDate = ""
 var imageName_DetailView = ""
 var whereValue = 0
 
@@ -57,11 +57,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
             print("이미지 ?? : \(imageName_DetailView)")
         }
     }
-    // Title Check MaxLength
-    @IBAction func textDidChanged(_ sender: Any) {
-        checkMaxLength(textField: txtTitle, maxLength: 10)
-    }
-    
     
     override func viewDidDisappear(_ animated: Bool) {
         mTimer?.invalidate()
@@ -360,10 +355,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
-    // Title Check MaxLength
-    func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text?.count ?? 10 > maxLength) {
-            txtTitle.deleteBackward()
-        }
+    // to limit maximum input characters
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = txtTitle.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 15
     }
 }

@@ -33,12 +33,11 @@ class SelectEmotionViewController: UIViewController {
         super.viewDidLoad()
   
         // Store text change NSMutableAttributedString Type
-//        let attributedStr = NSMutableAttributedString(string: lblEmotion.text!)
-//
-//        attributedStr.addAttribute(.foregroundColor, value: UIColor.black, range: (lblEmotion.text! as NSString).range(of: "느낌"))
+        let attributedStr = NSMutableAttributedString(string: lblEmotion.text!)
 
-        // 설정이 적용된 text를 label의 attributedText에 저장
-//        lblEmotion.attributedText = attributedStr
+        attributedStr.addAttribute(.foregroundColor, value: UIColor.black, range: (lblEmotion.text! as NSString).range(of: "느낌"))
+        
+        lblEmotion.attributedText = attributedStr
         
         // If don't select any image, image1 will selected
         clickImageOnlyOne(image: image1)

@@ -42,12 +42,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         
         viewDidLayoutSubviews()
     }
-    
-    // Title Check MaxLength
-    @IBAction func textDidChanged(_ sender: Any) {
-        checkMaxLength(textField: txtTitle, maxLength: 10)
-    }
-    
+ 
     // Button for DB insert action
     @IBAction func btnInsert(_ sender: UIButton) {
        checkNil()
@@ -261,14 +256,13 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         
     }
     
-    // Title Check MaxLength
-    func checkMaxLength(textField: UITextField!, maxLength: Int) {
-        if (textField.text?.count ?? 10 > maxLength) {
-            txtTitle.deleteBackward()
-        }
+    // to limit maximum input characters
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = txtTitle.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 15
     }
-
-    
-    
-
 }
