@@ -85,7 +85,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
     func updateAction(value : Int){
 
         var stmt : OpaquePointer?
-        // 중요 (한글 문제 해결)
+       
         let SQLITE_TRANSIENT = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
         
         let cTitle = txtTitle.text!
