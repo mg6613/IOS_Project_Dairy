@@ -2,7 +2,7 @@
 //  SettingTableViewController.swift
 //  autoLayout_Test02
 //
-//  Created by 이민우 on 2021/02/17.
+//  Created by MinWoo Lee on 2021/02/17.
 //
 
 import UIKit

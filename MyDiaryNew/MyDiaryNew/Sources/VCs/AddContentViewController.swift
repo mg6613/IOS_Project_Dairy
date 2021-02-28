@@ -2,7 +2,7 @@
 //  AddContentViewController.swift
 //  autoLayout_Test02
 //
-//  Created by 이민우 on 2021/02/16.
+//  Created by MinWoo Lee on 2021/02/16.
 //
 
 import UIKit
@@ -38,7 +38,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         // Connect DB
         connectDB()
         
-        print(selectedDate_AddContentView)
+        
         
         viewDidLayoutSubviews()
     }
@@ -113,7 +113,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         
         showAlert(value: 1)
         
-        print("Contents saved successfully")
+        
         
     }
     
@@ -164,11 +164,11 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
         let placeholder = changePlaceholder()
         
         if txtViewContent.text == placeholder{
-            print("dsdsg")
+            
             txtViewContent.textColor = UIColor.black
             txtViewContent.text = ""
         }else if txtViewContent.text == ""{
-            print("sgsgd")
+            
             txtViewContent.textColor = UIColor.lightGray
             txtViewContent.text = placeholder
         }
@@ -176,13 +176,13 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
 
     // Start edit
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print("테스트 1")
+        
         textViewSetupView()
     }
     
     // End edit
     func textViewDidEndEditing(_ textView: UITextView) {
-        print("테스트 2")
+        
         if txtViewContent.text == ""{
             textViewSetupView()
             touchSwitch = 0
@@ -193,7 +193,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
     
     // Editing
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print("테스트 3")
+        
         if text == "\n"{
             txtViewContent.resignFirstResponder()
         }
@@ -222,8 +222,7 @@ class AddContentViewController: UIViewController, UITextViewDelegate, UITextFiel
     func changePlaceholder() -> String{
         let currentTime = getCurrentTime().0
         
-        print("현재시간 : ", currentTime)
-        print("현재날짜 : ", getCurrentTime().1)
+        
         
         if getCurrentTime().1 == selectedDate_AddContentView{
             if currentTime >= 600 && currentTime < 1200{

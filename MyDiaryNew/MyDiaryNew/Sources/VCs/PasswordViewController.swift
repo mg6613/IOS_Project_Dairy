@@ -2,7 +2,7 @@
 //  PasswordViewController.swift
 //  MyDiary
 //
-//  Created by 이민우 on 2021/02/18.
+//  Created by MinWoo Lee on 2021/02/18.
 //
 
 import UIKit
@@ -105,14 +105,14 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
     
     // Check value when switch on and off
     func checkSwitchValue(){
-        print("\(String(describing: UserDefaults.standard.string(forKey: "switchValue")))")
+        
         if let switchValue = UserDefaults.standard.string(forKey: "switchValue"){
-            print("스위치값 : \(switchValue)")
+            
             if switchValue == "true"{
-                print("켜짐")
+                
                 swOnOff.isOn = true
             }else{
-                print("꺼짐")
+                
                 swOnOff.isOn = false
             }
         }

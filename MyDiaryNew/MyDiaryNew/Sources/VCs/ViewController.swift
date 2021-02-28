@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  autoLayout_Test02
 //
-//  Created by 이민우 on 2021/02/16.
+//  Created by MinWoo Lee on 2021/02/16.
 //
 
 import UIKit
@@ -55,7 +55,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.locale = Locale(identifier: "ko")
         current_date_string = dateFormatter.string(from: Date())
-        print("초기 날짜 : \(Date())")
+        
         
         // For when use button with other buttons on same view
         view.addSubview(myCalendar)
@@ -70,15 +70,14 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         // DB select action
         readValues()
 
-        // Check path of simulator
-        print(self.getDocumentDirectory())
+        
         
         myCalendar.register(FSCalendarCell.self, forCellReuseIdentifier: "CELL")
             }
 
     // When touch title on calendar
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        print("\(myCalendar.currentPage)")
+        
         currentPageDate = dateFormatter.string(from: myCalendar.currentPage)
         // Save current page on calendar
         let varDate = String(currentPageDate.split(separator: "-")[0]) + "-" + String(currentPageDate.split(separator: "-")[1])
@@ -87,13 +86,12 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         ListDateYear = String(currentPageDate.split(separator: "-")[0])
         ListDateMonth = String(currentPageDate.split(separator: "-")[1])
         ListDateYM = String(varDate)
-        print("varDate : ", varDate)
+        
     }
     
     // Reload data when back from other view
     override func viewWillAppear(_ animated: Bool) {
-        print("----------------")
-        print("viewWillAppear")
+        
         
         // DB select action
         readValues()
@@ -182,8 +180,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         dateFormatter.dateFormat = "YYYY-MM-dd"
         selectDate = dateFormatter.string(from: date)
-        print(dateFormatter.string(from: date) + " 선택됨")
-        print(selectDate)
+       
         
         // When the date is registered
         if self.eventDates.contains(date){
@@ -201,8 +198,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
 
         if self.eventDates.contains(date){
-            print("데이트 타입 확인 : \(type(of: date))")
-            print("날짜 : \(date)")
+     
 
             return UIImage(named: imageFileNames[eventDates.firstIndex(of: date)!])
         }
@@ -229,7 +225,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
               print("error creating table : \(errmsg)")
           }
         
-        print("sqlite 생성완료")
+        
     }
     
     // DB SELECT Action
@@ -253,7 +249,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             let cInsertDate = String(cString: sqlite3_column_text(stmt, 4))
             dateFormatter.locale = Locale(identifier: "ko")
             
-            print("DB에서 불러온 날짜 : \(cInsertDate)")
+            
             tempImageFileNames.append(changeCalendarImageName(beforename : cImageFileName))
             tempDate.append(dateFormatter.date(from: cInsertDate)!)
             
@@ -261,11 +257,7 @@ class ViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource
             imageFileNames = tempImageFileNames
         }
  
-        print("imageFileNames : \(imageFileNames)")
-        print("eventDates : \(eventDates)")
-        print("//////////////////////")
-        print("tempDate : \(tempDate)")
-        print("readValues()확인")
+
     }
     
     // Find to simulator path

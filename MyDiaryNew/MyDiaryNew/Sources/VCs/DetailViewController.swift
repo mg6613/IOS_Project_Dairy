@@ -2,7 +2,7 @@
 //  DetailViewController.swift
 //  autoLayout_Test02
 //
-//  Created by 이민우 on 2021/02/17.
+//  Created by MinWoo Lee on 2021/02/17.
 //
 
 import UIKit
@@ -54,7 +54,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
 
         if whereValue == 1{
             imgEmotion.image = UIImage(named: imageName_DetailView)
-            print("이미지 ?? : \(imageName_DetailView)")
+            
         }
     }
     
@@ -90,7 +90,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         
         let cTitle = txtTitle.text!
         let cContent = txtViewContent.text!
-        print("cContent = \(cContent)")
+        
         
         let queryString = "UPDATE contents set cTitle = ?, cContent = ?, cImageFileName = ?, cUpdateDate = ? WHERE cInsertDate = ?"
             
@@ -130,10 +130,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
             return
         }
 
-        print("제목 : \(cTitle)")
-        print("내용 : \(cContent)")
-        print("업데이트 날짜 : \(getCurrentTime())")
-        print("Insert Date : \(strDate)")
+        
         
         if sqlite3_step(stmt) != SQLITE_DONE{
             let errmsg = String(cString: sqlite3_errmsg(db)!)
@@ -207,9 +204,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
             cContent = String(cString: sqlite3_column_text(stmt, 2))
             cImageFileName = String(cString: sqlite3_column_text(stmt, 3))
             
-            print("DB에서 불러온 제목 : \(cTitle)")
-            print("DB에서 불러온 내용 : \(cContent)")
-            print("DB에서 불러온 사진 : \(cImageFileName)")
+ 
             imageName_DetailView = cImageFileName
         }
         
@@ -217,9 +212,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         txtViewContent.text = cContent
         imgEmotion.image = UIImage(named: changeImageName(beforename: cImageFileName))
         
-        print("이미지 ?? : \(cImageFileName)")
-        
-        print("strdate : \(strDate)")
     }
     
     // Alert Function
@@ -262,7 +254,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate{
         formatter.locale = Locale(identifier: "ko")
         formatter.dateFormat = "yyyy-MM-dd EEE a hh:mm:ss"
         
-        print("현재시간 : \(formatter.string(from: date as Date))")
+        
 
         return formatter.string(from: date as Date)
     }

@@ -2,7 +2,7 @@
 //  ChangeEmotionViewController.swift
 //  MyDiary
 //
-//  Created by 이민우 on 2021/02/19.
+//  Created by MinWoo Lee on 2021/02/19.
 //
 
 import UIKit
