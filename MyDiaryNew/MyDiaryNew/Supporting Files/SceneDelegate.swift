@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Connect CheckPWView when have password and password switch is on
         if UserDefaults.standard.string(forKey: "password") != nil && UserDefaults.standard.string(forKey: "switchValue")! == "true" {
-            print("패스워드 & 스위치 ON", UserDefaults.standard.string(forKey: "switchValue") as Any)
+
             guard let loginVC = storyboard.instantiateViewController(withIdentifier: "CheckPWView") as? CheckPWViewController else { return }
                         window?.rootViewController = loginVC
         }else{

@@ -175,7 +175,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Vs-rO-Eze">
                                         <rect key="frame" x="0.0" y="206" width="358" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-8p-C9v">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WiO-8p-C9v">
                                                 <rect key="frame" x="0.0" y="0.0" width="358" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                                 <constraints>
@@ -788,7 +788,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="삭제"/>
                                                         <connections>
-                                                            <action selector="btnUpdate:" destination="jSn-8D-8V2" eventType="touchUpInside" id="cGL-Nl-Wr6"/>
+                                                            <action selector="btnDelete:" destination="jSn-8D-8V2" eventType="touchUpInside" id="mtS-W9-14v"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCv-fK-eCo">
@@ -796,7 +796,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                         <state key="normal" title="수정"/>
                                                         <connections>
-                                                            <action selector="btnDelete:" destination="jSn-8D-8V2" eventType="touchUpInside" id="QK2-zd-UWi"/>
+                                                            <action selector="btnUpdate:" destination="jSn-8D-8V2" eventType="touchUpInside" id="qfe-9I-gtl"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
