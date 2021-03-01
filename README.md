@@ -87,21 +87,31 @@ pod install
 ```
 --- 
 # Folder
-## Image
+### Image
 ![image](https://user-images.githubusercontent.com/46651965/108167033-6d40c280-7138-11eb-81f4-b693d868488b.png)
 
-## Supporting Files
+### Supporting Files
 
-### Images = Image File
+#### Images = Image File
 - PNG
 
-### StoryBoard
+#### StoryBoard
 
-### Assets
+#### Assets
 - Assets.xcassets
 
-## Source
+### Source
 
-### Models = Data
-### VCs = View Controller's
+#### Models = Data
+#### VCs = View Controller's
+
+# Reference
+### 앱스토어 등록 방법
+https://ithub.tistory.com/95
+
+### Xcode → App store 빌드 방법
+https://sansanji.tistory.com/entry/Xcode에서-앱스토어-등록-배포-하기
+
+### 개인정보 처리방침 예시
+https://github.com/CSID-DGU/2020-1-OSSP2-SEOULLO-3/edit/master/개인정보처리방침.txt
 
