@@ -88,13 +88,13 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
             lblText.text = "비밀번호 OFF"
         }else{
             if UserDefaults.standard.string(forKey: "password") != nil {
-                print("비밀번호 설정 하고 스위치 ON!")
+                
                 UserDefaults.standard.set("true", forKey: "switchValue")
                 txtPassword.isEnabled = true
                 btnUpdate.isEnabled = true
                 lblText.text = "비밀번호 ON"
             }else{
-                print("비밀번호 설정 안하고 스위치 ON!")
+                
                 txtPassword.isEnabled = true
                 btnUpdate.isEnabled = true
                 lblText.text = "비밀번호를 입력해주세요\n(4자리 ~ 8자리)"

@@ -272,7 +272,6 @@
 				281B6F0625E397A500302370 /* PasswordViewController.swift */,
 				281B6F0B25E397A500302370 /* SelectEmotionViewController.swift */,
 				281B6F0725E397A500302370 /* SettingTableViewController.swift */,
-				281B6F0825E397A500302370 /* TableViewCell.swift */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -281,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				281B6F0325E3979D00302370 /* ListContents.swift */,
+				281B6F0825E397A500302370 /* TableViewCell.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
