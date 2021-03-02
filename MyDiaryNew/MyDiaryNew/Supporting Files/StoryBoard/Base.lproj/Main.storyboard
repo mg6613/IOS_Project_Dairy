@@ -232,36 +232,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C2M-oo-ObR">
-                                <rect key="frame" x="147" y="678" width="96" height="84"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1X-Pr-cVP">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="84"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
-                                        <state key="normal" title="+"/>
-                                        <connections>
-                                            <action selector="btnNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pvu-sk-7qx"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hO7-vK-rJF" customClass="FSCalendar">
-                                <rect key="frame" x="16" y="88" width="358" height="582"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-8c-wQQ" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="88" width="358" height="567"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGx-bE-mHj">
+                                <rect key="frame" x="180" y="701" width="30" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="btnNew:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WNY-Zv-hrE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="C2M-oo-ObR" firstAttribute="top" secondItem="hO7-vK-rJF" secondAttribute="bottom" constant="8" symbolic="YES" id="0vf-1w-CK2"/>
-                            <constraint firstItem="C2M-oo-ObR" firstAttribute="top" secondItem="hO7-vK-rJF" secondAttribute="bottom" constant="8" symbolic="YES" id="4jj-XR-wrg"/>
-                            <constraint firstItem="C2M-oo-ObR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="678" id="AWV-PX-3aA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hO7-vK-rJF" secondAttribute="trailing" constant="16" id="JsQ-iv-qzo"/>
-                            <constraint firstItem="C2M-oo-ObR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="Z1N-yh-Di6"/>
-                            <constraint firstItem="hO7-vK-rJF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bwo-l9-PGf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C2M-oo-ObR" secondAttribute="bottom" constant="48" id="fME-1y-Kxz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C2M-oo-ObR" secondAttribute="trailing" constant="147" id="juB-1p-1Zp"/>
-                            <constraint firstItem="hO7-vK-rJF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yTa-Fv-Hv3"/>
+                            <constraint firstItem="MOL-8c-wQQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KN1-Zz-teD"/>
+                            <constraint firstItem="MOL-8c-wQQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RwX-p0-qVx"/>
+                            <constraint firstItem="kGx-bE-mHj" firstAttribute="top" secondItem="MOL-8c-wQQ" secondAttribute="bottom" constant="46" id="lzc-mn-7gy"/>
+                            <constraint firstItem="MOL-8c-wQQ" firstAttribute="centerX" secondItem="kGx-bE-mHj" secondAttribute="centerX" id="mbw-eI-NeZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kGx-bE-mHj" secondAttribute="bottom" constant="49" id="oT1-o0-ZS6"/>
+                            <constraint firstItem="MOL-8c-wQQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="y9R-jA-tMg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DC0-Fq-kwm">
@@ -272,7 +264,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="myCalendar" destination="hO7-vK-rJF" id="bXB-5c-s4s"/>
+                        <outlet property="myCalendar" destination="MOL-8c-wQQ" id="rk1-T6-Stp"/>
                         <segue destination="ED5-mJ-4le" kind="show" identifier="moveList" id="Yhq-Mm-Gj8"/>
                         <segue destination="jSn-8D-8V2" kind="show" identifier="MoveDetailDirect" id="D7z-QE-jOc"/>
                         <segue destination="boM-lf-Chz" kind="show" identifier="moveSelectEmo" id="jDW-gm-cb7"/>
@@ -786,7 +778,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MGi-uA-rpE">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="100"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                                        <state key="normal" title="삭제"/>
+                                                        <state key="normal" title="삭제">
+                                                            <color key="titleColor" systemColor="systemPinkColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="btnDelete:" destination="jSn-8D-8V2" eventType="touchUpInside" id="mtS-W9-14v"/>
                                                         </connections>
@@ -981,7 +975,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D7z-QE-jOc"/>
+        <segue reference="FxR-W4-8c0"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="beige.png" width="200" height="200"/>
@@ -1004,6 +998,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
