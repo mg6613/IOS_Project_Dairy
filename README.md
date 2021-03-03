@@ -115,9 +115,6 @@ https://ithub.tistory.com/95
 ### Xcode → App store 빌드 방법
 https://sansanji.tistory.com/entry/Xcode에서-앱스토어-등록-배포-하기
 
-### 개인정보 처리방침 예시
-https://github.com/CSID-DGU/2020-1-OSSP2-SEOULLO-3/edit/master/개인정보처리방침.txt
-
 # 개인정보 처리방침
 1. 개인정보의 처리 목적 <쓰담>(‘https://github.com/Side-Team/IOS_Project_Dairy’이하 ‘쓰담’) 은(는) 다음의 목적을 위하여 개인정보를 처리하고 있으며, 다음의 목적 이외의 용도로는 이용하지 않습니다.  
 - 고객 가입의사 확인, 고객에 대한 서비스 제공에 따른 본인 식별.인증, 회원자격 유지.관리, 물품 또는 서비스 공급에 따른 금액 결제, 물품 또는 서비스의 공급.배송 등  
