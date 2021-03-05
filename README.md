@@ -206,9 +206,9 @@ https://sansanji.tistory.com/entry/Xcode에서-앱스토어-등록-배포-하기
 ### How to solve it
 => Change the display name of the app to ‘쓰담’
 
-# 2021.03.05 "Ready for Sale" Version 1.0
-#### The following app has been approved for the App Store:
-App Name: 쓰담
-App Version Number: 1.0
-App Type: iOS
+# 2021.03.05 " Ready for Sale, Version 1.0"  
+#### The following app has been approved for the App Store:  
+App Name: 쓰담  
+App Version Number: 1.0  
+App Type: iOS  
 
