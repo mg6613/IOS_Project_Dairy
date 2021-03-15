@@ -15,7 +15,7 @@ Stroke the mood of the day
 [2.Logo](#logo)    
 [3.Version](#version)    
 [4.Folder](#folder)  
-[5.Reference](#reference)   
+[5.Reference](#reference)  
 [6.개인정보 처리방침](#개인정보 처리방침)  
 
 
@@ -199,7 +199,6 @@ https://sansanji.tistory.com/entry/Xcode에서-앱스토어-등록-배포-하기
 
 5. 개인정보에 대한 접근 제한  
 개인정보를 처리하는 데이터베이스시스템에 대한 접근권한의 부여,변경,말소를 통하여 개인정보에 대한 접근통제를 위하여 필요한 조치를 하고 있으며 침입차단시스템을 이용하여 외부로부터의 무단 접근을 통제하고 있습니다.  
-
 ---
 # 2021.03.04 "Review"
 #### The name of the app in the App Store and the name of the downloaded app are different.  
@@ -211,4 +210,21 @@ https://sansanji.tistory.com/entry/Xcode에서-앱스토어-등록-배포-하기
 App Name: 쓰담  
 App Version Number: 1.0  
 App Type: iOS  
+
+# 2021.03.11 "Solve issue & Add function"
+## Solve issue
+#### 1. Solving the problem of having two articles registered on a single day
+
+## Add function
+#### 1. Register an email to receive the required authentication number when clearing a password
+- Enter the email to receive the authentication number when registering the password
+- You can change your email address through the '이메일 변경' button in the upper right corner.
+
+#### 2. Clear password
+- If the password is incorrect 5 times, you can clear the password through email authentication.
+- You can authenticate your email up to three times a day.
+- If the authentication is successful, the password will clear and the password function will be turned off.
+
+#### 3. When you change your email address or password
+- When you change your email address or password, you must enter your existing password.
 
